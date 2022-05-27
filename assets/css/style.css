@@ -1,4 +1,17 @@
-/* Remove margins and padding */
+/* Google Fonts import*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,800&display=swap');
+
+/* Global styles */
+
+:root {
+    --liberty: #4357adff;
+    --verdigris: #48a9a6ff;
+    --timberwolf: #e4dfdaff;
+    --tan: #d4b483ff;
+    --fuzzy-wuzzy: #c1666bff;
+}
+
+/* Remove default margins and padding */
 * {
     padding: 0;
     margin: 0;
@@ -11,20 +24,34 @@ body {
     align-items: center;
 }
 
+body, 
+input {
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    letter-spacing: .03rem;
+}
+
+header {
+    margin: 32px auto;
+}
+
 h1 {
     margin: 32px;
+    color: var(--liberty);
+    font-size: 3.125rem;
 }
 
 #outer-card {
-    margin-top: 32px;
-    border: 1px solid #2d2d2d;
+    border: 2px solid var(--liberty);
     display: flex;
-    justify-content: center;
     align-items: center;
     padding: 30px;
     border-radius: 15px;
     flex-direction: column;
-    max-width: 1000px;
+    width: 75%;
+    max-width: 1500px;
+    margin: auto;
 }
 
 #progress-bar {
@@ -33,14 +60,17 @@ h1 {
 }
 
 .progress {
-    margin: 0 10px;
-    height: 50px;
-    width: 50px;
-    line-height: 50px;
+    margin: 0 15px;
+    height: 55px;
+    width: 55px;
+    line-height: 55px;
     text-align: center;
     border-radius: 50%;
-    border-color:grey;
-    border-style: solid;
+    border: 7px solid var(--timberwolf);
+}
+
+#question {
+    margin: 50px auto;
 }
 
 #question-body {
@@ -48,5 +78,29 @@ h1 {
 }
 
 #start {
-    margin: 32px;
+    margin: 32px 32px 0 32px;
+}
+
+.input-style {
+    border: 2px solid var(--timberwolf);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+#start {
+    border: 2px solid var(--fuzzy-wuzzy);
+    padding: 15px 20px;
+    border-radius: 40px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    background-color: var(--fuzzy-wuzzy);
+}
+
+#start:hover {
+    border: 2px solid var(--fuzzy-wuzzy);
+    padding: 15px 20px;
+    border-radius: 40px;
+    font-size: 1.5rem;
+    color: var(--fuzzy-wuzzy);
+    background-color: #ffffff;
 }
