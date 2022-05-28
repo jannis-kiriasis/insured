@@ -37,9 +37,11 @@ let questions = [
     },
  ]
 
+// Variables to loop through questions
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 
+// Store yes/no button elements
 const yesClick = document.getElementById("yes");
 const noClick = document.getElementById("no");
 
@@ -58,7 +60,11 @@ function startQuestionnaire() {
 let start = document.getElementById("start");
 start.addEventListener("click", startQuestionnaire);
  
-//render a question
+/**
+* Render the first question,
+* show yes / no buttons,
+* hide Text area
+*/
 function nextQuestion() {
     let q = questions[runningQuestion];
     document.getElementsByTagName("h1")[1].innerText = q.question;
@@ -69,16 +75,23 @@ function nextQuestion() {
     hideTextArea();
 }
 
+// Show yes / no buttons
 function showButtons(){
     let showButtons = document.getElementById("answers");
     showButtons.classList.remove("hide");
 }
 
+// Hide intro text area
 function hideTextArea() {
     let hide = document.getElementById("text-area");
     hide.style.display="none";
 }
 
+/**
+ * Check if there are questions left to loop through,
+ * if so, increment runningQuestion and
+ * show the next question.
+ */
 function leftQuestions() {
     if (runningQuestion < lastQuestion) {
         runningQuestion++;
@@ -86,12 +99,22 @@ function leftQuestions() {
     }
 }
 
-function progressBar () {
-    for (let qIndex = 0; qIndex <= lastQuestion; qIndex++) {
-        let currentQ = document.getElementsByClassName("progress")[qIndex];
-        currentQ.classList.add("current-question");
-    }
-}
-
+// On yes/no click, run leftQuestions()
 yesClick.addEventListener("click", leftQuestions);
 noClick.addEventListener("click", leftQuestions);
+
+function saveAnswers () {
+
+}
+
+function progressUpdate () {
+
+}
+
+function validateUsername () {
+
+}
+
+function showResults () {
+
+}
