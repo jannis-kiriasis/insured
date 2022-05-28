@@ -74,6 +74,6 @@ function nextQuestion() {
     let showButtons = document.getElementById("answers");
     showButtons.classList.remove("hide");
 
-    let hide = document.getElementById("question-body");
+    let hide = document.getElementById("text-area");
     hide.style.display="none";
 };
