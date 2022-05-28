@@ -28,6 +28,10 @@ body,
 input {
     font-family: 'Open Sans', Helvetica, sans-serif;
     font-size: 1.2rem;
+
+}
+
+p, input {
     line-height: 1.8rem;
     letter-spacing: .03rem;
 }
