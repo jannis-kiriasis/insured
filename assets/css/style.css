@@ -52,11 +52,12 @@ h1 {
     padding: 30px;
     border-radius: 15px;
     flex-direction: column;
-    width: 75%;
+    width: 769px;
     max-width: 1500px;
     margin: auto;
     box-shadow: 0 0 15px #4357ad75;
     background-color: #4357ad10;
+    min-width: min-content;
 }
 
 #progress-bar {
@@ -93,22 +94,23 @@ h1 {
     padding: 15px;
 }
 
-#start {
+#start,
+#answers > button {
     border: 2px solid var(--fuzzy-wuzzy);
-    padding: 15px 20px;
+    padding: 15px 40px;
+    margin: 10px;
     border-radius: 40px;
     font-size: 1.5rem;
     color: #ffffff;
     background-color: var(--fuzzy-wuzzy);
 }
 
-#start:hover {
+#start:hover,
+#answers > button:hover {
     border: 2px solid var(--fuzzy-wuzzy);
-    padding: 15px 20px;
-    border-radius: 40px;
-    font-size: 1.5rem;
     color: var(--fuzzy-wuzzy);
     background-color: #ffffff;
+
 }
 
 .current-question {
@@ -119,27 +121,9 @@ h1 {
     border-color: var(--verdigris);
 }
 
-#answers > button {
-    border: 2px solid var(--fuzzy-wuzzy);
-    height: 50px;
-    width: 100px;
-    border-radius: 40px;
-    font-size: 1.5rem;
-    color: var(--fuzzy-wuzzy);
-    background-color: #ffffff;
-    margin: 0 10px;
-}
-
 #answers {
     display: flex;
     justify-content: center;
-}
-
-#answers > button:hover {
-    border: 2px solid var(--fuzzy-wuzzy);
-    color: #ffffff;
-    background-color: var(--fuzzy-wuzzy);
-    margin: 0 10px;
 }
 
 .hide {
