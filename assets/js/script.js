@@ -45,6 +45,7 @@ function startQuestionnaire() {
         username = document.getElementById("username").value;
 }
 
+//Listen to 'start' clicks
 let start = document.getElementById("start");
 start.addEventListener("click", startQuestionnaire);
 
