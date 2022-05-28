@@ -40,6 +40,9 @@ let questions = [
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 
+const yesClick = document.getElementById("yes");
+const noClick = document.getElementById("no");
+
 // Store username in a variable
 let username = "";
 
@@ -64,7 +67,6 @@ function nextQuestion() {
 
     showButtons();
     hideTextArea();
-    leftQuestions();
 }
 
 function showButtons(){
@@ -78,8 +80,18 @@ function hideTextArea() {
 }
 
 function leftQuestions() {
-    if (runningQuesition < lastQuestion) {
+    if (runningQuestion < lastQuestion) {
         runningQuestion++;
         nextQuestion();
     }
 }
+
+function progressBar () {
+    for (let qIndex = 0; qIndex <= lastQuestion; qIndex++) {
+        let currentQ = document.getElementsByClassName("progress")[qIndex];
+        currentQ.classList.add("current-question");
+    }
+}
+
+yesClick.addEventListener("click", leftQuestions);
+noClick.addEventListener("click", leftQuestions);
