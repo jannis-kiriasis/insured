@@ -1,3 +1,5 @@
+
+
 // Store username in a variable
 let username = "";
 
@@ -8,4 +10,15 @@ function startQuestionnaire() {
 
 let start = document.getElementById("start");
 start.addEventListener("click", startQuestionnaire);
+
+
+
+
+function Questionnaire () {
+
+}
+
+function validateUsername () {
+
+}
 

@@ -105,3 +105,11 @@ h1 {
     color: var(--fuzzy-wuzzy);
     background-color: #ffffff;
 }
+
+.current-question {
+    border-color: var(--liberty);
+}
+
+.past-question {
+    border-color: var(--verdigris);
+}
