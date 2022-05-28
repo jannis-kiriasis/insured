@@ -1,12 +1,3 @@
-const question = document.getElementById("question");
-const choices = Array.from(document.getElementsByClassName("choice-text"));
-
-let currentQuestion = {};
-let acceptingAnswers = false;
-let score = 0;
-let questionCounter = 0;
-let availableQuesions = [];
-
 //Questions
 let questions = [
     {
@@ -46,6 +37,9 @@ let questions = [
     },
  ]
 
+const lastQuestion = questions.length - 1;
+let runningQuestion = 0;
+
 // Store username in a variable
 let username = "";
 
@@ -54,8 +48,6 @@ function startQuestionnaire() {
     username = document.getElementById("username").value;
     start.classList.add("hide");
     questionCounter = 0;
-    score = 0;
-    availableQuesions = [...questions];
     nextQuestion()
 }
 
@@ -63,17 +55,31 @@ function startQuestionnaire() {
 let start = document.getElementById("start");
 start.addEventListener("click", startQuestionnaire);
  
-
+//render a question
 function nextQuestion() {
-    questionCounter++;
-    document.getElementsByTagName("h1")[1].innerText = questions[0].question;
-    document.getElementById("yes").innerText = questions[0].answers.a;
-    document.getElementById("no").innerText = questions[0].answers.b;
-    
+    let q = questions[runningQuestion];
+    document.getElementsByTagName("h1")[1].innerText = q.question;
+    document.getElementById("yes").innerText = q.answers.a;
+    document.getElementById("no").innerText = q.answers.b;
 
+    showButtons();
+    hideTextArea();
+    leftQuestions();
+}
+
+function showButtons(){
     let showButtons = document.getElementById("answers");
     showButtons.classList.remove("hide");
+}
 
+function hideTextArea() {
     let hide = document.getElementById("text-area");
     hide.style.display="none";
-};
+}
+
+function leftQuestions() {
+    if (runningQuesition < lastQuestion) {
+        runningQuestion++;
+        nextQuestion();
+    }
+}
