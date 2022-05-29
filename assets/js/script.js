@@ -167,6 +167,13 @@ function showResults () {
     displayComments ();
 }
 
+function backButton () {
+    let start = document.getElementById("start");
+    start.classList.remove("hide");
+    start.setAttribute("onclick", "window.location.href='index.html'");
+    start.innerHTML = `Restart with new name`;
+}
+
 //Show comments based on the user's answers
 function displayComments () {
     resultsArea.firstChild.textContent = `Hi ${username},`
@@ -206,12 +213,9 @@ function displayComments () {
         let br = document.createElement('br');
         resultsArea.appendChild(br);
     }
+    backButton ();
 }
 
 function validateUsername () {
-
-}
-
-function backButton () {
 
 }
