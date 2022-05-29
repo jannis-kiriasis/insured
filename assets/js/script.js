@@ -47,11 +47,20 @@ const yesClick = document.getElementById("yes");
 const noClick = document.getElementById("no");
 
 // Store username in a variable
-let username = "";
+let user = [
+    username = "",
+    {
+        answer0: "",
+        answer1: "",
+        answer2: "",
+        answer3: "",
+        answer4: "",
+    }
+]
 
 //Start game when Start is clicked
 function startQuestionnaire() {
-    username = document.getElementById("username").value;
+    user.username = document.getElementById("username").value;
     start.classList.add("hide");
     //Make first bar progress border-color green
     document.getElementById("i").classList.add("past-question");
