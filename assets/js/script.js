@@ -40,6 +40,7 @@ let questions = [
 // Variables to loop through questions
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
+let currentProgress = 0;
 
 // Store yes/no button elements
 const yesClick = document.getElementById("yes");
@@ -52,8 +53,10 @@ let username = "";
 function startQuestionnaire() {
     username = document.getElementById("username").value;
     start.classList.add("hide");
-    questionCounter = 0;
-    nextQuestion()
+    //Make first bar progress border-color green
+    document.getElementById("i").classList.add("past-question");
+    nextQuestion();
+    progressUpdate();
 }
 
 //Listen to 'start' clicks
@@ -73,6 +76,7 @@ function nextQuestion() {
 
     showButtons();
     hideTextArea();
+    progressUpdate();
 }
 
 // Show yes / no buttons
@@ -107,8 +111,16 @@ function saveAnswers () {
 
 }
 
-function progressUpdate () {
 
+function progressUpdate () {
+    currentProgress = document.getElementsByClassName("progress")[runningQuestion + 1 ].id;
+    let pastQuestion = currentProgress - 1;
+    if (parseInt(currentProgress) === runningQuestion) {
+        let blueCircle = document.getElementById(runningQuestion);
+        blueCircle.classList.add("current-question");
+        let greenCircle = document.getElementById(pastQuestion);
+        greenCircle.classList.add("past-question");
+    }
 }
 
 function validateUsername () {
