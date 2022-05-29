@@ -119,6 +119,8 @@ function leftQuestions() {
     if (runningQuestion < lastQuestion) {
         runningQuestion++;
         nextQuestion();
+    } else {
+        showResults();
     }
 }
 
@@ -136,7 +138,7 @@ function progressUpdate () {
     //Get the id of the progress circle that matches the running question
     currentProgress = document.getElementsByClassName("progress")[runningQuestion + 1 ].id;
     let pastQuestion = currentProgress - 1;
-    
+
     if (parseInt(currentProgress) === runningQuestion) {
         let blueCircle = document.getElementById(runningQuestion);
         blueCircle.classList.add("current-question");
@@ -150,5 +152,10 @@ function validateUsername () {
 }
 
 function showResults () {
+    document.getElementById("answers").classList.add("hide");
+    document.getElementById("question").classList.add("hide");
+    document.getElementById("text-area").classList.remove("hide");
 
+    document.getElementById("5").classList.add("current-question");
+    document.getElementById("4").classList.add("past-question");
 }
