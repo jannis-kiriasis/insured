@@ -47,20 +47,12 @@ const yesClick = document.getElementById("yes");
 const noClick = document.getElementById("no");
 
 // Store username in a variable
-let user = [
-    username = "",
-    {
-        answer0: "",
-        answer1: "",
-        answer2: "",
-        answer3: "",
-        answer4: "",
-    }
-]
+let username = "";
+let userAnswers = [];
 
 //Start game when Start is clicked
 function startQuestionnaire() {
-    user.username = document.getElementById("username").value;
+    username = document.getElementById("username").value;
     start.classList.add("hide");
     //Make first bar progress border-color green
     document.getElementById("i").classList.add("past-question");
@@ -101,6 +93,24 @@ function hideTextArea() {
 }
 
 /**
+ * Save user ansers in an array,
+ * go to next question
+ */
+function saveAnswers() {
+    userAnswers.push(this.id);
+    leftQuestions();
+}
+
+//Variable to loop through buttons
+var buttons = document.getElementsByClassName("choice-text");
+var buttonsCount = buttons.length;
+
+//On button click run saveAnswers
+for (var i = 0; i <= buttonsCount; i += 1) {
+    buttons[i].onclick = saveAnswers; 
+}
+
+/**
  * Check if there are questions left to loop through,
  * if so, increment runningQuestion and
  * show the next question.
@@ -116,14 +126,17 @@ function leftQuestions() {
 yesClick.addEventListener("click", leftQuestions);
 noClick.addEventListener("click", leftQuestions);
 
-function saveAnswers () {
-
-}
-
-
+/**
+ * Update progress bar,
+ * current question progress becomes blue,
+ * past questions become green
+ */
 function progressUpdate () {
+
+    //Get the id of the progress circle that matches the running question
     currentProgress = document.getElementsByClassName("progress")[runningQuestion + 1 ].id;
     let pastQuestion = currentProgress - 1;
+    
     if (parseInt(currentProgress) === runningQuestion) {
         let blueCircle = document.getElementById(runningQuestion);
         blueCircle.classList.add("current-question");
