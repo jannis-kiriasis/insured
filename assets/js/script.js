@@ -50,6 +50,14 @@ const noClick = document.getElementById("no");
 let username = "";
 let userAnswers = [];
 
+//Results
+let needLifeInsurance = "Considering that you have children below the age of 25, you may want to protect their future with a life cover.";
+let needIncomeProtection = "You said you are self-employed so an income protection (a specific type of life insurance) can help you out in case you can't work due to injury or illness.";
+let needMortgageProtection = "Homeowners who have a mortgage must have a specific type of life insurance called mortgage protection. This insurance will repay your mortgage in case you can't pay anymore. It isn't the say as a life cover: mortgage protection only repays your mortgage.";
+let noNeed = "Based on the answers you provided, you can park the life insurance for the moment! you probably don't need it!";
+let resultsArea = document.getElementById("text-area");
+let needLifeInsuranceExtra = "Considering that the family depends on 1 person (or 1 source of income), would be wise that person get a life insurance to protect the family.";
+
 //Start game when Start is clicked
 function startQuestionnaire() {
     username = document.getElementById("username").value;
@@ -147,15 +155,63 @@ function progressUpdate () {
     }
 }
 
+//Prepare DOM to display comments
+function showResults () {
+    document.getElementById("answers").style.display="none";
+    document.getElementById("question").style.display="none";
+    document.getElementById("text-area").style.display="block";
+    document.getElementById("intro").innerHTML = "";
+
+    document.getElementById("5").classList.add("current-question");
+    document.getElementById("4").classList.add("past-question");
+    displayComments ();
+}
+
+//Show comments based on the user's answers
+function displayComments () {
+    resultsArea.firstChild.textContent = `Hi ${username},`
+    
+    if (userAnswers[0] === "yes") {
+        let p = document.createElement('p');
+        p.textContent = needLifeInsurance;
+        resultsArea.appendChild(p);
+        let br = document.createElement('br');
+        resultsArea.appendChild(br);
+    } 
+    if (userAnswers[1] === "yes") {
+        let p = document.createElement('p');
+        p.textContent = needIncomeProtection;
+        resultsArea.appendChild(p);
+        let br = document.createElement('br');
+        resultsArea.appendChild(br);
+    } 
+    if (userAnswers[2] === "yes") {
+        let p = document.createElement('p');
+        p.textContent = needMortgageProtection;
+        resultsArea.appendChild(p);
+        let br = document.createElement('br');
+        resultsArea.appendChild(br);
+    }
+    if (userAnswers[3] === "yes" || userAnswers[4] === "yes") {
+        let p = document.createElement('p');
+        p.textContent = needLifeInsuranceExtra;
+        resultsArea.appendChild(p);
+        let br = document.createElement('br');
+        resultsArea.appendChild(br);
+    }
+    if (userAnswers[0] === "no" && userAnswers[1] === "no" && userAnswers[2] === "no" && userAnswers[3] === "no" && userAnswers[4] === "no") {
+        let p = document.createElement('p');
+        p. textContent = noNeed;
+        resultsArea.appendChild(p);
+        let br = document.createElement('br');
+        resultsArea.appendChild(br);
+    }
+}
+
 function validateUsername () {
 
 }
 
-function showResults () {
-    document.getElementById("answers").classList.add("hide");
-    document.getElementById("question").classList.add("hide");
-    document.getElementById("text-area").classList.remove("hide");
+function backButton () {
 
-    document.getElementById("5").classList.add("current-question");
-    document.getElementById("4").classList.add("past-question");
 }
