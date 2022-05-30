@@ -212,6 +212,8 @@ function calculatorButton() {
 function backButton () {
     let start = document.getElementById("start");
     start.classList.remove("hide");
+    start.removeAttribute("id");
+    start.classList.add("back-button");
     start.setAttribute("onclick", "window.location.href='index.html'");
     start.innerHTML = `Restart with new name`;
 }

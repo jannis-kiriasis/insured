@@ -153,3 +153,18 @@ form > input {
     color: var(--fuzzy-wuzzy);
     width: 240px;
 }
+
+.back-button {
+    border: 2px solid var(--fuzzy-wuzzy);
+    padding: 15px 40px;
+    margin: 10px;
+    border-radius: 40px;
+    font-size: 1.5rem;
+    color: var(--fuzzy-wuzzy);
+    background-color: #ffffff;
+}
+
+.back-button:hover {
+    color: #ffffff;
+    background-color: var(--fuzzy-wuzzy);
+}
