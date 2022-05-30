@@ -91,6 +91,9 @@ function validateUsername () {
     } else if (!isBetween(username.length, min, max)) {
         document.getElementById("username").style.borderColor="red";
         alert(`Username must be between ${min} and ${max} characters. Try Again!`);
+    } else if (/\s/.test(username)) {
+        document.getElementById("username").style.borderColor="red";
+        alert("Username must be one word! Try again.");    
     } else {
         valid = true;
         startQuestionnaire();
