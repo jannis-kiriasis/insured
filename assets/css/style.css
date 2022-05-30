@@ -143,4 +143,5 @@ form > input {
 
 #life-cover-result {
     color: var(--fuzzy-wuzzy);
+    width: 240px;
 }
