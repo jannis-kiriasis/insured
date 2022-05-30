@@ -168,3 +168,45 @@ form > input {
     color: #ffffff;
     background-color: var(--fuzzy-wuzzy);
 }
+
+@media only screen and (max-width: 858px) {
+    #progress-bar > div {
+        display: none;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    input,
+    body {
+        font-size: 1rem;
+        font-family: 'Open Sans', Helvetica, sans-serif;
+    }
+
+    #outer-card {
+        width: 85%;
+        padding: 15px;
+    }
+
+    #text-area {
+        margin: 0px;
+    }
+
+    #question {
+        margin: 20px auto;
+    }
+
+    #answers {
+        margin: 10px;
+    }
+
+    #start,
+    #answers > button,
+    #calculate-btn,
+    #life-calculator-btn,
+    .back-button {
+        font-size: 1.2rem;
+    }
+}
