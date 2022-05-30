@@ -97,7 +97,8 @@ h1 {
 
 #start,
 #answers > button,
-#calculate-btn {
+#calculate-btn,
+#life-calculator-btn {
     border: 2px solid var(--fuzzy-wuzzy);
     padding: 15px 40px;
     margin: 10px;
@@ -107,9 +108,16 @@ h1 {
     background-color: var(--fuzzy-wuzzy);
 }
 
+#life-calculator-btn {
+    margin: 32px auto;
+    display: flex;
+    justify-content: center;
+}
+
 #start:hover,
 #answers > button:hover,
-#calculate-btn:hover {
+#calculate-btn:hover,
+#life-calculator-btn:hover {
     border: 2px solid var(--fuzzy-wuzzy);
     color: var(--fuzzy-wuzzy);
     background-color: #ffffff;

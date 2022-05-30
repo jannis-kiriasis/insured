@@ -58,6 +58,7 @@ let noNeed = "Based on the answers you provided, you can park the life insurance
 let resultsArea = document.getElementById("text-area");
 let needLifeInsuranceExtra = "Considering that your family depends on 1 person (or 1 source of income), would be wise that person get a life insurance to protect the family.";
 
+
 /**
  * After the username is validated,
  * initialize the questionnaire and
@@ -199,6 +200,15 @@ function showResults () {
     displayComments ();
 }
 
+//show calculator buttons
+function calculatorButton() {
+    let calculatorBtn = document.createElement("button");
+    calculatorBtn.setAttribute("onclick", "window.location.href='life-insurance-calculator.html'");
+    calculatorBtn.textContent = `Calculate your life insurance need`;
+    calculatorBtn.setAttribute("id", "life-calculator-btn");
+    resultsArea.appendChild(calculatorBtn);
+}
+
 function backButton () {
     let start = document.getElementById("start");
     start.classList.remove("hide");
@@ -245,6 +255,7 @@ function displayComments () {
         let br = document.createElement('br');
         resultsArea.appendChild(br);
     }
+    calculatorButton();
     backButton ();
 }
 
