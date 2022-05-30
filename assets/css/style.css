@@ -92,6 +92,7 @@ h1 {
     border: 2px solid var(--timberwolf);
     border-radius: 5px;
     padding: 15px;
+    margin-top: 10px;
 }
 
 #start,
@@ -132,4 +133,12 @@ h1 {
 
 #text-area {
     margin: 32px;
+}
+
+form > input {
+    margin-bottom: 32px;
+}
+
+#life-cover-result {
+    color: var(--fuzzy-wuzzy);
 }
