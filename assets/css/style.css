@@ -169,7 +169,16 @@ form > input {
     background-color: var(--fuzzy-wuzzy);
 }
 
+#mobile-progress {
+    display: none;
+}
+
 @media only screen and (max-width: 858px) {
+
+    #mobile-progress {
+        display: block;
+    }
+    
     #progress-bar > div {
         display: none;
     }
