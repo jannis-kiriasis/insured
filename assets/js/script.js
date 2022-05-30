@@ -50,27 +50,56 @@ const noClick = document.getElementById("no");
 let username = "";
 let userAnswers = [];
 
-//Results
+// Results
 let needLifeInsurance = "Considering that you have children below the age of 25, you may want to protect their future with a life cover.";
 let needIncomeProtection = "You said you are self-employed so an income protection (a specific type of life insurance) can help you out in case you can't work due to injury or illness.";
-let needMortgageProtection = "Homeowners who have a mortgage must have a specific type of life insurance called mortgage protection. This insurance will repay your mortgage in case you can't pay anymore. It isn't the say as a life cover: mortgage protection only repays your mortgage.";
+let needMortgageProtection = "Homeowners who have a mortgage must have a specific type of life insurance called mortgage protection. This insurance will repay your mortgage in case you can't pay anymore. It isn't the same as a life cover: mortgage protection only repays your mortgage.";
 let noNeed = "Based on the answers you provided, you can park the life insurance for the moment! you probably don't need it!";
 let resultsArea = document.getElementById("text-area");
-let needLifeInsuranceExtra = "Considering that the family depends on 1 person (or 1 source of income), would be wise that person get a life insurance to protect the family.";
+let needLifeInsuranceExtra = "Considering that your family depends on 1 person (or 1 source of income), would be wise that person get a life insurance to protect the family.";
 
-//Start game when Start is clicked
+/**
+ * After the username is validated,
+ * initialize the questionnaire and
+ * show the first question
+ */
 function startQuestionnaire() {
-    username = document.getElementById("username").value;
     start.classList.add("hide");
-    //Make first bar progress border-color green
+    // Make first bar progress border-color green
     document.getElementById("i").classList.add("past-question");
     nextQuestion();
     progressUpdate();
 }
 
-//Listen to 'start' clicks
+// Username must be provided to start the questionnaire
+const isRequired = value => value === '' ? false : true;
+
+// Use to set username min and max length
+const isBetween = (length, min, max) => length < min || length > max ? false : true;
+
+// Validate username and initialize questionnaire
+function validateUsername () {
+    let valid = false;
+    const min = 3;
+    const max = 25;
+    username = document.getElementById("username").value;
+    username = username.trim();
+    // Logic to check username is valid
+    if (!isRequired(username)) {
+        document.getElementById("username").style.borderColor="red";
+        alert("Username cannot be blank. Try Again!");
+    } else if (!isBetween(username.length, min, max)) {
+        document.getElementById("username").style.borderColor="red";
+        alert(`Username must be between ${min} and ${max} characters. Try Again!`);
+    } else {
+        valid = true;
+        startQuestionnaire();
+    }
+}
+
+// Listen to 'start' clicks
 let start = document.getElementById("start");
-start.addEventListener("click", startQuestionnaire);
+start.addEventListener("click", validateUsername);
  
 /**
 * Render the first question,
@@ -216,6 +245,4 @@ function displayComments () {
     backButton ();
 }
 
-function validateUsername () {
 
-}
