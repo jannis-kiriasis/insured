@@ -96,7 +96,8 @@ h1 {
 }
 
 #start,
-#answers > button {
+#answers > button,
+#calculate-btn {
     border: 2px solid var(--fuzzy-wuzzy);
     padding: 15px 40px;
     margin: 10px;
@@ -107,7 +108,8 @@ h1 {
 }
 
 #start:hover,
-#answers > button:hover {
+#answers > button:hover,
+#calculate-btn:hover {
     border: 2px solid var(--fuzzy-wuzzy);
     color: var(--fuzzy-wuzzy);
     background-color: #ffffff;

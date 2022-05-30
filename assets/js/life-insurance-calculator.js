@@ -5,7 +5,7 @@ function validateInput() {
 
 }
 
-function calculate {
+function calculate() {
 
 }
 
