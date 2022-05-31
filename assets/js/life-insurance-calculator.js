@@ -3,13 +3,22 @@ let years = 0;
 let result = 0;
 let calcApplyBtn = document.getElementById("calculate-apply-btns");
 
-function showApplyBtn () {
+// Listen to 'calculate' clicks
+let calculateBtn = document.getElementById("calculate-btn");
+calculateBtn.addEventListener("click", calculate);
 
+function styleCalculate() {
+    calculateBtn.classList.add("back-button");
+    
+}
+
+function showApplyBtn () {
     if (salary !== "" && years !== "") {
         let btn = document.createElement("button");
         btn.setAttribute("id", "apply-now");
         btn.textContent = "Apply now";
-        calcApplyBtn.appendChild(btn);
+        calcApplyBtn.insertBefore(btn, calculateBtn);
+        styleCalculate();
     }
 }
 
@@ -21,7 +30,5 @@ function calculate() {
     showApplyBtn();
 }
 
-// Listen to 'calculate' clicks
-let calculateBtn = document.getElementById("calculate-btn");
-calculateBtn.addEventListener("click", calculate);
+
 
