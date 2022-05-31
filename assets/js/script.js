@@ -97,6 +97,8 @@ function validateUsername () {
         alert("Username must be one word! Try again.");    
     } else {
         valid = true;
+        //store username in sessionStorage
+        sessionStorage.setItem("name", username);
         startQuestionnaire();
     }
 }
