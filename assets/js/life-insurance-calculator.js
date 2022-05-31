@@ -7,7 +7,7 @@ function showApplyBtn () {
 
     if (salary !== "" && years !== "") {
         let btn = document.createElement("button");
-        btn.setAttribute("class", "back-button");
+        btn.setAttribute("id", "apply-now");
         btn.textContent = "Apply now";
         calcApplyBtn.appendChild(btn);
     }
