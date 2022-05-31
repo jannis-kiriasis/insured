@@ -259,7 +259,9 @@ function displayComments () {
         let br = document.createElement('br');
         resultsArea.appendChild(br);
     }
-    calculatorButton();
+    if (userAnswers[0] === "yes" || userAnswers[1] === "yes" || userAnswers[2] === "yes" || userAnswers[3] === "yes" || userAnswers[4] === "yes") {
+        calculatorButton();
+    }
     backButton ();
 }
 
