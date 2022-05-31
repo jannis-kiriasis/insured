@@ -7,18 +7,14 @@ let calcApplyBtn = document.getElementById("calculate-apply-btns");
 let calculateBtn = document.getElementById("calculate-btn");
 calculateBtn.addEventListener("click", calculate);
 
-function styleCalculate() {
-    calculateBtn.classList.add("back-button");
-    
-}
-
 function showApplyBtn () {
     if (salary !== "" && years !== "") {
         let btn = document.createElement("button");
         btn.setAttribute("id", "apply-now");
-        btn.textContent = "Apply now";
+        btn.textContent = "Apply now for this cover";
+        calculateBtn.classList.add("back-button");
         calcApplyBtn.insertBefore(btn, calculateBtn);
-        styleCalculate();
+        calculateBtn.innerText = "Recalculate";
     }
 }
 
