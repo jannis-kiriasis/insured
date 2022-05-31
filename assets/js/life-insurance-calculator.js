@@ -11,6 +11,7 @@ function showApplyBtn () {
     if (salary !== "" && years !== "") {
         let btn = document.createElement("button");
         btn.setAttribute("id", "apply-now");
+        btn.setAttribute("onclick", "window.location.href='application-form.html'");
         btn.textContent = "Apply now for this cover";
         calculateBtn.classList.add("back-button");
         calcApplyBtn.insertBefore(btn, calculateBtn);
@@ -23,6 +24,9 @@ function calculate() {
     years = document.getElementById("years").value;
     result = salary * years;
     document.getElementById("life-cover-result").innerText = result + `€ is the amount of cover you need!`;
+    sessionStorage.setItem("salary", salary);
+    sessionStorage.setItem("years", years);
+    sessionStorage.setItem("result", result);
     showApplyBtn();
 }
 
