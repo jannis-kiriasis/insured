@@ -175,18 +175,18 @@ noClick.addEventListener("click", leftQuestions);
  * past questions become green
  */
 function progressUpdate () {
-
     //Get the id of the progress circle that matches the running question
     currentProgress = document.getElementsByClassName("progress")[runningQuestion + 1 ].id;
     let pastQuestion = currentProgress - 1;
 
-    if (parseInt(currentProgress) === runningQuestion) {
-        let blueCircle = document.getElementById(runningQuestion);
-        blueCircle.classList.add("current-question");
-        let greenCircle = document.getElementById(pastQuestion);
-        greenCircle.classList.add("past-question");
+        if (parseInt(currentProgress) === runningQuestion) {
+            let blueCircle = document.getElementById(runningQuestion);
+            document.getElementById("mobile-progress").innerText = `${document.getElementById(runningQuestion).innerText} / 5`;
+            blueCircle.classList.add("current-question");
+            let greenCircle = document.getElementById(pastQuestion);
+            greenCircle.classList.add("past-question");
+        }
     }
-}
 
 //Prepare DOM to display comments
 function showResults () {
@@ -220,6 +220,8 @@ function backButton () {
 
 //Show comments based on the user's answers
 function displayComments () {
+    document.getElementById("mobile-progress").innerText = `R`;
+    document.getElementById("mobile-progress").classList.add("past-question");
     resultsArea.firstChild.textContent = `Hi ${username},`
     
     if (userAnswers[0] === "yes") {
