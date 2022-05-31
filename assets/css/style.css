@@ -109,6 +109,12 @@ h1 {
     background-color: var(--fuzzy-wuzzy);
 }
 
+#answers > button {
+    width: 120px;
+    height: 60px;
+    padding: 0;
+}
+
 #life-calculator-btn {
     margin: 32px auto;
     display: flex;
