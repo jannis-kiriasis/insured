@@ -30,7 +30,6 @@ function calculate() {
     document.getElementById("life-cover-result").innerText = result + `€ is the amount of cover you need!`;
     sessionStorage.setItem("salary", salary);
     sessionStorage.setItem("years", years);
-    sessionStorage.setItem("result", result);
     
     // If - prevents apply-now from appearing at every 'calculate' click
     if (calculateBtn.innerText !== "Recalculate") {

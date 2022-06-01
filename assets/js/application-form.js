@@ -25,6 +25,14 @@ function saveFormData() {
     saveYears = formYears.value;
     saveEmail = formEmail.value;
     saveContact = formContact.value;
+
+    // Update session storage in case information has changed
+    // and for future use
+    sessionStorage.setItem("salary", saveSalary);
+    sessionStorage.setItem("years", saveYears);
+    sessionStorage.setItem("phone", saveContact);
+    sessionStorage.setItem("email", saveEmail);
+    sessionStorage.setItem("name", saveName);
 }
 
 //Prevent default form submit
