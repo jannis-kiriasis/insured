@@ -13,9 +13,11 @@ function showApplyBtn () {
         btn.setAttribute("id", "apply-now");
         btn.setAttribute("onclick", "window.location.href='application-form.html'");
         btn.textContent = "Apply now for this cover";
+
         //Change calculate-btn color after use
         calculateBtn.removeAttribute("id");
         calculateBtn.classList.add("back-button");
+
         calcApplyBtn.insertBefore(btn, calculateBtn);
         calculateBtn.innerText = "Recalculate";
     }
@@ -29,7 +31,11 @@ function calculate() {
     sessionStorage.setItem("salary", salary);
     sessionStorage.setItem("years", years);
     sessionStorage.setItem("result", result);
-    showApplyBtn();
+    
+    // If - prevents apply-now from appearing at every 'calculate' click
+    if (calculateBtn.innerText !== "Recalculate") {
+        showApplyBtn();
+    }
 }
 
 
