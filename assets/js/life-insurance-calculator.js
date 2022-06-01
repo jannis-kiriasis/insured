@@ -13,6 +13,8 @@ function showApplyBtn () {
         btn.setAttribute("id", "apply-now");
         btn.setAttribute("onclick", "window.location.href='application-form.html'");
         btn.textContent = "Apply now for this cover";
+        //Change calculate-btn color after use
+        calculateBtn.removeAttribute("id");
         calculateBtn.classList.add("back-button");
         calcApplyBtn.insertBefore(btn, calculateBtn);
         calculateBtn.innerText = "Recalculate";
