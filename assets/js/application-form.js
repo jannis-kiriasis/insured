@@ -33,21 +33,30 @@ form.addEventListener("submit", function(event){
     event.preventDefault();
     saveFormData();
     displayThankYou();
-  });
+});
 
+let textArea = document.getElementById("text-area");
+
+function restart () {
+    let restart = document.createElement("button");
+    restart.setAttribute("id", "restart");
+    restart.setAttribute("onclick", "window.location.href='index.html'");
+    restart.innerHTML = `Restart with new name`;
+    textArea.appendChild(restart);
+}
 
 //Show thank you and information submitted
 function displayThankYou() {
-let newHeading = document.getElementById("heading").firstElementChild;
-let textArea = document.getElementById("text-area");
-newHeading.textContent = "Thank you for applying for a life insurance policy";
-textArea.innerHTML = `
-<p>An Insured representative will contact you shortly to verify the information submitted and process your application.</p><br>
-<p>Information submitted:</p>
-<p>Name: ${saveName}</p>
-<p>Years of cover needed: ${saveYears}</p>
-<p>Salary: ${saveSalary}</p>
-<p>Contact phone: ${saveContact}</p>
-<p>Contact email: ${saveEmail}</p>
- `
+    let newHeading = document.getElementById("heading").firstElementChild;
+    newHeading.textContent = "Thank you for applying for a life insurance policy";
+    textArea.innerHTML = `
+    <p>An Insured representative will contact you shortly to verify the information submitted and process your application.</p><br>
+    <p>Information submitted:</p>
+    <p>Name: ${saveName}</p>
+    <p>Years of cover needed: ${saveYears}</p>
+    <p>Salary: ${saveSalary}</p>
+    <p>Contact phone: ${saveContact}</p>
+    <p>Contact email: ${saveEmail}</p>
+    `
+    restart(); 
 }

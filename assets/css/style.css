@@ -101,7 +101,8 @@ h1 {
 #life-calculator-btn,
 #apply-now,
 #calculate-btn,
-#apply {
+#apply,
+#restart {
     border: 2px solid var(--fuzzy-wuzzy);
     padding: 15px 40px;
     margin: 10px;
@@ -127,7 +128,8 @@ h1 {
 #answers > button:hover,
 #life-calculator-btn:hover,
 #apply-now:hover,
-#apply:hover {
+#apply:hover,
+#restart:hover {
     border: 2px solid var(--fuzzy-wuzzy);
     color: var(--fuzzy-wuzzy);
     background-color: #ffffff;
@@ -188,6 +190,11 @@ form > input {
     flex-direction: column;
 }
 
+#restart {
+    display: block;
+    margin: 32px auto;
+}
+
 @media only screen and (max-width: 858px) {
 
     #mobile-progress {
@@ -232,7 +239,8 @@ form > input {
     #life-calculator-btn,
     .back-button,
     #apply-now,
-    #apply {
+    #apply,
+    #restart {
         font-size: 1.2rem;
     }
 
