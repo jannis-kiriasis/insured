@@ -41,17 +41,25 @@ function showApplyBtn () {
 }
 
 function calculate() {
-    salary = document.getElementById("salary").value;
-    years = document.getElementById("years").value;
-    result = salary * years;
-    document.getElementById("life-cover-result").innerText = result + `€ is the amount of cover you need!`;
-    sessionStorage.setItem("salary", salary);
-    sessionStorage.setItem("years", years);
-    
-    // If - prevents apply-now from appearing at every 'calculate' click
-    if (calculateBtn.innerText !== "Recalculate") {
-        showApplyBtn();
+    if (formSalary.value !== "" && formYears.value !== "") {
+        salary = document.getElementById("salary").value;
+        years = document.getElementById("years").value;
+        result = salary * years;
+        document.getElementById("life-cover-result").innerText = result + `€ is the amount of cover you need!`;
+        sessionStorage.setItem("salary", salary);
+        sessionStorage.setItem("years", years);   
+        // If - prevents apply-now from appearing at every 'calculate' click
+        if (calculateBtn.innerText !== "Recalculate") {
+            showApplyBtn();
+        }
+
+    } else {
+        alert("Enter your salary and the years or cover you need!");
+        formSalary.style.borderColor="red";
+        formYears.style.borderColor="red";
     }
+
+
 }
 
 
