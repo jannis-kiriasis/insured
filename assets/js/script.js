@@ -35,7 +35,7 @@ let questions = [
             b: "no",
         }
     },
- ]
+ ];
 
 // Variables to loop through questions
 const lastQuestion = questions.length - 1;
