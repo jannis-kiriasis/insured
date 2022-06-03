@@ -118,7 +118,7 @@ start.addEventListener("click", validateUsername);
 */
 function nextQuestion() {
     let q = questions[runningQuestion];
-    document.getElementsByTagName("h1")[1].innerText = q.question;
+    document.getElementsByTagName("h1")[0].innerText = q.question;
     document.getElementById("yes").innerText = q.answers.a;
     document.getElementById("no").innerText = q.answers.b;
 
