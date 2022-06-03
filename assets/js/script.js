@@ -83,6 +83,7 @@ function validateUsername () {
     let valid = false;
     const min = 3;
     const max = 25;
+    const specialChar = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
     username = document.getElementById("username").value;
     username = username.trim();
     // Logic to check username is valid
@@ -95,6 +96,9 @@ function validateUsername () {
     } else if (/\s/.test(username)) {
         document.getElementById("username").style.borderColor="red";
         alert("Username must be one word! Try again.");    
+    } else if (specialChar.test(username)) {
+        document.getElementById("username").style.borderColor="red";
+        alert("Username can't contain special characters! Try again.");
     } else {
         valid = true;
         //store username in sessionStorage

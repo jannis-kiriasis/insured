@@ -85,7 +85,7 @@ function formValidation () {
         alert("Username must be one word! Try again.");
     } else if (specialChar.test(formName.value.trim())) {
         formName.style.borderColor="red";
-        alert("Username can't contain special characters!. Try again.");
+        alert("Username can't contain special characters! Try again.");
     } else {
         //store username in sessionStorage
         saveFormData();

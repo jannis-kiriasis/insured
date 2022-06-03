@@ -59,6 +59,3 @@ function calculate() {
         formYears.style.borderColor="red";
     }
 }
-
-
-
