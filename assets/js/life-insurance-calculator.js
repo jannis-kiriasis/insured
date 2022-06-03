@@ -41,7 +41,7 @@ function showApplyBtn () {
 }
 
 function calculate() {
-    if (formSalary.value !== "" && formYears.value !== "") {
+    if (formSalary.value !== "" && formYears.value !== "" && formYears.value !== 0 && formYears.value !== 0) {
         salary = document.getElementById("salary").value;
         years = document.getElementById("years").value;
         result = salary * years;
@@ -54,6 +54,8 @@ function calculate() {
         }
 
     } else {
+        salary.value = "";
+        years.value = "";
         alert("Enter your salary and the years or cover you need!");
         formSalary.style.borderColor="red";
         formYears.style.borderColor="red";
