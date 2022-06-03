@@ -54,14 +54,10 @@ function calculate() {
         }
 
     } else {
-        salary.value = "";
-        years.value = "";
         alert("Enter your salary and the years or cover you need!");
         formSalary.style.borderColor="red";
         formYears.style.borderColor="red";
     }
-
-
 }
 
 
