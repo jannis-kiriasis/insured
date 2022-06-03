@@ -140,6 +140,20 @@ function hideTextArea() {
 }
 
 /**
+ * Check if there are questions left to loop through,
+ * if so, increment runningQuestion and
+ * show the next question.
+ */
+ function leftQuestions() {
+    if (runningQuestion < lastQuestion) {
+        runningQuestion++;
+        nextQuestion();
+    } else {
+        showResults();
+    }
+}
+
+/**
  * Save user ansers in an array,
  * go to next question
  */
@@ -155,20 +169,6 @@ var buttonsCount = buttons.length;
 //On button click run saveAnswers
 for (var i = 0; i <= buttonsCount; i += 1) {
     buttons[i].onclick = saveAnswers; 
-}
-
-/**
- * Check if there are questions left to loop through,
- * if so, increment runningQuestion and
- * show the next question.
- */
-function leftQuestions() {
-    if (runningQuestion < lastQuestion) {
-        runningQuestion++;
-        nextQuestion();
-    } else {
-        showResults();
-    }
 }
 
 // On yes/no click, run leftQuestions()
@@ -228,7 +228,7 @@ function backButton () {
 function displayComments () {
     document.getElementById("mobile-progress").innerText = `R`;
     document.getElementById("mobile-progress").classList.add("past-question");
-    resultsArea.firstChild.textContent = `Hi ${username},`
+    resultsArea.firstChild.textContent = `Hi ${username},`;
     
     if (userAnswers[0] === "yes") {
         let p = document.createElement('p');
