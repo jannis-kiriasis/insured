@@ -21,7 +21,7 @@ function roundSalary () {
     formSalary.value = Math.round(formSalaryValue);
 }
 
-//round entered Salary
+//round entered Years
 function roundYears () {
     let formYearsValue = formYears.value;
     formYears.value = Math.round(formYearsValue);

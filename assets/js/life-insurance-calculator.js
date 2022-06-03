@@ -2,6 +2,23 @@ let salary = 0;
 let years = 0;
 let result = 0;
 let calcApplyBtn = document.getElementById("calculate-apply-btns");
+let formSalary = document.getElementById("salary");
+let formYears = document.getElementById("years");
+
+//round entered Salary
+function roundSalary () {
+    let formSalaryValue = formSalary.value;
+    formSalary.value = Math.round(formSalaryValue);
+}
+
+//round entered Years
+function roundYears () {
+    let formYearsValue = formYears.value;
+    formYears.value = Math.round(formYearsValue);
+}
+
+formSalary.addEventListener('focusout', roundSalary);
+formYears.addEventListener('focusout', roundYears);
 
 // Listen to 'calculate' clicks
 let calculateBtn = document.getElementById("calculate-btn");
