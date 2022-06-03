@@ -15,6 +15,14 @@ formName.setAttribute("value", `${sessionStorage.getItem("name")}`);
 formSalary.setAttribute("value", `${sessionStorage.getItem("salary")}`);
 formYears.setAttribute("value", `${sessionStorage.getItem("years")}`);
 
+//round entered Salary
+function roundSalary () {
+    let formSalaryValue = formSalary.value;
+    formSalary.value = Math.round(formSalaryValue);
+}
+
+formSalary.addEventListener('focusout', roundSalary);
+
 /**
  * Save form inputs,
  * can be used for future development.
