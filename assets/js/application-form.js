@@ -35,24 +35,6 @@ function saveFormData() {
     sessionStorage.setItem("name", saveName);
 }
 
-//Prevent default form submit
-let form = document.getElementsByTagName("form")[0];
-form.addEventListener("submit", function(event){
-    event.preventDefault();
-    saveFormData();
-    displayThankYou();
-});
-
-let textArea = document.getElementById("text-area");
-
-function restart () {
-    let restart = document.createElement("button");
-    restart.setAttribute("id", "restart");
-    restart.setAttribute("onclick", "window.location.href='index.html'");
-    restart.innerHTML = `Restart with new name`;
-    textArea.appendChild(restart);
-}
-
 //Show thank you and information submitted
 function displayThankYou() {
     let newHeading = document.getElementById("heading").firstElementChild;
@@ -68,3 +50,50 @@ function displayThankYou() {
     `
     restart(); 
 }
+
+function formValidation () {
+    const min = 3;
+    const max = 25;
+    const specialChar = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    // Username must be provided to start the questionnaire
+    const isRequired = value => value === '' ? false : true;
+    // Use to set username min and max length
+    const isBetween = (length, min, max) => length < min || length > max ? false : true;
+    if (!isRequired(formName.value.trim())) {
+        formName.style.borderColor="red";
+        alert("Username cannot be blank. Try Again!");
+    } else if (!isBetween(formName.value.trim().length, min, max)) {
+        formName.style.borderColor="red";
+        alert(`Username must be between ${min} and ${max} characters. Try Again!`);
+    } else if (/\s/.test(formName.value.trim())) {
+        formName.style.borderColor="red";
+        alert("Username must be one word! Try again.");
+    } else if (specialChar.test(formName.value.trim())) {
+        formName.style.borderColor="red";
+        alert("Username can't contain special characters!. Try again.");
+    } else {
+        //store username in sessionStorage
+        saveFormData();
+        displayThankYou();
+    }
+}
+
+//Prevent default form submit
+let form = document.getElementsByTagName("form")[0];
+form.addEventListener("submit", function(event){
+    event.preventDefault();
+    formValidation();
+});
+
+let textArea = document.getElementById("text-area");
+
+function restart () {
+    let restart = document.createElement("button");
+    restart.setAttribute("id", "restart");
+    restart.setAttribute("onclick", "window.location.href='index.html'");
+    restart.innerHTML = `Restart with new name`;
+    textArea.appendChild(restart);
+}
+
+
+
