@@ -121,7 +121,7 @@ This is a list of features that appear on every page.
 
 ### Life cover calculator features - life-insurance-calculator.html
 
-7.	**Calculator**  
+8.	**Calculator**  
     A simple calculator to help users figure out how much life insurance they need. There are only 2 input fields: salary and years of cover needed. The calculation is a simple moltiplication. input fields are validated with HTML and JS rules.
 
     If the input fields aren't blank and differ from 0, an 'apply now for this cover' button is shown together with a 'recalculate' button.
@@ -132,16 +132,16 @@ This is a list of features that appear on every page.
 
 ### Application form features - application-form.html
 
-8.	**Contact form**  
+9.	**Contact form**  
     The contact form is prepopulated with the data previously asked to users. Users only need to add their contact details and click apply. New input fields validation rules are used on all fields. 
 
     ![Application form](./README-files/application-form.png)
 
-9. **Confirmation message**
+10. **Confirmation message**
     An application submitted message appears on the screen when the form is submitted correctly. This is done using DOM manipulation. In the confirmation message there is also a summary of the information submitted and a button to restart from the questionnaire.
 
 ### Others
-12. **Custom 404 page**  
+11. **Custom 404 page**  
     A custom 404 page asks visitors what page they were looking for.
 
     ![Custom 404 page](./README-files/404-page.png)
@@ -150,15 +150,17 @@ This is a list of features that appear on every page.
 
 In the following paragraph, I’m going to match features with user needs (user stories). The features are numbered and the same feature numbers appear in the table below.
 
-|User stories                                                                                                                       |Features                      |
-|----------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------|
-| As a first-time visitor, I want to easily understand the main purpose of the site                                                    | 4, 6                              |
-| As a first-time visitor, I want to be able to navigate the website easily                                                            | 1, plus various internal links    |
-| As a first-time visitor, I want to understand what services Digibooking offer                                                    | 6, 7, 8, 9, 10                    |
-| As a first-time visitor, I want to get an idea of how trusted the website (agency) is                                                | 5                                 |
-| As a returning visitor, I want to get in touch with Digibooking and find out the best way to contact                             | 3, 11                             |
-| As a returning visitor, I want to know when the best time is to get in touch with Digibooking customer service or sales teams    | 3                                 |
-| As a frequent visitor, I want to find the agency's address in case of an on-site meeting                                               | 3                                 |
+| **User stories**                                                                                                        | **Features** |
+|-------------------------------------------------------------------------------------------------------------------------|--------------|
+| As a first-time visitor, I want to easily understand the main purpose of the site                                       | 2, 5         |
+| As a first-time visitor, I want to have a better Idea of what cover I need                                              | 7            |
+| As a first-time visitor, I want to get a better understanding of what I need to consider when deciding on a life policy | 6, 7         |
+| As a first-time visitor, I want to see how long the questionnaire takes to complete                                     | 4            |
+| As a user, I want to see at what stage of the questionnaire I am and the number of questions left                       | 4            |
+| As a user, I want to get a personalised result based on my personal needs                                               | 7            |
+| As a user, I want to be able to take the questionnaire again                                                            | 7            |
+| As a user, I want to be able to find out how much cover I need                                                          | 8            |
+| As a user, I want to be able to apply for a cover easily                                                                | 9            |
 
 ## Wireframes
 
