@@ -55,20 +55,18 @@ Insured is for those people who aren't sure whether they should get a life cover
 - An almost totally prefilled application form that let you apply for a life policy only and painlessly.
 
 ## User Experience (UX) - user stories
-Now that we are familiar with Digibooking target audience and offering, we are looking at the needs website visitors may have. Someone getting to know Digibooking is interested mainly in the services the agency offers and how to get in touch. Following, you can find the users' stories covering the main users' needs.
+Now that we are familiar with Insured target audience and offering, we are looking at the needs website visitors may have. Following, you can find the users' stories covering the main users' needs.
 
-### First-time visitor goals
+### Visitor goals
 - As a first-time visitor, I want to easily understand the main purpose of the site
-- As a first-time visitor, I want to be able to navigate the website easily
-- As a first-time visitor, I want to understand what services Digibooking offer
-- As a first-time visitor, I want to get an idea of how trusted the website (agency) is
-
-### Returning visitor goals
-- As a returning visitor, I want to get in touch with Digibooking and find out the best way to contact
-- As a returning visitor, I want to know when the best time is to get in touch with Digibooking customer service or sales teams
-
-### Frequent visitor goals
-- As a frequent visitor, I want to find the agency address in case of an on-site meeting
+- As a first-time visitor, I want to have a better Idea of what cover I need
+- As a first-time visitor, I want to get a better understanding of what I need to consider when deciding on a life policy
+- As a first-time visitor, I want to see how long the questionnaire takes to complete
+- As a user, I want to see at what stage of the questionnaire I am and the number of questions left
+- As a user, I want to get a personalised result based on my personal needs
+- As a user, I want to be able to take the questionnaire again
+- as a user, I want to be able to find out how much cover I need
+- As a user, I want to be able to apply for a cover easily
 
 ## Features
 
@@ -79,88 +77,68 @@ In the following paragraphs, we are going to see what features appear on the web
 This is a list of features that appear on every page.
 
 1.	**Logo and navigation**  
-    The logo and navigation menu are the same across every page of the website. This allows users to find their way through the website easily wherever they are. 
+    The logo appears on every page. As an industry standard, the logo links back to the homepage.
 
-    As an industry standard, the logo links back to the homepage.
+    ![Logo](./README-files/insured-logo.png)
 
-    ![Header](./README-files/header.png)
+2.	**Main heading**  
+    A main heading appears on every page of the questionnaire, calculator and application form.
+    In the questionnaire, the main heading is the placeholder for the questions. Its content changes using DOM manipulation rules at every button click.
 
-2.	**Hero image with page headline**  
-    The hero image and headline block appear on index.html and services.html. It is tailored to the page content. It gives a good first idea of the page content.
+    ![Heading](./README-files/main-heading.png)
 
-    **Hero mobile**  
-    ![Hero-mobile](./README-files/hero-mobile.png)
+### Questionnaire features - index.html
 
-    **Hero desktop**  
-    ![Hero-desktop](./README-files/hero-desktop.png)
+4.	**Progress bar**  
+    The progress bar helps users to see at what stage of the questionnaire they are. There is an intro, 5 questions and the results page. 
+    The current progress circle is blue. The past quetions / pages are green. The progress bar updates at every button click, so when users start the quetionnaire or answer a question.
 
-3.	**Footer**  
-    The footer is also the same across every page of the website. It includes the agency's contact details, address and external links to social networks. All the external links open in new tabs.
+    ![Progress bar](./README-files/progress-bar.png)
 
-    ![Footer](./README-files/footer.png)
+    **Mobile progress bar**  
+    The mobile progress bar shows the current page only when users are on the intro page or results page. On the actual questions, the progress update shows the current question number on the total (x / 5).
 
-The following features are unique and appear only on the page specified.
+    ![Mobile progress bar](./README-files/mobile-progress-bar.png)
 
-### Homepage features - index.html
+5.	**Intro page**  
+    The intro page explain to users what Insured is all about. It also collects the user name which is stored in session storage and used later on. The user name is required and it's validated with other JS rules. 
 
-4.	**Hero image with page headline**  
-    While the block used is the same appearing on services.html, its content is unique. The heading 'Do you want to boost your hotel online direct bookings?' provides the users with a very clear idea of what the website is about. The sub-line 'Leverage the power of Google Search to get the bookings you need' also specifies that the online services Digibooking provide are related to Google Search.
+    If users clicks on 'start' and the user name hasn't been added or it doesn't pass validation, an alert message will show and the input fields border becomes red.
 
-    The illustration recalls an online hotel room booking.
+    ![Intro](./README-files/intro-page.png)
 
-    **Hero mobile**  
-    ![Hero-mobile](./README-files/hero-mobile.png)
+6.	**Question pages**  
+    When users click start on the intro page and pass the username validation test, the first question is served and the progress bar updates. Yes and no buttons also appear on the screen. This is all handled with DOM manipulation and updated as the user clicks on yes / no to go to the next question.
 
-    **Hero desktop**  
-    ![Hero-desktop](./README-files/hero-desktop.png)
+    User answers are stored in variables.
 
-5.	**Top clients**  
-    This feature includes 4 hotel logos, 4 clients of Digibooking. On smaller screens, the number of logos reduces to 3 for screen real estate availability reasons.
+    ![Question pages](./README-files/question-pages.png)
 
-    ![Clients](./README-files/clients.png)
+7.	**Results page**  
+    Based on the answers provided, the results page tells users what life cover they may need. It uses logic to determine what content to show. If users answers yes to at least 1 question, the 'calculate your life insurance need' button is shown. It brings users to the next step: calculate the cover amount they need. If all the users answers have a negative outcome, only the button to restart is shown.
 
+    ![Results page](./README-files/results.png)
 
-6.	**What we do**  
-    This section clearly says that Digibooking services are SEO, PPC and Google Hotel Ads. Those are the 3 services offered. There is also an internal link to navigate to the services.html page which includes more information on the services provided.
+### Life cover calculator features - life-insurance-calculator.html
 
-    ![What we do](./README-files/what-we-do.png)
+7.	**Calculator**  
+    A simple calculator to help users figure out how much life insurance they need. There are only 2 input fields: salary and years of cover needed. The calculation is a simple moltiplication. input fields are validated with HTML and JS rules.
 
-### Services features - services.html
+    If the input fields aren't blank and differ from 0, an 'apply now for this cover' button is shown together with a 'recalculate' button.
 
-7.	**Hero image with page headline**  
-    The Headline and paragraph of this hero banner explain what services the agency offers and the approach taken. The h1 also includes keywords with high search intent.
+    Users inputs are saved in session storage.
 
-    The illustration recalls a search for hotels and destinations on a tablet.
+    ![Calculator](./README-files/calculator.png)
 
-    ![Hero services desktop](./README-files/hero-services.png)
+### Application form features - application-form.html
 
-8.	**SEO services**  
-    This section explains why and how Digibooking does SEO. Some holidaymakers know already where to go and so they go straight to look for a hotel. Some others like to be inspired. The second group tend to search for locations and destinations and then book a trip only when they have been inspired. This is the audience Digibooking look to target by doing SEO for its clients.
+8.	**Contact form**  
+    The contact form is prepopulated with the data previously asked to users. Users only need to add their contact details and click apply. New input fields validation rules are used on all fields. 
 
-    The illustration recalls a local search on a map using a mobile or tablet.
+    ![Application form](./README-files/application-form.png)
 
-    ![Seo services section](./README-files/seo.png)
-
-9.	**PPC services**  
-    This section explains why and how Digibooking does PPC. When holidaymakers know where they want to go, they start to research different accommodation types. Google Ads helps Digibooking clients to appear on top of those search queries.
-
-    The illustration recalls a hotel booking done on a mobile device.
-
-    ![PPC services section](./README-files/ppc.png)
-
-10.	**Google Hotel Ads**  
-    This section explains why Digibooking offers Google Hotel Ads services. Once holidaymakers have chosen an accommodation type, they want to find the best price. Google Hotel Ads helps display direct prices for the accommodation selected competing directly with OTA prices since booking directly is often cheaper.
-
-    The illustration recalls an online room booking.
-
-    ![Google Hotel Ads](./README-files/google-hotel-ads.png)
-
-### Contact page - contact.html
-
-11. **Contact form**  
-	The contact form includes the basic personal details of the sender, the hotel or b&b website and a text area. All fields are mandatory and users can type 'none' if they don't have a website or they don't want to include a message.
-
-    ![Contact form](./README-files/contact-form.png)
+9. **Confirmation message**
+    An application submitted message appears on the screen when the form is submitted correctly. This is done using DOM manipulation. In the confirmation message there is also a summary of the information submitted and a button to restart from the questionnaire.
 
 ### Others
 12. **Custom 404 page**  
