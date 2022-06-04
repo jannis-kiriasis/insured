@@ -166,27 +166,21 @@ In the following paragraph, I’m going to match features with user needs (user 
 
 The first draft of the website was completed by creating wireframes using Balsamic. 
 
-- **homepage**   
-![Homepage wireframe](./README-files/pp1-homepage.png)
+- **Questionnaire**   
+![Intro page wireframe](./README-files/intro-page-wf.png)
+![Questions wireframe](./README-files/questions-wf.png)
+![Results wireframe](./README-files/results-page-wf.png)
 
-- **Services**  
-![Services wireframe](./README-files/pp1-services.png)
-
-- **Contact**  
-![Contact wireframe](./README-files/pp1-contact.png)
+- **Calculator & Application form**  
+I had the idea of adding a calculator and an application form while WIP so wireframes aren't available.
 
 ## Features left to implement 
 
-On the first homepage draft, 2 sections (marked on the wireframe) haven't been developed. However, they would be a nice addition to future development.
-
-- The first not developed section is an intro paragraph to a case study. That would link to a possible 4th page that explains what results have been achieved for a specific client and how. 
-- The second not developed section would include recent awards won by the agency.
-
-Both those sections address the user's needs 'As a first-time visitor, I want to get an idea of how trusted the website (agency) is'.
-
-Other features that can be implemented in the future:
-- Testimonials
-- Burger dropdown mobile menu
+- Little info boxes can be added next to each input field to clarify why that information is needed.
+- Additional fields can be added to the calculator to make it more advanced. An 'extra fields' dropdown could reveal more input fields and so give users the option to use the short calculator or the advanced calculator.
+- More questions can be added to the questionnaire: there are life insurance policies that haven't been covered such us the serious illness cover. More questions can be asked to the users to give an even more specific result.
+- Calculators for mortgage protection and income protection can also be created.
+- Preselected cover type input fields can be added to the application form. The field will preselect the cover type users need based on their questionnaire results.
 
 ## Design
 
