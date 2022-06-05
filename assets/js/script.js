@@ -175,15 +175,19 @@ function progressUpdate () {
     //Get the id of the progress circle that matches the running question
     currentProgress = document.getElementsByClassName("progress")[runningQuestion + 1 ].id;
     let pastQuestion = currentProgress - 1;
-
-        if (parseInt(currentProgress) === runningQuestion) {
-            let blueCircle = document.getElementById(runningQuestion);
-            document.getElementById("mobile-progress").innerText = `${document.getElementById(runningQuestion).innerText} / 5`;
-            blueCircle.classList.add("current-question");
-            let greenCircle = document.getElementById(pastQuestion);
-            greenCircle.classList.add("past-question");
+    /**
+     * If the progress id = running questions,
+     * progress circle becomes blue,
+     * if the question is past circle becomes green
+     */
+    if (parseInt(currentProgress) === runningQuestion) {
+        let blueCircle = document.getElementById(runningQuestion);
+        document.getElementById("mobile-progress").innerText = `${document.getElementById(runningQuestion).innerText} / 5`;
+        blueCircle.classList.add("current-question");
+        let greenCircle = document.getElementById(pastQuestion);
+        greenCircle.classList.add("past-question");
         }
-    }
+}
 
 //Prepare DOM to display comments
 function showResults () {
