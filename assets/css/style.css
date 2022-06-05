@@ -228,6 +228,11 @@ form > input {
 
 @media only screen and (max-width: 858px) {
 
+    header {
+        margin-top: 20px;
+        margin-bottom: 32px;
+    }
+
     header > a > img {
         width: 80%;
         display: block;
