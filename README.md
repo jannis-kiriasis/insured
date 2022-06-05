@@ -251,16 +251,14 @@ A Lighthouse report is available a few paragraphs below in the testing section.
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS3](https://en.wikipedia.org/wiki/CSS)
+- [JavaScript](https://it.wikipedia.org/wiki/JavaScript)
 - Version control: [Git](https://git-scm.com/)
 - Public repository: [GitHub](https://github.com/)
 - Resize and edit images: [Pixlr.com](https://pixlr.com/)
 - Transform png to SVG: [Convertio.co](https://convertio.co/it/png-svg/)
-- Social icons: [Fontawesome](https://fontawesome.com/)
 - Other icons: [Flaticon](https://www.flaticon.com/)
 - Create a transparent background for illustrations: [Adobe](https://www.adobe.com/express/feature/image/transparent-background)
-- Create CSS gradient: [Cssgradient](https://cssgradient.io/)
 - Illustrations: [Freepik](https://www.freepik.com)
-- Google Font: [Display Playfair](https://fonts.google.com/specimen/Playfair+Display)
 - Google Font: [Open Sans](https://fonts.google.com/specimen/Open+Sans)
 - Wireframes: [Balsamiq](https://balsamiq.com/)
 
