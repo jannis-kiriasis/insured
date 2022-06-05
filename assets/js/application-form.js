@@ -76,16 +76,19 @@ function formValidation () {
     const isBetween = (length, min, max) => length < min || length > max ? false : true;
     if (!isRequired(formName.value.trim())) {
         formName.style.borderColor="red";
-        alert("Username cannot be blank. Try Again!");
+        alert("Your name cannot be blank. Try Again!");
     } else if (!isBetween(formName.value.trim().length, min, max)) {
         formName.style.borderColor="red";
-        alert(`Username must be between ${min} and ${max} characters. Try Again!`);
+        alert(`Your name must be between ${min} and ${max} characters. Try Again!`);
     } else if (/\s/.test(formName.value.trim())) {
         formName.style.borderColor="red";
-        alert("Username must be one word! Try again.");
+        alert("Your name must be one word! Try again.");
     } else if (specialChar.test(formName.value.trim())) {
         formName.style.borderColor="red";
-        alert("Username can't contain special characters! Try again.");
+        alert("Your name can't contain special characters! Try again.");
+    } else if (/\d/.test(formName.value.trim())) {
+        formName.style.borderColor="red";
+        alert("Your name can't contain numbers! Try again.");
     } else {
         //store username in sessionStorage
         saveFormData();
