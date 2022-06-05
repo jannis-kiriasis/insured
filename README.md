@@ -261,6 +261,9 @@ A Lighthouse report is available a few paragraphs below in the testing section.
 - Illustrations: [Freepik](https://www.freepik.com)
 - Google Font: [Open Sans](https://fonts.google.com/specimen/Open+Sans)
 - Wireframes: [Balsamiq](https://balsamiq.com/)
+- Lighthouse: [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- Colors contrast checker: [Contrast checker](https://color-contrast-checker.deque.com/)
+- Colors accessibility: [Webiam](https://webaim.org/resources/contrastchecker/)
 
 ## Testing
 
