@@ -221,26 +221,31 @@ I've also used png images where I needed to have a transparent background and SV
 
 ## Accessibility
 
-As mentioned above, all the font colours passed a contrast test. During the testing phase, the white fonts on the orange backgrounds (only used to style buttons) resulted low in contrast ratio. One suggestion provided by webiam.org was to use bold text instead of normal text. Doing so gave me a score of WCAG AA for the white fonts on orange background. The rest of the website (which makes the remaining 99%) achieves a score of WCAG AAA.
+As mentioned above, all the font colours passed a contrast test. During the testing phase, the white fonts on the red backgrounds (only used to style buttons) resulted low in contrast ratio. The red color was adjusted to pass and achive an accessibility score of WCAG AAA.
 
 I've also used alt tags to describe images and aria labels to describe links and images used as background images.  
 The pages have been structured using semantic HTML markup.  
 
-I've also tested the website's accessibility on [webaccessibility.com](https://www.webaccessibility.com/).  
+The Lighthouse accessibiliy test also reports an accessibility score of 100/100. 
 
-![webaccessibility result](./README-files/accessibility-result.png)
+A Lighthouse report is available a few paragraphs below in the testing section.
 
 ## SEO
 
-Keywords have been used in the headings of the homepage and services page. Each page addresses a specific search intent:
-- the homepage, the need for a digital marketing agency to grow online bookings
-- the services page, the need for SEO and PPC services for hotels
+Keywords have been used in the headings of the questionnaire start page and life insurance calculator page. Each page addresses a specific search intent:
+- The questionnaire page, the need of a life insurance cover
+- the calculator page, the need of a cover amount calculator
+- The application form, the need of getting a cover painlessly
 
-The title tags also include target keywords and the length displays in full on Google Search. Test with this [title tag length checker](https://www.highervisibility.com/seo/tools/serp-snippet-optimizer/).
+The title tags also include target keywords and the length displays in full on Google Search. Tested with this [title tag length checker](https://www.highervisibility.com/seo/tools/serp-snippet-optimizer/).
 
 I've included the most common metadata (description, keywords, index) and a self-referring `rel=canonical` link on each page.
 
-The lighthouse score is also optimal. A Lighthouse test is available a few paragraphs below in the testing section.
+I've included Open Graph tags to control the page appearence when shared on social media as posts.
+
+The Lighthouse SEO test also reports an score of 100/100. 
+
+A Lighthouse report is available a few paragraphs below in the testing section.
 
 ## Technologies and tools used
 
