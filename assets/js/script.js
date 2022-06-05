@@ -165,9 +165,12 @@ function saveAnswers() {
     leftQuestions();
 }
 
-// On yes/no click, run leftQuestions()
-yesClick.addEventListener("click", saveAnswers);
-noClick.addEventListener("click", saveAnswers);
+let buttons = document.getElementsByClassName("choice-text");
+
+// On yes/no click, run saveAnswer()
+for (let button of buttons) {
+    button.addEventListener("click", saveAnswers)
+}
 
 /**
  * Update progress bar,
