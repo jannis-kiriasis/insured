@@ -35,7 +35,13 @@ let questions = [
             b: "no",
         }
     },
- ];
+];
+
+// Wait DOM to be loaded then run funtion
+document.addEventListener("DOMContentLoaded", function() {
+    let currentStage = document.getElementsByTagName("img")[1];
+    currentStage.classList.add("verdigris");
+})
 
 // Variables to loop through questions
 const lastQuestion = questions.length - 1;
