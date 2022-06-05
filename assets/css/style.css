@@ -127,6 +127,7 @@ h1 {
     margin-top: 10px;
 }
 
+.button-style,
 #start,
 #answers > button,
 #life-calculator-btn,
@@ -153,18 +154,6 @@ h1 {
     margin: 32px auto;
     display: flex;
     justify-content: center;
-}
-
-#start:hover,
-#answers > button:hover,
-#life-calculator-btn:hover,
-#apply-now:hover,
-#apply:hover,
-#restart:hover {
-    border: 2px solid var(--fuzzy-wuzzy);
-    color: var(--fuzzy-wuzzy);
-    background-color: #ffffff;
-
 }
 
 .current-question {
@@ -224,6 +213,21 @@ form > input {
 #restart {
     display: block;
     margin: 32px auto;
+}
+
+/* Add :hover only on devices with real hover */
+@media (hover: hover) {
+    #start:hover,
+    #answers > button:hover,
+    #life-calculator-btn:hover,
+    #apply-now:hover,
+    #apply:hover,
+    #restart:hover {
+        border: 2px solid var(--fuzzy-wuzzy);
+        color: var(--fuzzy-wuzzy);
+        background-color: #ffffff;
+    
+    }
 }
 
 @media only screen and (max-width: 858px) {
