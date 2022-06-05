@@ -297,6 +297,10 @@ form > input {
         width: 20px;
         height: 20px;
     }
+
+    #phone {
+        width: 217px;
+    }
 }
 
 /* Galaxy fold */
