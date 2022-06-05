@@ -45,7 +45,7 @@ function saveFormData() {
     // and for future use
     sessionStorage.setItem("salary", saveSalary);
     sessionStorage.setItem("years", saveYears);
-    sessionStorage.setItem("phone", saveContact);
+    sessionStorage.setItem("phone", 0 + saveContact);
     sessionStorage.setItem("email", saveEmail);
     sessionStorage.setItem("name", saveName);
 }
@@ -89,6 +89,9 @@ function formValidation () {
     } else if (/\d/.test(formName.value.trim())) {
         formName.style.borderColor="red";
         alert("Your name can't contain numbers! Try again.");
+    } else if (formContact.value.trim().length < 7 || formContact.value.trim().length > 9) {
+        formContact.style.borderColor="red";
+        alert("Your phone number must be between 7 and 9 digits long. Try again.");
     } else {
         //store username in sessionStorage
         saveFormData();

@@ -37,6 +37,10 @@ p, input {
     letter-spacing: .03rem;
 }
 
+#phone {
+    width: 187px;
+}
+
 header {
     margin: 32px auto 50px auto;
 }
