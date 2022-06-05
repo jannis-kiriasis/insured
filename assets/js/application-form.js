@@ -10,6 +10,12 @@ let saveYears = 0;
 let saveEmail = "";
 let saveContact = 0;
 
+// Wait DOM to be loaded then run funtion
+document.addEventListener("DOMContentLoaded", function() {
+    let currentStage = document.getElementsByTagName("img")[5];
+    currentStage.classList.add("verdigris");
+})
+
 //Prepopulate existing values
 formName.setAttribute("value", `${sessionStorage.getItem("name")}`);
 formSalary.setAttribute("value", `${sessionStorage.getItem("salary")}`);

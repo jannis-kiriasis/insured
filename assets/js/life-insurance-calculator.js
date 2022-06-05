@@ -5,6 +5,12 @@ let calcApplyBtn = document.getElementById("calculate-apply-btns");
 let formSalary = document.getElementById("salary");
 let formYears = document.getElementById("years");
 
+// Wait DOM to be loaded then run funtion
+document.addEventListener("DOMContentLoaded", function() {
+    let currentStage = document.getElementsByTagName("img")[3];
+    currentStage.classList.add("verdigris");
+})
+
 //round entered Salary
 function roundSalary () {
     let formSalaryValue = formSalary.value;
