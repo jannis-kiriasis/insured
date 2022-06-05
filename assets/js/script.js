@@ -162,18 +162,9 @@ function saveAnswers() {
     leftQuestions();
 }
 
-//Variable to loop through buttons
-var buttons = document.getElementsByClassName("choice-text");
-var buttonsCount = buttons.length;
-
-//On button click run saveAnswers
-for (var i = 0; i <= buttonsCount; i += 1) {
-    buttons[i].onclick = saveAnswers; 
-}
-
 // On yes/no click, run leftQuestions()
-yesClick.addEventListener("click", leftQuestions);
-noClick.addEventListener("click", leftQuestions);
+yesClick.addEventListener("click", saveAnswers);
+noClick.addEventListener("click", saveAnswers);
 
 /**
  * Update progress bar,
