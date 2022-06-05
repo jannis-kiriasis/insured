@@ -205,11 +205,11 @@ Tested with [Contrast checker](https://color-contrast-checker.deque.com/)
 
 ### Typography
 
-The typography was chosen for my liking. Open Sans is a very popular font if not the most popular. I associate Playfair Display with a font possibly used by hotels for their headings and so I did the same.
+The typography was chosen for my liking. Open Sans is a very popular font if not the most popular.
 
-I used [Playfair display](https://fonts.google.com/specimen/Playfair+Display) for headings and [Open Sans](https://fonts.google.com/specimen/Open+Sans) for body elements.  
+I used [Open Sans](https://fonts.google.com/specimen/Open+Sans) for all body elements.  
 
-The fallback fonts used are Times New Roman for headings and Helvetica for body elements.
+The fallback font used is Helvetiva for all body elements.
 
 ### Imagery
 
