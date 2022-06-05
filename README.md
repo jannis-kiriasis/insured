@@ -180,7 +180,7 @@ I had the idea of adding a calculator and an application form while WIP so wiref
 - Additional fields can be added to the calculator to make it more advanced. An 'extra fields' dropdown could reveal more input fields and so give users the option to use the short calculator or the advanced calculator.
 - More questions can be added to the questionnaire: there are life insurance policies that haven't been covered such us the serious illness cover. More questions can be asked to the users to give an even more specific result.
 - Calculators for mortgage protection and income protection can also be created.
-- Preselected cover type input fields can be added to the application form. The field will preselect the cover type users need based on their questionnaire results.
+- Preselected cover type input fields can be added to the application form. The field will be preselected to the cover type users need based on their questionnaire results.
 
 ## Design
 
@@ -188,18 +188,20 @@ In the following paragraph, I'm going to explain the colours, typography and ima
 
 ### Colours
 
-The first colour I wanted to use was dark blue. Blue is a calming colour, what I had in mind was "Work with us and you won't need to worry about bookings anymore".
+The main color used is a shade of blue (liberty). Blue is a calm and serene color. It is often associated to stabilitty and reliability. Most of the insurance companies I can think of have at least one shade of blue in their color palette (Allianz, Aviva, Axa, Zurich to name a few) and so Insured had to have a blue too. 
 
-As I chose dark blue, I needed an opposite colour to create contrast with important elements on the page, such as the buttons. So, orange was my first choice. Then, I was able to find a set of illustrations that worked for this website and so I slightly changed the orange to a salmon/red colour to match the shades of the images.
+As I chose Liberty, I needed an opposite colour to create contrast with important elements on the page, such as the buttons. So, I picked a shade of red, Fuzzy Wuzzy and adjusted it to increase its contrast ratio on with foreground (to pass accessibility tests). 
 
-As secondary colours, I've only used white as the background colour and for some text on dark blue background. I've also used a lighter shade of blue as a background colour to alternate sections.
+As secondary colours, I've used a shade of green (Verdigris) to highlight the past questions in the progress bar, and a tan color used for smaller decorative purpuses. I've also added  Timberwolf in case I needed a lightgrey but I haven't used it. May become useful for future development. 
 
-![Color Palette](./README-files/color-palette.png)
+![Color Palette](./README-files/insured-color-palette.png)
 
-All the colours have been tested for accessibility and most of the site achieved a WCAG AAA. The white and bold text on the orange background was the only area getting a WCAG AA score.
-- [Colour contrast test: Orange on dark blue](https://webaim.org/resources/contrastchecker/?fcolor=EF695D&bcolor=201767) - Used for navigation links hover color with bold attribute.  
-- [Colour contrast test: White on dark blue](https://webaim.org/resources/contrastchecker/?fcolor=FFFFFF&bcolor=201767) - Used in the header, footer and button colour hover on screens below 825px wide.  
-- [Colour contrast test: White on orange](https://webaim.org/resources/contrastchecker/?fcolor=FFFFFF&bcolor=EF695D) - Used on buttons with bold attribute (large text).  
+All the text color combinations have been tested for accessibility and they all achieve a minimum of WCAG AA.
+- [Colour contrast test: white on red](./README-files/red-white.png) - Used on buttons.  
+- [Colour contrast test: black on lightblue](./README-files/black-lightblue.png) - Used on main text area.  
+- [Colour contrast test: blue on lightblue](./README-files/blue-lightblue.png) - Used on headings.  
+
+Tested with [Contrast checker](https://color-contrast-checker.deque.com/)
 
 ### Typography
 
