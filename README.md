@@ -274,11 +274,12 @@ I've carried out the following tests:
 
 1. [HTML validation](#html-validation)
 2. [CSS validation](#css-validation)
-3. [Functionality testing](#functionality-testing)
-4. [Browsers compatibility](#browser-compatibility)
-5. [Responsiveness testing](#responsiveness-testing)
-6. [Lighthouse testing](#lighthouse-testing)
-7. [User stories testing](#user-stories-testing)
+3. [JavaScript validation](#JS-validation)
+4. [Functionality testing](#functionality-testing)
+5. [Browsers compatibility](#browser-compatibility)
+6. [Responsiveness testing](#responsiveness-testing)
+7. [Lighthouse testing](#lighthouse-testing)
+8. [User stories testing](#user-stories-testing)
 
 ### HTML validation
 
