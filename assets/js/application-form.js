@@ -3,7 +3,6 @@ let formSalary = document.getElementById("salary");
 let formYears = document.getElementById("years");
 let formContact = document.getElementById("phone");
 let formEmail = document.getElementById("email");
-let formApply = document.getElementById("apply");
 let saveName = "";
 let saveSalary = 0;
 let saveYears = 0;
@@ -14,7 +13,7 @@ let saveContact = 0;
 document.addEventListener("DOMContentLoaded", function() {
     let currentStage = document.getElementsByTagName("img")[5];
     currentStage.classList.add("verdigris");
-})
+});
 
 //Prepopulate existing values
 formName.setAttribute("value", `${sessionStorage.getItem("name")}`);
@@ -68,7 +67,7 @@ function displayThankYou() {
     <p>Salary: ${saveSalary}</p>
     <p>Contact phone: ${saveContact}</p>
     <p>Contact email: ${saveEmail}</p>
-    `
+    `;
     restart(); 
 }
 

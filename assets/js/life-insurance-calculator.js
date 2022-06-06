@@ -9,7 +9,7 @@ let formYears = document.getElementById("years");
 document.addEventListener("DOMContentLoaded", function() {
     let currentStage = document.getElementsByTagName("img")[3];
     currentStage.classList.add("verdigris");
-})
+});
 
 //round entered Salary
 function roundSalary () {
