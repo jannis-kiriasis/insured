@@ -293,12 +293,10 @@ All the pages passed the HTML validation with no errors or warnings.
 ### CSS validation
 
 Style.css passed the CSS validation with no errors.
-- [css validation](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjannis-kiriasis.github.io%2Fdigibooking%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)  
-![CSS validation](./README-files/css-validation.png)
+- [css validation](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjannis-kiriasis.github.io%2Finsured%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)  
+![CSS validation](./README-files/css-test.png)
 
-There is only 1 warning related to `-webkit-appearance: none;` used to style the form submit button. This was used to prevent iPhone / iPad default style. The submit button would otherwise not be styled as declared in the CSS without the webkit extension.  
-
-![CSS warning](./README-files/css-warning.png)
+There is only 1 warning related to `-webkit-appearance: none;` used to style the form submit button. This was used to prevent iPhone / iPad default style. The submit button would otherwise not be styled as declared in the CSS without the webkit extension.
 
 ### Functionality testing
 
