@@ -410,11 +410,11 @@ To clone the website:
 ## Credits
 ### Graphics
 
-[Calculator icons created by Vitaly Gorbachev - Flaticon](https://www.flaticon.com/free-icons/calculator)
-[Questionnaire icons created by netscript - Flaticon](https://www.flaticon.com/free-icons/questionnaire)
-[Submit icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/submit)
-[Arrow icons created by th studio - Flaticon](https://www.flaticon.com/free-icons/arrow)
-[Arrow icons created by Handicon - Flaticon](https://www.flaticon.com/free-icons/arrow) 
+- [Calculator icons created by Vitaly Gorbachev - Flaticon](https://www.flaticon.com/free-icons/calculator)
+- [Questionnaire icons created by netscript - Flaticon](https://www.flaticon.com/free-icons/questionnaire)
+- [Submit icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/submit)
+- [Arrow icons created by th studio - Flaticon](https://www.flaticon.com/free-icons/arrow)
+- [Arrow icons created by Handicon - Flaticon](https://www.flaticon.com/free-icons/arrow) 
 
 ## Acknowledgements
 
@@ -427,6 +427,8 @@ I've followed [this video](https://www.youtube.com/watch?v=49pYIMygIcU&t=2066s) 
 I've used [this guide](https://www.javascripttutorial.net/javascript-dom/javascript-form-validation/) published on javascripttutorial.net to create part of the username input validation logic. The code was edited to fit this website.
 
 I've used [this thread](https://stackoverflow.com/questions/17616624/detect-if-string-contains-any-spaces) to detect if username input value contain any white spaces.
+
+To create the README.md file I've used a previously created by me README.md [digibooking README.md](https://github.com/jannis-kiriasis/digibooking/blob/main/README.md) and updated it as needed.
 
 ## Disclaimer
 
