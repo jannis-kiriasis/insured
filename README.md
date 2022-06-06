@@ -59,15 +59,20 @@ Insured is for those people who aren't sure whether they should get a life cover
 Now that we are familiar with Insured target audience and offering, we are looking at the needs website visitors may have. Following, you can find the users' stories covering the main users' needs.
 
 ### Visitor goals
-- As a first-time visitor, I want to easily understand the main purpose of the site
-- As a first-time visitor, I want to have a better Idea of what cover I need
-- As a first-time visitor, I want to get a better understanding of what I need to consider when deciding on a life policy
-- As a first-time visitor, I want to see how long the questionnaire takes to complete
-- As a user, I want to see at what stage of the questionnaire I am and the number of questions left
-- As a user, I want to get a personalised result based on my personal needs
-- As a user, I want to be able to take the questionnaire again
-- as a user, I want to be able to find out how much cover I need
-- As a user, I want to be able to apply for a cover easily
+
+| **User stories**                                                                                          |
+|-----------------------------------------------------------------------------------------------------------|
+| As a user, I want to easily understand the main purpose of the site                                       |
+| As a user, I want to have a better Idea of what cover I need                                              |
+| As a user, I want to get a better understanding of what I need to consider when deciding on a life policy |
+| As a user, I want to see how long the questionnaire takes to complete                                     |
+| As a user, I want to see at what stage of the questionnaire I am and the number of questions left         |
+| As a user, I want to get a personalised result based on my personal needs                                 |
+| As a user, I want to be able to take the questionnaire again                                              |
+| As a user, I want to be able to find out how much cover I need                                            |
+| As a user, I want to be able to apply for a cover easily                                                  |
+| As a user, I want to know if my application had a positive outcome                                        |
+| As a user, I want to know be able to find my way if I get lost                                            |
 
 ## Features
 
@@ -77,7 +82,7 @@ In the following paragraphs, we are going to see what features appear on the web
 
 This is a list of features that appear on every page.
 
-1.	**Logo and navigation**  
+1.	**Logo**  
     The logo appears on every page. As an industry standard, the logo links back to the homepage.
 
     ![Logo](./README-files/insured-logo.png)
@@ -89,17 +94,17 @@ This is a list of features that appear on every page.
     ![Heading](./README-files/main-heading.png)
 
 3.	**Navigation / stages**  
-    I've used graphics to represent the 3 steps included in the website: The questionnaire, the calculator and the application form. The current page icon becomes Verdigris when the page is active.
-
-    While this can be used as navigation, it is reccommanded to follow the on screen instructions for the best experience instead of jumping from a page to the other by clicking on the icons. 
+    I've used graphics to represent the 3 pages included in the website: The questionnaire, the calculator and the application form. The reason is becauase while it can effectively be used as a navigation (the graphics link to the related pages), it isn't its intended use.  I reccommand to follow the on screen instructions for the best experience instead of jumping from a page to the other by clicking on the graphics. Hence to discourage this behavior, I used graphics. The primary use is to let users know at what stage of the whole process they are. 
+    
+    The current page icon becomes Verdigris when the page is active.
 
     ![Navigation](./README-files/navigation.png)
 
 ### Questionnaire features - index.html
 
 4.	**Progress bar**  
-    The progress bar helps users to see at what stage of the questionnaire they are. There is an intro, 5 questions and the results page. 
-    The current progress circle is blue. The past quetions / pages are green. The progress bar updates at every button click, so when users start the quetionnaire or answer a question.
+    The progress bar helps users see at what stage of the questionnaire they are. The full questionnaire includes an intro, 5 questions and the results page. 
+    The current progress circle is blue. The past quetions / pages are green. The progress bar updates at every button click with DOM manipulation, so when users start the quetionnaire or answer a question.
 
     ![Progress bar](./README-files/progress-bar.png)
 
@@ -109,9 +114,9 @@ This is a list of features that appear on every page.
     ![Mobile progress bar](./README-files/mobile-progress-bar.png)
 
 5.	**Intro page**  
-    The intro page explain to users what Insured is all about. It also collects the user name which is stored in session storage and used later on. The user name is required and it's validated with other JS rules. 
+    The intro page explains to users what Insured is all about. It also collects the user name which is stored in session storage and used later on. The user name is required and it's validated with other JS rules. 
 
-    If users clicks on 'start' and the user name hasn't been added or it doesn't pass validation, an alert message will show and the input fields border becomes red.
+    If users clicks on 'start' and the user name hasn't been added or it doesn't pass validation, an alert message will show up and the input fields border becomes red.
 
     ![Intro](./README-files/intro-page.png)
 
@@ -123,14 +128,14 @@ This is a list of features that appear on every page.
     ![Question pages](./README-files/question-pages.png)
 
 7.	**Results page**  
-    Based on the answers provided, the results page tells users what life cover they may need. It uses logic to determine what content to show. If users answers yes to at least 1 question, the 'calculate your life insurance need' button is shown. It brings users to the next step: calculate the cover amount they need. If all the users answers have a negative outcome, only the button to restart is shown.
+    Based on the answers provided, the results page tells users what life cover they may need. It uses logic to determine what content to show. If users answer yes to at least 1 question, the 'calculate your life insurance need' button will be shown. It brings users to the next step: calculate the cover amount they need. If all the users answers have a negative outcome, only the button to restart is shown.
 
     ![Results page](./README-files/results.png)
 
 ### Life cover calculator features - life-insurance-calculator.html
 
 8.	**Calculator**  
-    A simple calculator to help users figure out how much life insurance they need. There are only 2 input fields: salary and years of cover needed. The calculation is a simple moltiplication. input fields are validated with HTML and JS rules.
+    A simple calculator to help users figure out how much life insurance they need. There are only 2 input fields: salary and years of cover needed. The calculation is a simple moltiplication. Input fields are validated with HTML and JS rules.
 
     If the input fields aren't blank and differ from 0, an 'apply now for this cover' button is shown together with a 'recalculate' button.
 
@@ -198,20 +203,20 @@ In the following paragraph, I'm going to explain the colours, typography and ima
 
 ### Colours
 
-The main color used is a shade of blue (liberty). Blue is a calm and serene color. It is often associated to stabilitty and reliability. Most of the insurance companies I can think of have at least one shade of blue in their color palette (Allianz, Aviva, Axa, Zurich to name a few) and so Insured had to have a blue too. 
+The main color used is a shade of blue (Liberty). Blue is a calm and serene color. It is often associated to stabilitty and reliability. Most of the insurance companies I can think of have at least one shade of blue in their color palette (Allianz, Aviva, Axa, Zurich to name a few) and so Insured had to have a blue too. I've increased a bit the contrast ratio with light backgrounds to achieve accessibility best scores.
 
-As I chose Liberty, I needed an opposite colour to create contrast with important elements on the page, such as the buttons. So, I picked a shade of red, Fuzzy Wuzzy and adjusted it to increase its contrast ratio on with foreground (to pass accessibility tests). 
+As I chose Liberty, I needed an opposite colour to create contrast with important elements on the page, such as the buttons. So, I picked a shade of red, Fuzzy Wuzzy and increased it's contrast ratio with light colours to pass accessibility tests.
 
 As secondary colours, I've used a shade of green (Verdigris) to highlight the past questions in the progress bar, and a tan color used for smaller decorative purpuses. I've also added  Timberwolf in case I needed a lightgrey but I haven't used it. May become useful for future development. 
 
 ![Color Palette](./README-files/insured-color-palette.png)
 
-All the text color combinations have been tested for accessibility and they all achieve a minimum of WCAG AA.
-- [Colour contrast test: white on red](./README-files/red-white.png) - Used on buttons.  
-- [Colour contrast test: black on lightblue](./README-files/black-lightblue.png) - Used on main text area.  
-- [Colour contrast test: blue on lightblue](./README-files/blue-lightblue.png) - Used on headings.  
+All the text color combinations have been tested for accessibility and they all achieve a minimum of WCAG AA (2/3 achieved WCAG AAA).
+- [Colour contrast test: white on red](https://webaim.org/resources/contrastchecker/?fcolor=FFFFFF&bcolor=A42D2D) - Used on buttons.  
+- [Colour contrast test: black on lightblue](https://webaim.org/resources/contrastchecker/?fcolor=000000&bcolor=F3F4FA) - Used on main text area.  
+- [Colour contrast test: blue on lightblue](https://webaim.org/resources/contrastchecker/?fcolor=3B4D97&bcolor=F3F4FA) - Used on headings.  
 
-Tested with [Contrast checker](https://color-contrast-checker.deque.com/)
+Tested with [Contrast checker](https://webaim.org/resources/contrastchecker/).
 
 ### Typography
 
@@ -223,13 +228,13 @@ The fallback font used is Helvetiva for all body elements.
 
 ### Imagery
 
-I've used graphics for the logo, favicon the the navigation process. All the illustrations come from [Freepik](https://www.freepik.com/home).
+I've used graphics for the logo, favicon the the navigation process. All the graphics come from [Flaticon](https://www.flaticon.com/).
 
 I've used svg images where possible which are lighter than jpg and since it's a vector format, graphics always loook sharp. It works well with logos and 'flat' graphics. I've used webp format for the favicon. Nowadays, [Wepb is supported by all the major browsers](https://developers.google.com/speed/webp/faq), with [Safari being the last main browser that started supporting webp in 2020](https://caniuse.com/webp) with the release of Safari 14.
 
 ## Accessibility
 
-As mentioned above, all the font colours passed a contrast test. During the testing phase, the white fonts on the red backgrounds (only used to style buttons) resulted low in contrast ratio. The red color was adjusted to pass and achive an accessibility score of WCAG AAA.
+As mentioned above, all the colours combinations used for text passed a contrast ratio test. During the testing phase, the white fonts on the red backgrounds (only used to style buttons) resulted low in contrast ratio. The red color was adjusted to pass and achive an accessibility score of WCAG AAA.
 
 I've also used alt tags to describe images and aria labels to describe links and images used as background images.  
 The pages have been structured using semantic HTML markup.  
@@ -241,15 +246,15 @@ A Lighthouse report is available a few paragraphs below in the testing section.
 ## SEO
 
 Keywords have been used in the headings of the questionnaire start page and life insurance calculator page. Each page addresses a specific search intent:
-- The questionnaire page, the need of a life insurance cover
-- the calculator page, the need of a cover amount calculator
+- The questionnaire page, the need of knowing whether a life insurance cover is needed
+- the calculator page, the need of a life cover calculator
 - The application form, the need of getting a cover painlessly
 
 The title tags also include target keywords and the length displays in full on Google Search. Tested with this [title tag length checker](https://www.highervisibility.com/seo/tools/serp-snippet-optimizer/).
 
 I've included the most common metadata (description, keywords, index) and a self-referring `rel=canonical` link on each page.
 
-I've included Open Graph tags to control the page appearence when shared on social media as posts.
+I've included Open Graph tags to control the pages appearence when shared on social media as posts.
 
 The Lighthouse SEO test also reports a score of 100/100. 
 
@@ -303,7 +308,7 @@ Style.css passed the CSS validation with no errors.
 There are only 2 warnings related to `-webkit-appearance: none;` and `-moz-appearance: none;` used to style the form submit button. This was used to prevent iPhone / iPad default style. The submit button would otherwise not be styled as declared in the CSS without the webkit extension.
 
 ### JS validation 
-The JavaScript files has been passed thorugh Jshint ![Jshint](https://jshint.com/): few semicolumns have been added and unused variables removed. There are no significant issues with the code.
+The JavaScript files has been passed thorugh [Jshint](https://jshint.com/): I have added few semicolumns and removed unused variables. There are no issues with the code.
 
 There are also no errors in the Console (Google Developer Tools).
 
@@ -318,21 +323,21 @@ I've tested that the different functionalities of the website work as intended.
 |                     Test Label                     |                                                              Test Action                                                              |                                                                                                                                                                Expected Outcome                                                                                                                                                                |  Test Outcome  |
 |:--------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------:|
 | Header and navigation links                        | Click on all header internal links to verify they work (all pages).                                                                   | No links return a 404 error.                                                                                                                                                                                                                                                                                                                   | PASS all pages |
-| Header and navigation links                        | Click on all header internal links to verify they link to the right pages (all pages).                                                | All links should link to the pages described in their anchor image.                                                                                                                                                                                                                                                                            | PASS all pages |
+| Header and navigation links                        | Click on all header internal links to verify they link to the right pages (all pages).                                                | All links should link to the pages described in their anchor images.                                                                                                                                                                                                                                                                            | PASS all pages |
 | On ‘start’ click                                   | Click on Start to verify questionnaire doesn’t start if user name isn’t valid.                                                        | Questionnaire will start only if username is 1 word, contains no numbers or special characters, is between 3 and 25 characters long.                                                                                                                                                                                                           | PASS           |
-| On ‘start’ click                                   | Click on Start and the if username validation is passed, the first question is shown                                                  | After username validation one question with yes / no buttons is shown.                                                                                                                                                                                                                                                                         | PASS           |
-| On ‘yes no’ click                                  | Click on Yes / no to verify that user answers are saved.                                                                              | Console userAnswers will show the clicks saved                                                                                                                                                                                                                                                                                                 | PASS           |
-| On ‘yes no’ click                                  | On yes no clicks, question changes, progress bar updates.                                                                             | On buttons click a new question appear, the past question progress placeholder becomes Verdigris and the current question Liberty.                                                                                                                                                                                                             | PASS           |
-| On ‘yes no’ click                                  | On last yes no click, results are shown.                                                                                              | Based on the user answers different content is triggered. The user name appears in the first line.                                                                                                                                                                                                                                             | PASS           |
+| On ‘start’ click                                   | Click on Start and if username validation is passed, the first question is shown                                                  | After username validation, the first question with yes / no buttons is shown.                                                                                                                                                                                                                                                                         | PASS           |
+| On ‘yes no’ click                                  | Click on Yes / no to verify that user answers are saved.                                                                              | Type userAnswers in the console (in Developer Tools) and it will show the clicks saved                                                                                                                                                                                                                                                                                                 | PASS           |
+| On ‘yes no’ click                                  | On yes no clicks, question changes, progress bar updates.                                                                             | On buttons click a new question appears, the past question progress placeholder becomes Verdigris and the current question placeholder Liberty.                                                                                                                                                                                                             | PASS           |
+| On ‘yes no’ click                                  | On last yes no click, results are shown.                                                                                              | Based on the answers provided, different content is triggered. The user name appears in the first line.                                                                                                                                                                                                                                             | PASS           |
 | Calculator input fields validation                 | Click on ‘calculate’ without entering any value.                                                                                      | An alert will say that salary and years fields are mandatory and input border becomes red.                                                                                                                                                                                                                                                     | PASS           |
 | Calculator input fields validation                 | Click on ‘calculate’ after entering salary and years.                                                                                 | A multiplication result is shown together with ‘apply now for this cover’ and ‘recalculate’ buttons.                                                                                                                                                                                                                                           | PASS           |
 | ‘Recalculate’ clicks                               | Enter a new salary and / or years and click recalculate.                                                                              | The new multiplication result is shown.                                                                                                                                                                                                                                                                                                        | PASS           |
 | Input fields storage                               | After clicking on ‘Apply now for this cover’ open sessions storage in Developer Tools.                                                | The input field values will be stored in session storage.                                                                                                                                                                                                                                                                                      | PASS           |
 | Application form opening                           | When ./application-form.html opens, if anything is stored in session storage, the form fields will be prepopulated.                   | Form fields will be prepopulated if any value is stored in session storage.                                                                                                                                                                                                                                                                    | PASS           |
 | Application form fields validation                 | On ‘apply’ click, some logic will validate all input fields. Try to leave a field blank one by one and check if an alert box appears. | On ‘apply’ click: -       All fields are mandatory -       Username validation is equal to the questionnaire username validation -       Salary and years validation is equal to the calculator input fields validation -       Phone number must be between 7 and 9 digits. -       Email is validated with html role and ‘email’ input type. | PASS           |
-| On ‘apply’ click                                   | Click on apply, if validation is passed, a message will be shown.                                                                     | DOM manipulation will show a thank you message, a recap of the data provided and a button to restart the questionnaire.                                                                                                                                                                                                                        | PASS           |
-| On ‘restart with new’ name click on thank you page | Click on Restart with new name and you’ll go back to the beginning of the questionnaire.                                              | On button click, go back to questionnaire and storageSession is cleared.                                                                                                                                                                                                                                                                       | PASS           |
-| On page change                                     | When opening a new page, the related icon below the logo will turn Verdigris.                                                         | On current page, icons turn Verdigris.                                                                                                                                                                                                                                                                                                         | PASS           |
+| On ‘apply’ click                                   | Click on 'apply', if validation is passed, a message will be shown.                                                                     | DOM manipulation will show a thank you message, a recap of the data provided and a button to restart the questionnaire.                                                                                                                                                                                                                        | PASS           |
+| On ‘restart with new’ name click on thank you page | Click on 'Restart with new name' and you’ll go back to the beginning of the questionnaire.                                              | On button click, go back to questionnaire and storageSession is cleared.                                                                                                                                                                                                                                                                       | PASS           |
+| On page change                                     | When opening a new page, the related icon below the logo will turn Verdigris.                                                         | On current page, the related icon turns Verdigris.                                                                                                                                                                                                                                                                                                         | PASS           |
 | 404 links                                          | Click on a non existing URL and verify it lands on the custom 404 page.                                                               | A non-existing page links to the custom 404.html                                                                                                                                                                                                                                                                                               | PASS           |
 |                                                    |                                                                                                                                       |                                                                                                                                                                                                                                                                                                                                                |                |
 ### Browser compatibility
@@ -398,7 +403,7 @@ To deploy the website:
 2. find and click on 'pages' on the setting sidebar menu
 3. select the branch to be used. In this case 'main'
 4. Refresh the page and in a few minutes, the following message will appear if the website was deployed correctly
-![website published](./README-files/website-published.png)
+![website published](./README-files/published-github-pages.png)
 
 To clone the website:
 1. Go to the GitHub repository [Insured](https://github.com/jannis-kiriasis/insured)

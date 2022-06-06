@@ -4,7 +4,7 @@
 /* Global styles */
 
 :root {
-    --liberty: #3F53A2;
+    --liberty: #3B4D97;
     --verdigris: #48a9a6;
     --timberwolf: #e4dfda;
     --tan: #d4b483;
@@ -237,6 +237,11 @@ form > input {
     }
 }
 
+header > a > img {
+    height: 71px;
+    width: 360px;
+}
+
 @media only screen and (max-width: 858px) {
 
     header {
@@ -245,9 +250,10 @@ form > input {
     }
 
     header > a > img {
-        width: 80%;
         display: block;
         margin: auto;
+        height: 52px;
+        width: 288px;
     }
 
     #mobile-progress {
