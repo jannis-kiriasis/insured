@@ -1,46 +1,45 @@
 //Questions
-let questions = [
-    {
-        question: "Do you have children below the age of 25?",
-        answers: {
-            a: "yes",
-            b: "no",
-        }
-    },
-    {
-        question: "Are you self-employed?",
-        answers: {
-            a: "yes",
-            b: "no",
-        }
-    },
-    {
-        question: "Do you own a house or planning to buy one?",
-        answers: {
-            a: "yes",
-            b: "no",
-        }
-    },
-    {
-        question: "Is the vast majority of your household income coming from 1 person only?",
-        answers: {
-            a: "yes",
-            b: "no",
-        }
-    },
-    {
-        question: "Does your family members depend mostly on 1 person?",
-        answers: {
-            a: "yes",
-            b: "no",
-        }
-    },
+let questions = [{
+    question: "Do you have children below the age of 25?",
+    answers: {
+      a: "yes",
+      b: "no",
+    }
+  },
+  {
+    question: "Are you self-employed?",
+    answers: {
+      a: "yes",
+      b: "no",
+    }
+  },
+  {
+    question: "Do you own a house or planning to buy one?",
+    answers: {
+      a: "yes",
+      b: "no",
+    }
+  },
+  {
+    question: "Is the vast majority of your household income coming from 1 person only?",
+    answers: {
+      a: "yes",
+      b: "no",
+    }
+  },
+  {
+    question: "Does your family members depend mostly on 1 person?",
+    answers: {
+      a: "yes",
+      b: "no",
+    }
+  },
 ];
 
 // Wait DOM to be loaded then run funtion
 document.addEventListener("DOMContentLoaded", function() {
-    let currentStage = document.getElementsByTagName("img")[1];
-    currentStage.classList.add("verdigris");
+  let currentStage = document.getElementsByTagName("img")[1];
+  currentStage.classList.add("verdigris");
 });
 
 // Variables to loop through questions
@@ -67,11 +66,11 @@ let needLifeInsuranceExtra = "Considering that your family depends on 1 person (
  * show the first question
  */
 function startQuestionnaire() {
-    start.classList.add("hide");
-    // Make first bar progress border-color green
-    document.getElementById("i").classList.add("past-question");
-    nextQuestion();
-    progressUpdate();
+  start.classList.add("hide");
+  // Make first bar progress border-color green
+  document.getElementById("i").classList.add("past-question");
+  nextQuestion();
+  progressUpdate();
 }
 
 // Username must be provided to start the questionnaire
@@ -81,65 +80,65 @@ const isRequired = value => value === '' ? false : true;
 const isBetween = (length, min, max) => length < min || length > max ? false : true;
 
 // Validate username and initialize questionnaire
-function validateUsername () {
-    const min = 3;
-    const max = 25;
-    const specialChar = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-    username = document.getElementById("username").value;
-    username = username.trim();
-    // Logic to check username is valid
-    if (!isRequired(username)) {
-        document.getElementById("username").style.borderColor="red";
-        alert("Your name cannot be blank. Try Again!");
-    } else if (!isBetween(username.length, min, max)) {
-        document.getElementById("username").style.borderColor="red";
-        alert(`Your name must be between ${min} and ${max} characters. Try Again!`);
-    } else if (/\s/.test(username)) {
-        document.getElementById("username").style.borderColor="red";
-        alert("Your name must be one word! Try again.");    
-    } else if (specialChar.test(username)) {
-        document.getElementById("username").style.borderColor="red";
-        alert("Your name can't contain special characters! Try again.");
-    } else if (/\d/.test(username)) {
-        document.getElementById("username").style.borderColor="red";
-        alert("Your name can't contain numbers! Try again.");
-    } else {
-        //store username in sessionStorage
-        sessionStorage.setItem("name", username);
-        startQuestionnaire();
-    }
+function validateUsername() {
+  const min = 3;
+  const max = 25;
+  const specialChar = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+  username = document.getElementById("username").value;
+  username = username.trim();
+  // Logic to check username is valid
+  if (!isRequired(username)) {
+    document.getElementById("username").style.borderColor = "red";
+    alert("Your name cannot be blank. Try Again!");
+  } else if (!isBetween(username.length, min, max)) {
+    document.getElementById("username").style.borderColor = "red";
+    alert(`Your name must be between ${min} and ${max} characters. Try Again!`);
+  } else if (/\s/.test(username)) {
+    document.getElementById("username").style.borderColor = "red";
+    alert("Your name must be one word! Try again.");
+  } else if (specialChar.test(username)) {
+    document.getElementById("username").style.borderColor = "red";
+    alert("Your name can't contain special characters! Try again.");
+  } else if (/\d/.test(username)) {
+    document.getElementById("username").style.borderColor = "red";
+    alert("Your name can't contain numbers! Try again.");
+  } else {
+    //store username in sessionStorage
+    sessionStorage.setItem("name", username);
+    startQuestionnaire();
+  }
 }
 
 // Listen to 'start' clicks
 let start = document.getElementById("start");
 start.addEventListener("click", validateUsername);
- 
-/**
-* Render the first question,
-* show yes / no buttons,
-* hide Text area
-*/
-function nextQuestion() {
-    let q = questions[runningQuestion];
-    document.getElementsByTagName("h1")[0].innerText = q.question;
-    document.getElementById("yes").innerText = q.answers.a;
-    document.getElementById("no").innerText = q.answers.b;
 
-    showButtons();
-    hideTextArea();
-    progressUpdate();
+/**
+ * Render the first question,
+ * show yes / no buttons,
+ * hide Text area
+ */
+function nextQuestion() {
+  let q = questions[runningQuestion];
+  document.getElementsByTagName("h1")[0].innerText = q.question;
+  document.getElementById("yes").innerText = q.answers.a;
+  document.getElementById("no").innerText = q.answers.b;
+
+  showButtons();
+  hideTextArea();
+  progressUpdate();
 }
 
 // Show yes / no buttons
-function showButtons(){
-    let showButtons = document.getElementById("answers");
-    showButtons.classList.remove("hide");
+function showButtons() {
+  let showButtons = document.getElementById("answers");
+  showButtons.classList.remove("hide");
 }
 
 // Hide intro text area
 function hideTextArea() {
-    let hide = document.getElementById("text-area");
-    hide.style.display="none";
+  let hide = document.getElementById("text-area");
+  hide.style.display = "none";
 }
 
 /**
@@ -147,13 +146,13 @@ function hideTextArea() {
  * if so, increment runningQuestion and
  * show the next question.
  */
- function leftQuestions() {
-    if (runningQuestion < lastQuestion) {
-        runningQuestion++;
-        nextQuestion();
-    } else {
-        showResults();
-    }
+function leftQuestions() {
+  if (runningQuestion < lastQuestion) {
+    runningQuestion++;
+    nextQuestion();
+  } else {
+    showResults();
+  }
 }
 
 /**
@@ -161,15 +160,15 @@ function hideTextArea() {
  * go to next question
  */
 function saveAnswers() {
-    userAnswers.push(this.id);
-    leftQuestions();
+  userAnswers.push(this.id);
+  leftQuestions();
 }
 
 let buttons = document.getElementsByClassName("choice-text");
 
 // On yes/no click, run saveAnswer()
 for (let button of buttons) {
-    button.addEventListener("click", saveAnswers);
+  button.addEventListener("click", saveAnswers);
 }
 
 /**
@@ -177,102 +176,100 @@ for (let button of buttons) {
  * current question progress becomes blue,
  * past questions become green
  */
-function progressUpdate () {
-    //Get the id of the progress circle that matches the running question
-    currentProgress = document.getElementsByClassName("progress")[runningQuestion + 1 ].id;
-    /**
-     * If the progress id = running questions,
-     * progress circle becomes blue,
-     * if the question is past and
-     * there are past questions,
-     * circle becomes green
-    */
-    if (parseInt(currentProgress) === runningQuestion) {
-        let blueCircle = document.getElementById(runningQuestion);
-        document.getElementById("mobile-progress").innerText = `${document.getElementById(runningQuestion).innerText} / 5`;
-        blueCircle.classList.add("current-question");
-    }
-    if (parseInt(currentProgress) > runningQuestion - 1 && runningQuestion !== 0){
-        let greenCircle = document.getElementById(runningQuestion - 1);
-        greenCircle.classList.add("past-question");
-    }
+function progressUpdate() {
+  //Get the id of the progress circle that matches the running question
+  currentProgress = document.getElementsByClassName("progress")[runningQuestion + 1].id;
+  /**
+   * If the progress id = running questions,
+   * progress circle becomes blue,
+   * if the question is past and
+   * there are past questions,
+   * circle becomes green
+   */
+  if (parseInt(currentProgress) === runningQuestion) {
+    let blueCircle = document.getElementById(runningQuestion);
+    document.getElementById("mobile-progress").innerText = `${document.getElementById(runningQuestion).innerText} / 5`;
+    blueCircle.classList.add("current-question");
+  }
+  if (parseInt(currentProgress) > runningQuestion - 1 && runningQuestion !== 0) {
+    let greenCircle = document.getElementById(runningQuestion - 1);
+    greenCircle.classList.add("past-question");
+  }
 }
 
 //Prepare DOM to display comments
-function showResults () {
-    document.getElementById("answers").style.display="none";
-    document.getElementById("question").style.display="none";
-    document.getElementById("text-area").style.display="block";
-    document.getElementById("intro").innerHTML = "";
+function showResults() {
+  document.getElementById("answers").style.display = "none";
+  document.getElementById("question").style.display = "none";
+  document.getElementById("text-area").style.display = "block";
+  document.getElementById("intro").innerHTML = "";
 
-    document.getElementById("5").classList.add("current-question");
-    document.getElementById("4").classList.add("past-question");
-    displayComments ();
+  document.getElementById("5").classList.add("current-question");
+  document.getElementById("4").classList.add("past-question");
+  displayComments();
 }
 
 //show calculator buttons
 function calculatorButton() {
-    let calculatorBtn = document.createElement("button");
-    calculatorBtn.setAttribute("onclick", "window.location.href='life-insurance-calculator.html'");
-    calculatorBtn.textContent = `Calculate your life insurance need`;
-    calculatorBtn.setAttribute("id", "life-calculator-btn");
-    resultsArea.appendChild(calculatorBtn);
+  let calculatorBtn = document.createElement("button");
+  calculatorBtn.setAttribute("onclick", "window.location.href='life-insurance-calculator.html'");
+  calculatorBtn.textContent = `Calculate your life insurance need`;
+  calculatorBtn.setAttribute("id", "life-calculator-btn");
+  resultsArea.appendChild(calculatorBtn);
 }
 
-function backButton () {
-    let start = document.getElementById("start");
-    start.classList.remove("hide");
-    start.removeAttribute("id");
-    start.classList.add("back-button");
-    start.setAttribute("onclick", "window.location.href='index.html'");
-    start.innerHTML = `Restart with new name`;
+function backButton() {
+  let start = document.getElementById("start");
+  start.classList.remove("hide");
+  start.removeAttribute("id");
+  start.classList.add("back-button");
+  start.setAttribute("onclick", "window.location.href='index.html'");
+  start.innerHTML = `Restart with new name`;
 }
 
 //Show comments based on the user's answers
-function displayComments () {
-    document.getElementById("mobile-progress").innerText = `R`;
-    document.getElementById("mobile-progress").classList.add("past-question");
-    resultsArea.firstChild.textContent = `Hi ${username},`;
-    
-    if (userAnswers[0] === "yes") {
-        let p = document.createElement('p');
-        p.textContent = needLifeInsurance;
-        resultsArea.appendChild(p);
-        let br = document.createElement('br');
-        resultsArea.appendChild(br);
-    } 
-    if (userAnswers[1] === "yes") {
-        let p = document.createElement('p');
-        p.textContent = needIncomeProtection;
-        resultsArea.appendChild(p);
-        let br = document.createElement('br');
-        resultsArea.appendChild(br);
-    } 
-    if (userAnswers[2] === "yes") {
-        let p = document.createElement('p');
-        p.textContent = needMortgageProtection;
-        resultsArea.appendChild(p);
-        let br = document.createElement('br');
-        resultsArea.appendChild(br);
-    }
-    if (userAnswers[3] === "yes" || userAnswers[4] === "yes") {
-        let p = document.createElement('p');
-        p.textContent = needLifeInsuranceExtra;
-        resultsArea.appendChild(p);
-        let br = document.createElement('br');
-        resultsArea.appendChild(br);
-    }
-    if (userAnswers[0] === "no" && userAnswers[1] === "no" && userAnswers[2] === "no" && userAnswers[3] === "no" && userAnswers[4] === "no") {
-        let p = document.createElement('p');
-        p. textContent = noNeed;
-        resultsArea.appendChild(p);
-        let br = document.createElement('br');
-        resultsArea.appendChild(br);
-    }
-    if (userAnswers[0] === "yes" || userAnswers[1] === "yes" || userAnswers[2] === "yes" || userAnswers[3] === "yes" || userAnswers[4] === "yes") {
-        calculatorButton();
-    }
-    backButton ();
+function displayComments() {
+  document.getElementById("mobile-progress").innerText = `R`;
+  document.getElementById("mobile-progress").classList.add("past-question");
+  resultsArea.firstChild.textContent = `Hi ${username},`;
+
+  if (userAnswers[0] === "yes") {
+    let p = document.createElement('p');
+    p.textContent = needLifeInsurance;
+    resultsArea.appendChild(p);
+    let br = document.createElement('br');
+    resultsArea.appendChild(br);
+  }
+  if (userAnswers[1] === "yes") {
+    let p = document.createElement('p');
+    p.textContent = needIncomeProtection;
+    resultsArea.appendChild(p);
+    let br = document.createElement('br');
+    resultsArea.appendChild(br);
+  }
+  if (userAnswers[2] === "yes") {
+    let p = document.createElement('p');
+    p.textContent = needMortgageProtection;
+    resultsArea.appendChild(p);
+    let br = document.createElement('br');
+    resultsArea.appendChild(br);
+  }
+  if (userAnswers[3] === "yes" || userAnswers[4] === "yes") {
+    let p = document.createElement('p');
+    p.textContent = needLifeInsuranceExtra;
+    resultsArea.appendChild(p);
+    let br = document.createElement('br');
+    resultsArea.appendChild(br);
+  }
+  if (userAnswers[0] === "no" && userAnswers[1] === "no" && userAnswers[2] === "no" && userAnswers[3] === "no" && userAnswers[4] === "no") {
+    let p = document.createElement('p');
+    p.textContent = noNeed;
+    resultsArea.appendChild(p);
+    let br = document.createElement('br');
+    resultsArea.appendChild(br);
+  }
+  if (userAnswers[0] === "yes" || userAnswers[1] === "yes" || userAnswers[2] === "yes" || userAnswers[3] === "yes" || userAnswers[4] === "yes") {
+    calculatorButton();
+  }
+  backButton();
 }
-
-
