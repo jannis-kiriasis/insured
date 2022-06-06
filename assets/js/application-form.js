@@ -114,13 +114,17 @@ form.addEventListener("submit", function(event){
 
 let textArea = document.getElementById("text-area");
 
+//display restart button + logic
 function restart () {
     let restart = document.createElement("button");
     restart.setAttribute("id", "restart");
-    restart.setAttribute("onclick", "window.location.href='index.html'");
+    restart.setAttribute("onclick", "restartClick()");
     restart.innerHTML = `Restart with new name`;
     textArea.appendChild(restart);
 }
 
-
-
+//On restart click link to homepage + clear session storage
+function restartClick() {
+    window.location.href='index.html';
+    sessionStorage.clear();
+}
