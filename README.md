@@ -248,7 +248,7 @@ I've included the most common metadata (description, keywords, index) and a self
 
 I've included Open Graph tags to control the page appearence when shared on social media as posts.
 
-The Lighthouse SEO test also reports an score of 100/100. 
+The Lighthouse SEO test also reports a score of 100/100. 
 
 A Lighthouse report is available a few paragraphs below in the testing section.
 
@@ -299,7 +299,13 @@ Style.css passed the CSS validation with no errors.
 There are only 2 warnings related to `-webkit-appearance: none;` and `-moz-appearance: none;` used to style the form submit button. This was used to prevent iPhone / iPad default style. The submit button would otherwise not be styled as declared in the CSS without the webkit extension.
 
 ### JS validation 
+The JavaScript files has been passed thorugh Jshint ![Jshint](https://jshint.com/): few semicolumns have been added and unused variables removed. There are no significant issues with the code.
 
+There are also no errors in the Console (Google Developer Tools).
+
+The Lighthouse best practices test also reports a score of 100/100. 
+
+A Lighthouse report is available a few paragraphs below in the testing section.
 
 ### Functionality testing
 
