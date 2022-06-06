@@ -31,7 +31,7 @@ You may have, but many people don't think about it until they need it. It usully
 
 Insured was born to answer people most basic question: "Do I need life insurance?".
 
-![Digibooking responsive design](./README-files/ami-responsivedesign.is.png)
+![Insured responsive design](./README-files/i-am-responsive.png)
 
 A quick search with Google Keywords Planner can reveal how many questions people have about life insurance that need to be answered before to get one.
 
@@ -264,7 +264,7 @@ A Lighthouse report is available a few paragraphs below in the testing section.
 - Public repository: [GitHub](https://github.com/)
 - Resize and edit images: [Pixlr.com](https://pixlr.com/)
 - Transform png to SVG: [Convertio.co](https://convertio.co/it/png-svg/)
-- Illustrations: [Freepik](https://www.freepik.com)
+- Graphics: [Flaticons](https://www.flaticon.com/)
 - Google Font: [Open Sans](https://fonts.google.com/specimen/Open+Sans)
 - Wireframes: [Balsamiq](https://balsamiq.com/)
 - Lighthouse: [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
