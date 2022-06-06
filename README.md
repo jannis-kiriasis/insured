@@ -283,12 +283,12 @@ I've carried out the following tests:
 ### HTML validation
 
 All the pages passed the HTML validation with no errors or warnings.
-- [index.html](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fjannis-kiriasis.github.io%2Fdigibooking%2Findex.html)  
-![inde.html html test](./README-files/html-test-index.png)
-- [services.html](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fjannis-kiriasis.github.io%2Fdigibooking%2Fservices.html)  
-![services.html test](./README-files/html-test-services.png)
-- [contact.html](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fjannis-kiriasis.github.io%2Fdigibooking%2Fcontact.html)  
-![contact.html](./README-files/html-test-contact.png)
+- [index.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjannis-kiriasis.github.io%2Finsured%2Findex.html)  
+![index.html html test](./README-files/questionnaire-html.png)
+- [life-insurance-calculator.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjannis-kiriasis.github.io%2Finsured%2Flife-insurance-calculator.html)  
+![life-insurance-calculator.html test](./README-files/calculator-html.png)
+- [application-form.html](hhttps://validator.w3.org/nu/?doc=https%3A%2F%2Fjannis-kiriasis.github.io%2Finsured%2Fapplication-form.html)  
+![application-form.html test](./README-files/application-html.png)
 
 ### CSS validation
 
