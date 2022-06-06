@@ -298,6 +298,9 @@ Style.css passed the CSS validation with no errors.
 
 There are only 2 warnings related to `-webkit-appearance: none;` and `-moz-appearance: none;` used to style the form submit button. This was used to prevent iPhone / iPad default style. The submit button would otherwise not be styled as declared in the CSS without the webkit extension.
 
+### JS validation 
+
+
 ### Functionality testing
 
 I've tested that the different aspects of the website work as intended.

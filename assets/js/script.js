@@ -41,16 +41,12 @@ let questions = [
 document.addEventListener("DOMContentLoaded", function() {
     let currentStage = document.getElementsByTagName("img")[1];
     currentStage.classList.add("verdigris");
-})
+});
 
 // Variables to loop through questions
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 let currentProgress = 0;
-
-// Store yes/no button elements
-const yesClick = document.getElementById("yes");
-const noClick = document.getElementById("no");
 
 // Store username in a variable
 let username = "";
@@ -175,7 +171,7 @@ let buttons = document.getElementsByClassName("choice-text");
 
 // On yes/no click, run saveAnswer()
 for (let button of buttons) {
-    button.addEventListener("click", saveAnswers)
+    button.addEventListener("click", saveAnswers);
 }
 
 /**
