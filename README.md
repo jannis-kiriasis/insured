@@ -400,7 +400,12 @@ To deploy the website:
 4. Refresh the page and in a few minutes, the following message will appear if the website was deployed correctly
 ![website published](./README-files/website-published.png)
 
-To run the website locally, use your preferred text editor and paste `git clone https://github.com/jannis-kiriasis/digibooking.git` into your terminal. To find more cloning options click on the 'code' dropdown in the [digibooking repository](https://github.com/jannis-kiriasis/digibooking/).
+To clone the website:
+1. Go to the GitHub repository [Insured](https://github.com/jannis-kiriasis/insured)
+2. Open the dropdown 'Code'
+3. Copy the given url (https://github.com/jannis-kiriasis/insured.git)
+4. Open 'Git Bash' on your favourite code editor and select the location where you want to save the cloned directory
+5. Type `git clone https://github.com/jannis-kiriasis/insured.git` and press enter to create a local copy
 
 ## Credits
 ### Graphics
