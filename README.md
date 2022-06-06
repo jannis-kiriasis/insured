@@ -19,6 +19,7 @@
 -	[Deployment](#deployment)
 -	[Credits](#credits)
 -   [Acknowledgements](#acknowledgements)
+-   [Disclaimer](#disclaimer)
 
 ## Introduction
 
@@ -402,31 +403,33 @@ To deploy the website:
 To run the website locally, use your preferred text editor and paste `git clone https://github.com/jannis-kiriasis/digibooking.git` into your terminal. To find more cloning options click on the 'code' dropdown in the [digibooking repository](https://github.com/jannis-kiriasis/digibooking/).
 
 ## Credits
+### Graphics
 
-### Hotel booking illustration attributions
-
-- [Hotel booking vector created by vectorjuice - www.freepik.com](https://www.freepik.com/vectors/hotel-booking)  
-- [Helpline vector created by vectorjuice - www.freepik.com](https://www.freepik.com/vectors/helpline)  
-- [Hotel booking vector created by vectorjuice - www.freepik.com](https://www.freepik.com/vectors/hotel-booking)  
-- [Cartoon city vector created by vectorjuice - www.freepik.com](https://www.freepik.com/vectors/cartoon-city)  
-- [Mobile map vector created by vectorjuice - www.freepik.com](https://www.freepik.com/vectors/mobile-map)  
-
-### Clients logos 
-
-- [rawpixels.com](https://www.rawpixels.com)
-
-### Digital icons 
-
-- [Keyword icons created by Smashicons - Flaticon](https://www.flaticon.com/free-icons/keyword)  
-- [Money icons created by itim2101 - Flaticon](https://www.flaticon.com/free-icons/money)  
-- [Booking icons created by Icongeek26 - Flaticon](https://www.flaticon.com/free-icons/booking)  
+[Calculator icons created by Vitaly Gorbachev - Flaticon](https://www.flaticon.com/free-icons/calculator)
+[Questionnaire icons created by netscript - Flaticon](https://www.flaticon.com/free-icons/questionnaire)
+[Submit icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/submit)
+[Arrow icons created by th studio - Flaticon](https://www.flaticon.com/free-icons/arrow)
+[Arrow icons created by Handicon - Flaticon](https://www.flaticon.com/free-icons/arrow) 
 
 ## Acknowledgements
 
-I previously worked in a digital marketing agency having as a client a big hotel chain. I've also helped my family business, a short term lettings business, grow online using SEO, PPC and Google Hotel Ads. Hence I came up with this website. I'm also an SEO specialist and I have been building and working on websites using Content Management Systems for the past 6 years.
+I'm an SEO specialist working for a insurance company in Dublin. So I have some experience with Google tools and marketing life insurance policies to people.
 
 Brian Macharia, my mentor, helped me test the website functionalities and provide excellent recommendations.
 
-The first 3 input fields of the [contact form](contact.html) were taken from the Love Running project and edited to fit this website. There isn't a link since it was a challenge I have completed but I believe this is the [sign up form](https://github.com/Code-Institute-Solutions/love-running-lab-solutions/blob/master/signup.html). 
+I've followed [this video](https://www.youtube.com/watch?v=49pYIMygIcU&t=2066s) by Code Explained to create the logic to loop through the questions and create the progress bar (progressUpdate(), nextQuestion(), leftQuestions() and related event listeners and varibles). I've edited the code to fit this website.
 
-The social links code in the footer also comes from the [Love Running social icons](https://github.com/Code-Institute-Solutions/Love-Running-Solutions/blob/master/06_site_footer/01_footer_main_structure/index.html) and they have been edited as needed.
+I've used [this guide](https://www.javascripttutorial.net/javascript-dom/javascript-form-validation/) published on javascripttutorial.net to create part of the username input validation logic. The code was edited to fit this website.
+
+I've used [this thread](https://stackoverflow.com/questions/17616624/detect-if-string-contains-any-spaces) to detect if username input value contain any white spaces.
+
+## Disclaimer
+
+I'm not a financial advisor. This website doesn't constitute financial advice and it has been created as part of a post graduate degree project. 
+
+Your data aren't retained and will be deleted as the session expires. 
+
+By clicking apply, you aren't actully applying for a life insurance policy. 
+
+More factors need to be taken in consideration when deciding if to get a life insurance policy and calculating the amount. Don't rely on this website for your life insurance but contact a financial advisor.
+
