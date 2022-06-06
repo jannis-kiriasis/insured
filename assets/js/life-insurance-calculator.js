@@ -47,6 +47,7 @@ function showApplyBtn () {
 }
 
 function calculate() {
+    // Calculate only if fields are blank or 0
     if (formSalary.value !== "" && formYears.value !== "" && formYears.value !== 0 && formYears.value !== 0) {
         salary = document.getElementById("salary").value;
         years = document.getElementById("years").value;

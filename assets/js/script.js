@@ -82,7 +82,6 @@ const isBetween = (length, min, max) => length < min || length > max ? false : t
 
 // Validate username and initialize questionnaire
 function validateUsername () {
-    let valid = false;
     const min = 3;
     const max = 25;
     const specialChar = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
@@ -105,7 +104,6 @@ function validateUsername () {
         document.getElementById("username").style.borderColor="red";
         alert("Your name can't contain numbers! Try again.");
     } else {
-        valid = true;
         //store username in sessionStorage
         sessionStorage.setItem("name", username);
         startQuestionnaire();

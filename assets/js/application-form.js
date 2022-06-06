@@ -71,6 +71,7 @@ function displayThankYou() {
     restart(); 
 }
 
+//Validate form input fields
 function formValidation () {
     const min = 3;
     const max = 25;
