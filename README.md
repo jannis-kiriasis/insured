@@ -87,6 +87,13 @@ This is a list of features that appear on every page.
 
     ![Heading](./README-files/main-heading.png)
 
+3.	**Navigation / stages**  
+    I've used graphics to represent the 3 steps included in the website: The questionnaire, the calculator and the application form. The current page icon becomes Verdigris when the page is active.
+
+    While this can be used as navigation, it is reccommanded to follow the on screen instructions for the best experience instead of jumping from a page to the other by clicking on the icons. 
+
+    ![Navigation](./README-files/navigation.png)
+
 ### Questionnaire features - index.html
 
 4.	**Progress bar**  
@@ -132,7 +139,7 @@ This is a list of features that appear on every page.
 
 ### Application form features - application-form.html
 
-9.	**Contact form**  
+9.	**Application form**  
     The contact form is prepopulated with the data previously asked to users. Users only need to add their contact details and click apply. New input fields validation rules are used on all fields. 
 
     ![Application form](./README-files/application-form.png)
@@ -152,13 +159,13 @@ In the following paragraph, I’m going to match features with user needs (user 
 
 | **User stories**                                                                                                        | **Features** |
 |-------------------------------------------------------------------------------------------------------------------------|--------------|
-| As a first-time visitor, I want to easily understand the main purpose of the site                                       | 2, 5         |
+| As a first-time visitor, I want to easily understand the main purpose of the site                                       | 2, 3, 6         |
 | As a first-time visitor, I want to have a better Idea of what cover I need                                              | 7            |
-| As a first-time visitor, I want to get a better understanding of what I need to consider when deciding on a life policy | 6, 7         |
+| As a first-time visitor, I want to get a better understanding of what I need to consider when deciding on a life policy | 7, 8         |
 | As a first-time visitor, I want to see how long the questionnaire takes to complete                                     | 4            |
 | As a user, I want to see at what stage of the questionnaire I am and the number of questions left                       | 4            |
 | As a user, I want to get a personalised result based on my personal needs                                               | 7            |
-| As a user, I want to be able to take the questionnaire again                                                            | 7            |
+| As a user, I want to be able to take the questionnaire again                                                            | 8            |
 | As a user, I want to be able to find out how much cover I need                                                          | 8            |
 | As a user, I want to be able to apply for a cover easily                                                                | 9            |
 
@@ -213,11 +220,9 @@ The fallback font used is Helvetiva for all body elements.
 
 ### Imagery
 
-I liked the idea of using illustrations. I was able to find a set of illustrations that fit perfectly. Each image used recalls the content of the section. There is a very good connection between the images and the text especially noticeable on the services page. All the illustrations come from [Freepik](https://www.freepik.com/home).
+I've used graphics for the logo, favicon the the navigation process. All the illustrations come from [Freepik](https://www.freepik.com/home).
 
-I've used Webp images where possible which is one of the lightest image formats. Nowadays, [Wepb is supported by all the major browsers](https://developers.google.com/speed/webp/faq), with [Safari being the last main browser that started supporting webp in 2020](https://caniuse.com/webp) with the release of Safari 14.
-
-I've also used png images where I needed to have a transparent background and SVG files for icons to keep them lightweight and pixel perfect.
+I've used svg images where possible which are lighter than jpg and since it's a vector format, graphics always loook sharp. It works well with logos and 'flat' graphics. I've used webp format for the favicon. Nowadays, [Wepb is supported by all the major browsers](https://developers.google.com/speed/webp/faq), with [Safari being the last main browser that started supporting webp in 2020](https://caniuse.com/webp) with the release of Safari 14.
 
 ## Accessibility
 
@@ -256,8 +261,6 @@ A Lighthouse report is available a few paragraphs below in the testing section.
 - Public repository: [GitHub](https://github.com/)
 - Resize and edit images: [Pixlr.com](https://pixlr.com/)
 - Transform png to SVG: [Convertio.co](https://convertio.co/it/png-svg/)
-- Other icons: [Flaticon](https://www.flaticon.com/)
-- Create a transparent background for illustrations: [Adobe](https://www.adobe.com/express/feature/image/transparent-background)
 - Illustrations: [Freepik](https://www.freepik.com)
 - Google Font: [Open Sans](https://fonts.google.com/specimen/Open+Sans)
 - Wireframes: [Balsamiq](https://balsamiq.com/)
