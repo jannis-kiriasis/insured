@@ -146,6 +146,7 @@ h1 {
 
 #apply {
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
 }
 
