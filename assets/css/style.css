@@ -86,7 +86,7 @@ h1 {
     flex-direction: column;
     width: 769px;
     max-width: 1500px;
-    margin: auto;
+    margin: auto auto 32px auto;
     box-shadow: 0 0 15px #4357ad75;
     background-color: #4357ad10;
     min-width: min-content;
