@@ -39,7 +39,7 @@ A quick search with Google Keywords Planner can reveal how many questions people
 
 All those questions can be resumed in 3 main questions:
 - Do I need life insurance?
-- What Life insurance do I need?
+- What life insurance do I need?
 - How much life insurance do I need?
 
 This is exactly what Insured do:
@@ -211,7 +211,7 @@ As secondary colours, I've used a shade of green (Verdigris) to highlight the pa
 
 ![Color Palette](./README-files/insured-color-palette.png)
 
-All the text colour combinations have been tested for accessibility and they all achieve a minimum of WCAG AA (2/3 achieved WCAG AAA).
+All the text colour combinations have been tested for accessibility and they all achieve WCAG AAA.
 - [Colour contrast test: white on red](https://webaim.org/resources/contrastchecker/?fcolor=FFFFFF&bcolor=A42D2D) - Used on buttons.  
 - [Colour contrast test: black on light blue](https://webaim.org/resources/contrastchecker/?fcolor=000000&bcolor=F3F4FA) - Used on the main text area.  
 - [Colour contrast test: blue on light blue](https://webaim.org/resources/contrastchecker/?fcolor=3B4D97&bcolor=F3F4FA) - Used on headings.  
@@ -228,7 +228,7 @@ The fallback font used is Helvetica for all body elements.
 
 ### Imagery
 
-I've used graphics for the logo,favicon and the navigation process. All the graphics come from [Flaticon](https://www.flaticon.com/).
+I've used graphics for the logo, favicon and the navigation process. All the graphics come from [Flaticon](https://www.flaticon.com/).
 
 I've used SVG images where possible that are lighter than jpg and since it's a vector format, graphics always look sharp. It works well with logos and 'flat' graphics. I've used webp format for the favicon. Nowadays, [Wepb is supported by all the major browsers](https://developers.google.com/speed/webp/faq), with [Safari being the last main browser that started supporting webp in 2020](https://caniuse.com/webp) with the release of Safari 14.
 
@@ -236,7 +236,7 @@ I've used SVG images where possible that are lighter than jpg and since it's a v
 
 As mentioned above, all the colour combinations used for text passed a contrast ratio test. During the testing phase, the white fonts on the red backgrounds (only used to style buttons) resulted low in contrast ratio. The red colour was adjusted to pass and achieve an accessibility score of WCAG AAA.
 
-I've also used alt tags to describe images and aria labels to describe links and images used as background images.  
+I've also used alt tags to describe images and aria labels to describe links.  
 The pages have been structured using semantic HTML markup.  
 
 The Lighthouse accessibility test also reports an accessibility score of 100/100. 
