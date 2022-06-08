@@ -21,7 +21,8 @@ let questions = [{
     }
   },
   {
-    question: "Is the vast majority of your household income coming from 1 person only?",
+    question: 
+    "Is the vast majority of your household income coming from 1 person only?",
     answers: {
       a: "yes",
       b: "no",
@@ -52,13 +53,28 @@ let username = "";
 let userAnswers = [];
 
 // Results
-let needLifeInsurance = "Considering that you have children below the age of 25, you may want to protect their future with a life cover.";
-let needIncomeProtection = "You said you are self-employed so an income protection (a specific type of life insurance) can help you out in case you can't work due to injury or illness.";
-let needMortgageProtection = "Homeowners who have a mortgage must have a specific type of life insurance called mortgage protection. This insurance will repay your mortgage in case you can't pay anymore. It isn't the same as a life cover: mortgage protection only repays your mortgage.";
-let noNeed = "Based on the answers you provided, you can park the life insurance for the moment! you probably don't need it!";
-let resultsArea = document.getElementById("text-area");
-let needLifeInsuranceExtra = "Considering that your family depends on 1 person (or 1 source of income), would be wise that person get a life insurance to protect the family.";
+let needLifeInsurance = 
+`Considering that you have children below the age of 25, you may want 
+to protect their future with a life cover.`;
 
+let needIncomeProtection = 
+`You said you are self-employed so an income protection 
+(a specific type of life insurance) can help you out in case you can't work 
+due to injury or illness.`;
+let needMortgageProtection = 
+`Homeowners who have a mortgage must have a specific type of life insurance 
+called mortgage protection. This insurance will repay your mortgage in case you 
+can't pay anymore. It isn't the same as a life cover: mortgage protection only 
+repays your mortgage.`;
+let noNeed = 
+`Based on the answers you provided, you can park the life insurance 
+for the moment! you probably don't need it!`;
+
+let needLifeInsuranceExtra = 
+`Considering that your family depends on 1 person (or 1 source of income), 
+would be wise that person get a life insurance to protect the family.`;
+
+let resultsArea = document.getElementById("text-area");
 
 /**
  * After the username is validated,
@@ -77,7 +93,8 @@ function startQuestionnaire() {
 const isRequired = value => value === '' ? false : true;
 
 // Use to set username min and max length
-const isBetween = (length, min, max) => length < min || length > max ? false : true;
+const isBetween = (length, min, max) => length < min || 
+length > max ? false : true;
 
 // Validate username and initialize questionnaire
 function validateUsername() {
@@ -178,7 +195,8 @@ for (let button of buttons) {
  */
 function progressUpdate() {
   //Get the id of the progress circle that matches the running question
-  currentProgress = document.getElementsByClassName("progress")[runningQuestion + 1].id;
+  currentProgress = document.getElementsByClassName("progress")
+  [runningQuestion + 1].id;
   /**
    * If the progress id = running questions,
    * progress circle becomes blue,
@@ -188,10 +206,14 @@ function progressUpdate() {
    */
   if (parseInt(currentProgress) === runningQuestion) {
     let blueCircle = document.getElementById(runningQuestion);
-    document.getElementById("mobile-progress").innerText = `${document.getElementById(runningQuestion).innerText} / 5`;
+
+    document.getElementById("mobile-progress").innerText = 
+    `${document.getElementById(runningQuestion).innerText} / 5`;
+
     blueCircle.classList.add("current-question");
   }
-  if (parseInt(currentProgress) > runningQuestion - 1 && runningQuestion !== 0) {
+  if (parseInt(currentProgress) > runningQuestion - 1 && runningQuestion !== 0) 
+  {
     let greenCircle = document.getElementById(runningQuestion - 1);
     greenCircle.classList.add("past-question");
   }
@@ -212,7 +234,10 @@ function showResults() {
 //show calculator buttons
 function calculatorButton() {
   let calculatorBtn = document.createElement("button");
-  calculatorBtn.setAttribute("onclick", "window.location.href='life-insurance-calculator.html'");
+
+  calculatorBtn.setAttribute("onclick", 
+  "window.location.href='life-insurance-calculator.html'");
+
   calculatorBtn.textContent = `Calculate your life insurance need`;
   calculatorBtn.setAttribute("id", "life-calculator-btn");
   resultsArea.appendChild(calculatorBtn);
@@ -261,14 +286,20 @@ function displayComments() {
     let br = document.createElement('br');
     resultsArea.appendChild(br);
   }
-  if (userAnswers[0] === "no" && userAnswers[1] === "no" && userAnswers[2] === "no" && userAnswers[3] === "no" && userAnswers[4] === "no") {
+  if (userAnswers[0] === "no" && userAnswers[1] === "no" && 
+  userAnswers[2] === "no" && userAnswers[3] === "no" && 
+  userAnswers[4] === "no") 
+  {
     let p = document.createElement('p');
     p.textContent = noNeed;
     resultsArea.appendChild(p);
     let br = document.createElement('br');
     resultsArea.appendChild(br);
   }
-  if (userAnswers[0] === "yes" || userAnswers[1] === "yes" || userAnswers[2] === "yes" || userAnswers[3] === "yes" || userAnswers[4] === "yes") {
+  if (userAnswers[0] === "yes" || userAnswers[1] === "yes" || 
+  userAnswers[2] === "yes" || userAnswers[3] === "yes" || 
+  userAnswers[4] === "yes") 
+  {
     calculatorButton();
   }
   backButton();

@@ -66,9 +66,13 @@ function saveFormData() {
 //Show thank you and information submitted
 function displayThankYou() {
     let newHeading = document.getElementById("heading").firstElementChild;
-    newHeading.textContent = "Thank you for applying for a life insurance policy";
+    
+    newHeading.textContent = 
+    "Thank you for applying for a life insurance policy";
+
     textArea.innerHTML = `
-    <p>An Insured representative will contact you shortly to verify the information submitted and process your application.</p><br>
+    <p>An Insured representative will contact you shortly to verify 
+    the information submitted and process your application.</p><br>
     <p>Information submitted:</p>
     <p>Name: ${saveName}</p>
     <p>Years of cover needed: ${saveYears}</p>
@@ -92,13 +96,15 @@ function formValidation () {
     // Username must be provided to start the questionnaire
     const isRequired = value => value === '' ? false : true;
     // Use to set username min and max length
-    const isBetween = (length, min, max) => length < min || length > max ? false : true;
+    const isBetween = (length, min, max) => length < min || 
+    length > max ? false : true;
     if (!isRequired(formName.value.trim())) {
         formName.style.borderColor="red";
         alert("Your name cannot be blank. Try Again!");
     } else if (!isBetween(formName.value.trim().length, min, max)) {
         formName.style.borderColor="red";
-        alert(`Your name must be between ${min} and ${max} characters. Try Again!`);
+        alert(`Your name must be between ${min} and ${max} characters. 
+        Try Again!`);
     } else if (/\s/.test(formName.value.trim())) {
         formName.style.borderColor="red";
         alert("Your name must be one word! Try again.");
@@ -108,9 +114,11 @@ function formValidation () {
     } else if (/\d/.test(formName.value.trim())) {
         formName.style.borderColor="red";
         alert("Your name can't contain numbers! Try again.");
-    } else if (formContact.value.trim().length < 7 || formContact.value.trim().length > 9) {
+    } else if (formContact.value.trim().length < 7 || 
+    formContact.value.trim().length > 9) {
         formContact.style.borderColor="red";
-        alert("Your phone number must be between 7 and 9 digits long. Try again.");
+        alert(`Your phone number must be between 7 and 9 digits long. 
+        Try again.`);
     } else {
         //store username in sessionStorage
         saveFormData();

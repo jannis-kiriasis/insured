@@ -34,7 +34,9 @@ function showApplyBtn () {
     if (salary !== "" && years !== "") {
         let btn = document.createElement("button");
         btn.setAttribute("id", "apply-now");
-        btn.setAttribute("onclick", "window.location.href='application-form.html'");
+        btn.setAttribute("onclick", 
+        "window.location.href='application-form.html'");
+
         btn.textContent = "Apply now for this cover";
 
         //Change calculate-btn color after use
@@ -48,13 +50,19 @@ function showApplyBtn () {
 
 function calculate() {
     // Calculate only if fields are blank or 0
-    if (formSalary.value !== "" && formYears.value !== "" && formYears.value !== 0 && formYears.value !== 0) {
+    if (formSalary.value !== "" && formYears.value !== "" && 
+    formYears.value !== 0 && formYears.value !== 0) 
+    {
         salary = document.getElementById("salary").value;
         years = document.getElementById("years").value;
         result = salary * years;
-        document.getElementById("life-cover-result").innerText = result + `€ is the amount of cover you need!`;
+
+        document.getElementById("life-cover-result").innerText = 
+        result + `€ is the amount of cover you need!`;
+
         sessionStorage.setItem("salary", salary);
         sessionStorage.setItem("years", years);   
+        
         // If - prevents apply-now from appearing at every 'calculate' click
         if (calculateBtn.innerText !== "Recalculate") {
             showApplyBtn();
