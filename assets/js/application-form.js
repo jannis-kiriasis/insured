@@ -28,13 +28,17 @@ formName.setAttribute("value", `${sessionStorage.getItem("name")}`);
 formSalary.setAttribute("value", `${sessionStorage.getItem("salary")}`);
 formYears.setAttribute("value", `${sessionStorage.getItem("years")}`);
 
-//round entered Salary
+/**
+ * Round input salary to the nearest integer
+ */
 function roundSalary () {
     let formSalaryValue = formSalary.value;
     formSalary.value = Math.round(formSalaryValue);
 }
 
-//round entered Years
+/**
+ * Round input years to the nearest integer
+ */
 function roundYears () {
     let formYearsValue = formYears.value;
     formYears.value = Math.round(formYearsValue);
@@ -63,7 +67,10 @@ function saveFormData() {
     sessionStorage.setItem("name", saveName);
 }
 
-//Show thank you and information submitted
+/**
+ * Show thank you message after the user succesfully applied.
+ * Append html to the show restart button.
+ */
 function displayThankYou() {
     let newHeading = document.getElementById("heading").firstElementChild;
     
@@ -137,7 +144,9 @@ form.addEventListener("submit", function(event){
 
 let textArea = document.getElementById("text-area");
 
-//display restart button + logic
+/**
+ * Display restart button with attributes
+ */
 function restart () {
     let restart = document.createElement("button");
     restart.setAttribute("id", "restart");
@@ -146,9 +155,12 @@ function restart () {
     textArea.appendChild(restart);
 }
 
-//On restart click link to homepage + clear session storage
+/**
+ * On restart link click, open to homepage and 
+ * clear session storage
+ */
 function restartClick() {
-    window.location.href='index.html';
     sessionStorage.clear();
+    window.location.href='index.html';
 }
 

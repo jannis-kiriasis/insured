@@ -11,13 +11,17 @@ document.addEventListener("DOMContentLoaded", function() {
     currentStage.classList.add("verdigris");
 });
 
-//round entered Salary
+/**
+ * Round input salary to the nearest integer
+ */
 function roundSalary () {
     let formSalaryValue = formSalary.value;
     formSalary.value = Math.round(formSalaryValue);
 }
 
-//round entered Years
+/**
+ * Round input years to the nearest integer
+ */
 function roundYears () {
     let formYearsValue = formYears.value;
     formYears.value = Math.round(formYearsValue);
@@ -30,6 +34,11 @@ formYears.addEventListener('focusout', roundYears);
 let calculateBtn = document.getElementById("calculate-btn");
 calculateBtn.addEventListener("click", calculate);
 
+/**
+ * If salary and years input exist and are different from 0,
+ * show apply button.
+ * Change calculate to recalculate.
+ */
 function showApplyBtn () {
     if (salary !== "" && years !== "") {
         let btn = document.createElement("button");
@@ -48,6 +57,13 @@ function showApplyBtn () {
     }
 }
 
+/**
+ * Multiply salary and years user inputs and
+ * show moltiplication result and
+ * store inputs in session storage and
+ * show apply button only if 'recalculate'.
+ * If input fields are missing show alerts.
+ */
 function calculate() {
     // Calculate only if fields are blank or 0
     if (formSalary.value !== "" && formYears.value !== "" && 

@@ -96,7 +96,14 @@ const isRequired = value => value === '' ? false : true;
 const isBetween = (length, min, max) => length < min || 
 length > max ? false : true;
 
-// Validate username and initialize questionnaire
+/**
+ * Validate username and initialize questionnaire. Username must be
+ * between 3 and 25 characters long
+ * one word
+ * no digits
+ * no special characters
+ * cannot be blank
+ */
 function validateUsername() {
   const min = 3;
   const max = 25;
@@ -133,7 +140,7 @@ start.addEventListener("click", validateUsername);
 /**
  * Render the first question,
  * show yes / no buttons,
- * hide Text area
+ * hide Text area (the intro message)
  */
 function nextQuestion() {
   let q = questions[runningQuestion];
@@ -146,13 +153,17 @@ function nextQuestion() {
   progressUpdate();
 }
 
-// Show yes / no buttons
+/**
+ * Show yes / no buttons below the question
+ */
 function showButtons() {
   let showButtons = document.getElementById("answers");
   showButtons.classList.remove("hide");
 }
 
-// Hide intro text area
+/**
+ * Hide intro text area
+ */
 function hideTextArea() {
   let hide = document.getElementById("text-area");
   hide.style.display = "none";
@@ -161,7 +172,8 @@ function hideTextArea() {
 /**
  * Check if there are questions left to loop through,
  * if so, increment runningQuestion and
- * show the next question.
+ * show the next question. If there are no questions left,
+ * show results.
  */
 function leftQuestions() {
   if (runningQuestion < lastQuestion) {
@@ -189,21 +201,20 @@ for (let button of buttons) {
 }
 
 /**
- * Update progress bar,
+ * Update progress bar colors:
  * current question progress becomes blue,
- * past questions become green
+ * past questions become green.
+ * If the progress id = running questions,
+ * progress circle becomes blue,
+ * if the question is past and
+ * there are past questions,
+ * circle becomes green
  */
 function progressUpdate() {
   //Get the id of the progress circle that matches the running question
   currentProgress = document.getElementsByClassName("progress")
   [runningQuestion + 1].id;
-  /**
-   * If the progress id = running questions,
-   * progress circle becomes blue,
-   * if the question is past and
-   * there are past questions,
-   * circle becomes green
-   */
+  //Check if currentProgress = running question to change the progress color
   if (parseInt(currentProgress) === runningQuestion) {
     let blueCircle = document.getElementById(runningQuestion);
 
@@ -212,6 +223,7 @@ function progressUpdate() {
 
     blueCircle.classList.add("current-question");
   }
+  // Check if there are past questions to change the progress color
   if (parseInt(currentProgress) > runningQuestion - 1 && runningQuestion !== 0) 
   {
     let greenCircle = document.getElementById(runningQuestion - 1);
@@ -219,7 +231,9 @@ function progressUpdate() {
   }
 }
 
-//Prepare DOM to display comments
+/**
+ * Initialise the DOM preor to display comments
+ */
 function showResults() {
   document.getElementById("answers").style.display = "none";
   document.getElementById("question").style.display = "none";
@@ -231,7 +245,9 @@ function showResults() {
   displayComments();
 }
 
-//show calculator buttons
+/**
+ * Show calculator buttons and set properties
+ */
 function calculatorButton() {
   let calculatorBtn = document.createElement("button");
 
@@ -243,6 +259,9 @@ function calculatorButton() {
   resultsArea.appendChild(calculatorBtn);
 }
 
+/**
+ * Show back button and set properties
+ */
 function backButton() {
   let start = document.getElementById("start");
   start.classList.remove("hide");
@@ -253,7 +272,7 @@ function backButton() {
 }
 
 /**
- * addInsuranceMessage pass the paramenter message.
+ * addInsuranceMessage passing the paramenter message.
  * This function creates paragraphs and spaces.
  * The content of the message is equal to the user needs (life, mortgage or
  * income protection).
