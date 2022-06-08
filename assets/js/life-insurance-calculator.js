@@ -94,7 +94,5 @@ function calculate() {
     if (calculateBtn.innerText !== "Recalculate") {
       showApplyBtn();
     }
-
-
   }
 }
