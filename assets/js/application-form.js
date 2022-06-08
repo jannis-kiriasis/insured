@@ -4,7 +4,6 @@ const formSalary = document.getElementById("salary");
 const formYears = document.getElementById("years");
 const formContact = document.getElementById("phone");
 const formEmail = document.getElementById("email");
-const restart = document.createElement("button");
 
 //Get main text area
 const textArea = document.getElementById("text-area");
@@ -163,6 +162,7 @@ function formValidation () {
  * Display restart button with attributes
  */
 function restart () {
+    const restart = document.createElement("button");
     restart.setAttribute("id", "restart");
     restart.setAttribute("onclick", "restartClick()");
     restart.innerHTML = `Restart with new name`;
