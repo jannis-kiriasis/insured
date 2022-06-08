@@ -92,7 +92,7 @@ function calculate() {
     }
 
   } else {
-    alert("Enter your salary and the years or cover you need!");
+    Swal.fire("Enter your salary and the years or cover you need!");
     formSalary.style.borderColor = "red";
     formYears.style.borderColor = "red";
   }

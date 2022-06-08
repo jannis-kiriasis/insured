@@ -130,24 +130,24 @@ function formValidation() {
 
   if (!nameExists(formName.value.trim())) {
     formName.style.borderColor = "red";
-    alert("Your name cannot be blank. Try Again!");
+    Swal.fire("Your name cannot be blank. Try Again!");
   } else if (!nameLength(formName.value.trim().length, min, max)) {
     formName.style.borderColor = "red";
-    alert(`Your name must be between ${min} and ${max} characters. 
+    Swal.fire(`Your name must be between ${min} and ${max} characters. 
         Try Again!`);
   } else if (/\s/.test(formName.value.trim())) {
     formName.style.borderColor = "red";
-    alert("Your name must be one word! Try again.");
+    Swal.fire("Your name must be one word! Try again.");
   } else if (specialChar.test(formName.value.trim())) {
     formName.style.borderColor = "red";
-    alert("Your name can't contain special characters! Try again.");
+    Swal.fire("Your name can't contain special characters! Try again.");
   } else if (/\d/.test(formName.value.trim())) {
     formName.style.borderColor = "red";
-    alert("Your name can't contain numbers! Try again.");
+    Swal.fire("Your name can't contain numbers! Try again.");
   } else if (formContact.value.trim().length < 7 ||
     formContact.value.trim().length > 9) {
     formContact.style.borderColor = "red";
-    alert(`Your phone number must be between 7 and 9 digits long. 
+    Swal.fire(`Your phone number must be between 7 and 9 digits long. 
         Try again.`);
   } else {
     // store username in sessionStorage
