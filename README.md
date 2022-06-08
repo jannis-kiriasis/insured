@@ -230,9 +230,9 @@ The fallback font used is Helvetica for all body elements.
 
 ### Imagery
 
-I've used graphics for the logo, favicon and the navigation process. All the graphics come from [Flaticon](https://www.flaticon.com/).
+I've used graphics for the logo, favicon and the navigation process. The navigation graphics come from [Flaticon](https://www.flaticon.com/).
 
-I've used SVG images where possible that are lighter than jpg and since it's a vector format, graphics always look sharp. It works well with logos and 'flat' graphics. I've used webp format for the favicon. Nowadays, [Wepb is supported by all the major browsers](https://developers.google.com/speed/webp/faq), with [Safari being the last main browser that started supporting webp in 2020](https://caniuse.com/webp) with the release of Safari 14.
+I've used SVG images where possible that are lighter than jpg and since it's a vector format, graphics always look sharp. It works well with logos and 'flat' graphics.
 
 ## Accessibility
 
