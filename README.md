@@ -278,6 +278,7 @@ A Lighthouse report is available a few paragraphs below in the testing section.
 - Colours contrast checker: [Contrast checker](https://color-contrast-checker.deque.com/)
 - Colours accessibility: [Webiam](https://webaim.org/resources/contrastchecker/)
 - Send emails with JS: [emailJS](https://www.emailjs.com/)
+- Uniform alert on all browsers: [SweetAlert](https://sweetalert2.github.io/)
 
 ## Testing
 
