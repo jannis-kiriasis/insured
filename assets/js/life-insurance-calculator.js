@@ -11,6 +11,14 @@ document.addEventListener("DOMContentLoaded", function() {
     currentStage.classList.add("verdigris");
 });
 
+// Round inputs on focus out
+formSalary.addEventListener('focusout', roundSalary);
+formYears.addEventListener('focusout', roundYears);
+
+// Listen to 'calculate' clicks
+let calculateBtn = document.getElementById("calculate-btn");
+calculateBtn.addEventListener("click", calculate);
+
 /**
  * Round input salary to the nearest integer
  */
@@ -26,13 +34,6 @@ function roundYears () {
     let formYearsValue = formYears.value;
     formYears.value = Math.round(formYearsValue);
 }
-
-formSalary.addEventListener('focusout', roundSalary);
-formYears.addEventListener('focusout', roundYears);
-
-// Listen to 'calculate' clicks
-let calculateBtn = document.getElementById("calculate-btn");
-calculateBtn.addEventListener("click", calculate);
 
 /**
  * If salary and years input exist and are different from 0,

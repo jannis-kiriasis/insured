@@ -8,12 +8,24 @@ let saveSalary = 0;
 let saveYears = 0;
 let saveEmail = "";
 let saveContact = 0;
+let textArea = document.getElementById("text-area");
+let form = document.getElementsByTagName("form")[0];
+
 
 // Wait DOM to be loaded then run funtion
 document.addEventListener("DOMContentLoaded", function() {
     let currentStage = document.getElementsByTagName("img")[5];
     currentStage.classList.add("verdigris");
 });
+
+//Prevent default form submit
+form.addEventListener("submit", function(event){
+    event.preventDefault();
+    formValidation();
+});
+
+formSalary.addEventListener('focusout', roundSalary);
+formYears.addEventListener('focusout', roundYears);
 
 /**
  * EmailJS public key
@@ -43,9 +55,6 @@ function roundYears () {
     let formYearsValue = formYears.value;
     formYears.value = Math.round(formYearsValue);
 }
-
-formSalary.addEventListener('focusout', roundSalary);
-formYears.addEventListener('focusout', roundYears);
 
 /**
  * Save form inputs,
@@ -134,15 +143,6 @@ function formValidation () {
         displayThankYou();
     }
 }
-
-//Prevent default form submit
-let form = document.getElementsByTagName("form")[0];
-form.addEventListener("submit", function(event){
-    event.preventDefault();
-    formValidation();
-});
-
-let textArea = document.getElementById("text-area");
 
 /**
  * Display restart button with attributes
