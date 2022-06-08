@@ -134,19 +134,19 @@ function validateUsername() {
 // Logic to check username is valid
 if (!nameExists(username)) {
   document.getElementById("username").style.borderColor = "red";
-  alert("Your name cannot be blank. Try Again!");
+  Swal.fire("Your name cannot be blank. Try Again!");
 } else if (!nameLength(username.length, min, max)) {
   document.getElementById("username").style.borderColor = "red";
-  alert(`Your name must be between ${min} and ${max} characters. Try Again!`);
+  Swal.fire(`Your name must be between ${min} and ${max} characters. Try Again!`);
 } else if (/\s/.test(username)) {
   document.getElementById("username").style.borderColor = "red";
-  alert("Your name must be one word! Try again.");
+  Swal.fire("Your name must be one word! Try again.");
 } else if (specialChar.test(username)) {
   document.getElementById("username").style.borderColor = "red";
-  alert("Your name can't contain special characters! Try again.");
+  Swal.fire("Your name can't contain special characters! Try again.");
 } else if (/\d/.test(username)) {
   document.getElementById("username").style.borderColor = "red";
-  alert("Your name can't contain numbers! Try again.");
+  Swal.fire("Your name can't contain numbers! Try again.");
 } else {
   //store username in sessionStorage
   sessionStorage.setItem("name", username);
