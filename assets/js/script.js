@@ -134,7 +134,10 @@ function validateUsername() {
 // Logic to check username is valid
 if (!nameExists(username)) {
   document.getElementById("username").style.borderColor = "red";
-  Swal.fire("Your name cannot be blank. Try Again!");
+  Swal.fire({
+    text: "Your name cannot be blank. Try Again!",
+    customClass: "swalButton",
+  });
 } else if (!nameLength(username.length, min, max)) {
   document.getElementById("username").style.borderColor = "red";
   Swal.fire(`Your name must be between ${min} and ${max} characters. Try Again!`);
