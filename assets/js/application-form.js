@@ -79,7 +79,12 @@ function displayThankYou() {
     restart(); 
 }
 
-//Validate form input fields
+/**
+ * Validate form input fields and
+ * save inputs in session storage and
+ * send email to user and Insured and 
+ * display thank you message
+ */
 function formValidation () {
     const min = 3;
     const max = 25;
@@ -109,26 +114,10 @@ function formValidation () {
     } else {
         //store username in sessionStorage
         saveFormData();
+        //Send email to Insured and user
+        emailjs.sendForm("service_dnybmhl", "template_r1haoio", "form");
         displayThankYou();
     }
-}
-
-/**
- * On submit click,
- * send form data to emailJS and
- * forward email to user Email and Insured (jannis.kiriasis@gmail.com)
- */
-window.onload = function() {
-    document.getElementById("form").addEventListener('submit', function(event) {
-        event.preventDefault();
-        // these IDs from the previous steps
-        emailjs.sendForm('service_dnybmhl', 'template_r1haoio', this)
-            .then(function() {
-                console.log('SUCCESS!');
-            }, function(error) {
-                console.log('FAILED...', error);
-            });
-    });
 }
 
 //Prevent default form submit
