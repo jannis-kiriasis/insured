@@ -1,20 +1,35 @@
-let formName = document.getElementById("name");
-let formSalary = document.getElementById("salary");
-let formYears = document.getElementById("years");
-let formContact = document.getElementById("phone");
-let formEmail = document.getElementById("email");
+//Get user inputs
+const formName = document.getElementById("name");
+const formSalary = document.getElementById("salary");
+const formYears = document.getElementById("years");
+const formContact = document.getElementById("phone");
+const formEmail = document.getElementById("email");
+const restart = document.createElement("button");
+
+//Get main text area
+const textArea = document.getElementById("text-area");
+
+// Get form html
+const form = document.getElementsByTagName("form")[0];
+
+// Variables for username validation
+const min = 3;
+const max = 25;
+const specialChar = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+
+// New heading for thank you message
+const newHeading = document.getElementById("heading").firstElementChild;
+
+// Initialise variables for user inputs
 let saveName = "";
 let saveSalary = 0;
 let saveYears = 0;
 let saveEmail = "";
 let saveContact = 0;
-let textArea = document.getElementById("text-area");
-let form = document.getElementsByTagName("form")[0];
-
 
 // Wait DOM to be loaded then run funtion
 document.addEventListener("DOMContentLoaded", function() {
-    let currentStage = document.getElementsByTagName("img")[5];
+    const currentStage = document.getElementsByTagName("img")[5];
     currentStage.classList.add("verdigris");
 });
 
@@ -24,6 +39,7 @@ form.addEventListener("submit", function(event){
     formValidation();
 });
 
+// Round user inputs on focus out
 formSalary.addEventListener('focusout', roundSalary);
 formYears.addEventListener('focusout', roundYears);
 
@@ -35,7 +51,7 @@ formYears.addEventListener('focusout', roundYears);
     emailjs.init('DDKNXpYjXyUnLG1Vo');
 })();
 
-//Prepopulate existing values
+// Prepopulate existing values
 formName.setAttribute("value", `${sessionStorage.getItem("name")}`);
 formSalary.setAttribute("value", `${sessionStorage.getItem("salary")}`);
 formYears.setAttribute("value", `${sessionStorage.getItem("years")}`);
@@ -81,7 +97,6 @@ function saveFormData() {
  * Append html to the show restart button.
  */
 function displayThankYou() {
-    let newHeading = document.getElementById("heading").firstElementChild;
     
     newHeading.textContent = 
     "Thank you for applying for a life insurance policy";
@@ -106,18 +121,18 @@ function displayThankYou() {
  * display thank you message
  */
 function formValidation () {
-    const min = 3;
-    const max = 25;
-    const specialChar = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+
     // Username must be provided to start the questionnaire
-    const isRequired = value => value === '' ? false : true;
+    const nameExists = value => value === '' ? false : true;
+
     // Use to set username min and max length
-    const isBetween = (length, min, max) => length < min || 
+    const nameLength = (length, min, max) => length < min || 
     length > max ? false : true;
-    if (!isRequired(formName.value.trim())) {
+
+    if (!nameExists(formName.value.trim())) {
         formName.style.borderColor="red";
         alert("Your name cannot be blank. Try Again!");
-    } else if (!isBetween(formName.value.trim().length, min, max)) {
+    } else if (!nameLength(formName.value.trim().length, min, max)) {
         formName.style.borderColor="red";
         alert(`Your name must be between ${min} and ${max} characters. 
         Try Again!`);
@@ -136,9 +151,9 @@ function formValidation () {
         alert(`Your phone number must be between 7 and 9 digits long. 
         Try again.`);
     } else {
-        //store username in sessionStorage
+        // store username in sessionStorage
         saveFormData();
-        //Send email to Insured and user
+        // Send email to Insured and user
         emailjs.sendForm("service_dnybmhl", "template_r1haoio", "form");
         displayThankYou();
     }
@@ -148,7 +163,6 @@ function formValidation () {
  * Display restart button with attributes
  */
 function restart () {
-    let restart = document.createElement("button");
     restart.setAttribute("id", "restart");
     restart.setAttribute("onclick", "restartClick()");
     restart.innerHTML = `Restart with new name`;

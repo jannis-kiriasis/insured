@@ -1,13 +1,21 @@
+// Get user inputs html and buttons
+const calcApplyBtn = document.getElementById("calculate-apply-btns");
+const formSalary = document.getElementById("salary");
+const formYears = document.getElementById("years");
+
+// Get calculate button
+const calculateBtn = document.getElementById("calculate-btn");
+
+// Get calculator icon
+const currentStage = document.getElementsByTagName("img")[3];
+
+// Initialise variables for user inputs and results
 let salary = 0;
 let years = 0;
 let result = 0;
-let calcApplyBtn = document.getElementById("calculate-apply-btns");
-let formSalary = document.getElementById("salary");
-let formYears = document.getElementById("years");
 
 // Wait DOM to be loaded then run funtion
 document.addEventListener("DOMContentLoaded", function() {
-    let currentStage = document.getElementsByTagName("img")[3];
     currentStage.classList.add("verdigris");
 });
 
@@ -16,7 +24,6 @@ formSalary.addEventListener('focusout', roundSalary);
 formYears.addEventListener('focusout', roundYears);
 
 // Listen to 'calculate' clicks
-let calculateBtn = document.getElementById("calculate-btn");
 calculateBtn.addEventListener("click", calculate);
 
 /**
@@ -42,7 +49,7 @@ function roundYears () {
  */
 function showApplyBtn () {
     if (salary !== "" && years !== "") {
-        let btn = document.createElement("button");
+        const btn = document.createElement("button");
         btn.setAttribute("id", "apply-now");
         btn.setAttribute("onclick", 
         "window.location.href='application-form.html'");

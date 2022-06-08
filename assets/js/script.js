@@ -61,9 +61,17 @@ const needLifeInsuranceExtra =
 `Considering that your family depends on 1 person (or 1 source of income), 
 would be wise that person get a life insurance to protect the family.`;
 
+// Get the main text area 
 const resultsArea = document.getElementById("text-area");
+
+// Get the start button
 const start = document.getElementById("start");
+
+// Get the yes / no answer buttons
 const buttons = document.getElementsByClassName("choice-text");
+
+// Get questionnaire icon
+const currentStage = document.getElementsByTagName("img")[1];
 
 // Variables to loop through questions
 const lastQuestion = questions.length - 1;
@@ -79,7 +87,6 @@ start.addEventListener("click", validateUsername);
 
 // Wait DOM to be loaded then run funtion
 document.addEventListener("DOMContentLoaded", function() {
-  const currentStage = document.getElementsByTagName("img")[1];
   currentStage.classList.add("verdigris");
 });
 
