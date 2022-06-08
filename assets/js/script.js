@@ -37,12 +37,6 @@ let questions = [{
   },
 ];
 
-// Wait DOM to be loaded then run funtion
-document.addEventListener("DOMContentLoaded", function() {
-  let currentStage = document.getElementsByTagName("img")[1];
-  currentStage.classList.add("verdigris");
-});
-
 // Variables to loop through questions
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
@@ -76,6 +70,23 @@ would be wise that person get a life insurance to protect the family.`;
 
 let resultsArea = document.getElementById("text-area");
 
+// Listen to 'start' clicks
+let start = document.getElementById("start");
+start.addEventListener("click", validateUsername);
+
+let buttons = document.getElementsByClassName("choice-text");
+
+// Wait DOM to be loaded then run funtion
+document.addEventListener("DOMContentLoaded", function() {
+  let currentStage = document.getElementsByTagName("img")[1];
+  currentStage.classList.add("verdigris");
+});
+
+// On yes/no click, run saveAnswer()
+for (let button of buttons) {
+  button.addEventListener("click", saveAnswers);
+}
+
 /**
  * After the username is validated,
  * initialize the questionnaire and
@@ -90,10 +101,10 @@ function startQuestionnaire() {
 }
 
 // Username must be provided to start the questionnaire
-const isRequired = value => value === '' ? false : true;
+const nameExists = value => value === '' ? false : true;
 
 // Use to set username min and max length
-const isBetween = (length, min, max) => length < min || 
+const nameLength = (length, min, max) => length < min || 
 length > max ? false : true;
 
 /**
@@ -111,10 +122,10 @@ function validateUsername() {
   username = document.getElementById("username").value;
   username = username.trim();
   // Logic to check username is valid
-  if (!isRequired(username)) {
+  if (!nameExists(username)) {
     document.getElementById("username").style.borderColor = "red";
     alert("Your name cannot be blank. Try Again!");
-  } else if (!isBetween(username.length, min, max)) {
+  } else if (!nameLength(username.length, min, max)) {
     document.getElementById("username").style.borderColor = "red";
     alert(`Your name must be between ${min} and ${max} characters. Try Again!`);
   } else if (/\s/.test(username)) {
@@ -132,10 +143,6 @@ function validateUsername() {
     startQuestionnaire();
   }
 }
-
-// Listen to 'start' clicks
-let start = document.getElementById("start");
-start.addEventListener("click", validateUsername);
 
 /**
  * Render the first question,
@@ -193,12 +200,6 @@ function saveAnswers() {
   leftQuestions();
 }
 
-let buttons = document.getElementsByClassName("choice-text");
-
-// On yes/no click, run saveAnswer()
-for (let button of buttons) {
-  button.addEventListener("click", saveAnswers);
-}
 
 /**
  * Update progress bar colors:
