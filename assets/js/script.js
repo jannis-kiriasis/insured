@@ -1,5 +1,5 @@
 //Questions
-let questions = [{
+const questions = [{
     question: "Do you have children below the age of 25?",
     answers: {
       a: "yes",
@@ -37,6 +37,34 @@ let questions = [{
   },
 ];
 
+//Results to show at the end of the questionnaire
+const needLifeInsurance = 
+`Considering that you have children below the age of 25, you may want 
+to protect their future with a life cover.`;
+
+const needIncomeProtection = 
+`You said you are self-employed so an income protection 
+(a specific type of life insurance) can help you out in case you can't work 
+due to injury or illness.`;
+
+const needMortgageProtection = 
+`Homeowners who have a mortgage must have a specific type of life insurance 
+called mortgage protection. This insurance will repay your mortgage in case you 
+can't pay anymore. It isn't the same as a life cover: mortgage protection only 
+repays your mortgage.`;
+
+const noNeed = 
+`Based on the answers you provided, you can park the life insurance 
+for the moment! you probably don't need it!`;
+
+const needLifeInsuranceExtra = 
+`Considering that your family depends on 1 person (or 1 source of income), 
+would be wise that person get a life insurance to protect the family.`;
+
+const resultsArea = document.getElementById("text-area");
+const start = document.getElementById("start");
+const buttons = document.getElementsByClassName("choice-text");
+
 // Variables to loop through questions
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
@@ -46,39 +74,12 @@ let currentProgress = 0;
 let username = "";
 let userAnswers = [];
 
-// Results
-let needLifeInsurance = 
-`Considering that you have children below the age of 25, you may want 
-to protect their future with a life cover.`;
-
-let needIncomeProtection = 
-`You said you are self-employed so an income protection 
-(a specific type of life insurance) can help you out in case you can't work 
-due to injury or illness.`;
-let needMortgageProtection = 
-`Homeowners who have a mortgage must have a specific type of life insurance 
-called mortgage protection. This insurance will repay your mortgage in case you 
-can't pay anymore. It isn't the same as a life cover: mortgage protection only 
-repays your mortgage.`;
-let noNeed = 
-`Based on the answers you provided, you can park the life insurance 
-for the moment! you probably don't need it!`;
-
-let needLifeInsuranceExtra = 
-`Considering that your family depends on 1 person (or 1 source of income), 
-would be wise that person get a life insurance to protect the family.`;
-
-let resultsArea = document.getElementById("text-area");
-
 // Listen to 'start' clicks
-let start = document.getElementById("start");
 start.addEventListener("click", validateUsername);
-
-let buttons = document.getElementsByClassName("choice-text");
 
 // Wait DOM to be loaded then run funtion
 document.addEventListener("DOMContentLoaded", function() {
-  let currentStage = document.getElementsByTagName("img")[1];
+  const currentStage = document.getElementsByTagName("img")[1];
   currentStage.classList.add("verdigris");
 });
 
@@ -164,7 +165,7 @@ function nextQuestion() {
  * Show yes / no buttons below the question
  */
 function showButtons() {
-  let showButtons = document.getElementById("answers");
+  const showButtons = document.getElementById("answers");
   showButtons.classList.remove("hide");
 }
 
@@ -172,7 +173,7 @@ function showButtons() {
  * Hide intro text area
  */
 function hideTextArea() {
-  let hide = document.getElementById("text-area");
+  const hide = document.getElementById("text-area");
   hide.style.display = "none";
 }
 
@@ -199,7 +200,6 @@ function saveAnswers() {
   userAnswers.push(this.id);
   leftQuestions();
 }
-
 
 /**
  * Update progress bar colors:
@@ -250,7 +250,7 @@ function showResults() {
  * Show calculator buttons and set properties
  */
 function calculatorButton() {
-  let calculatorBtn = document.createElement("button");
+  const calculatorBtn = document.createElement("button");
 
   calculatorBtn.setAttribute("onclick", 
   "window.location.href='life-insurance-calculator.html'");
@@ -264,7 +264,6 @@ function calculatorButton() {
  * Show back button and set properties
  */
 function backButton() {
-  let start = document.getElementById("start");
   start.classList.remove("hide");
   start.removeAttribute("id");
   start.classList.add("back-button");
@@ -281,10 +280,10 @@ function backButton() {
  * displayComments().
  */
 function addInsuranceMessage(message) {
-  let p = document.createElement('p');
+  const p = document.createElement('p');
   p.textContent = message;
   resultsArea.appendChild(p);
-  let br = document.createElement('br');
+  const br = document.createElement('br');
   resultsArea.appendChild(br);
 }
 
