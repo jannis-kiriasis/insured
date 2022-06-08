@@ -149,6 +149,11 @@ function formValidation() {
     formContact.style.borderColor = "red";
     Swal.fire(`Your phone number must be between 7 and 9 digits long. 
         Try again.`);
+  } else if (formSalary.value == "" || formYears.value == "" ||
+    formYears.value == "0" || formSalary.value == "0") {
+      Swal.fire("Enter your salary and the years or cover you need!");
+      formSalary.style.borderColor = "red";
+      formYears.style.borderColor = "red";
   } else {
     // store username in sessionStorage
     saveFormData();
