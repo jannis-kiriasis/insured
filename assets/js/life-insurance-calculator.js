@@ -74,8 +74,12 @@ function showApplyBtn() {
  */
 function calculate() {
   // Calculate only if fields are blank or 0
-  if (formSalary.value !== "" && formYears.value !== "" &&
-    formYears.value !== 0 && formYears.value !== 0) {
+  if (formSalary.value == "" || formYears.value == "" ||
+    formYears.value == "0" || formSalary.value == "0") {
+      Swal.fire("Enter your salary and the years or cover you need!");
+      formSalary.style.borderColor = "red";
+      formYears.style.borderColor = "red";
+  } else {
     salary = document.getElementById("salary").value;
     years = document.getElementById("years").value;
     result = salary * years;
@@ -91,9 +95,6 @@ function calculate() {
       showApplyBtn();
     }
 
-  } else {
-    Swal.fire("Enter your salary and the years or cover you need!");
-    formSalary.style.borderColor = "red";
-    formYears.style.borderColor = "red";
+
   }
 }
