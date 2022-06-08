@@ -299,7 +299,7 @@ All the pages passed the HTML validation with no errors or warnings.
 ![index.html html test](./README-files/questionnaire-html.png)
 - [life-insurance-calculator.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjannis-kiriasis.github.io%2Finsured%2Flife-insurance-calculator.html)  
 ![life-insurance-calculator.html test](./README-files/calculator-html.png)
-- [application-form.html](hhttps://validator.w3.org/nu/?doc=https%3A%2F%2Fjannis-kiriasis.github.io%2Finsured%2Fapplication-form.html)  
+- [application-form.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjannis-kiriasis.github.io%2Finsured%2Fapplication-form.html)  
 ![application-form.html test](./README-files/application-html.png)
 
 ### CSS validation
