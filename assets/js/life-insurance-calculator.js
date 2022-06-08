@@ -16,7 +16,7 @@ let result = 0;
 
 // Wait DOM to be loaded then run funtion
 document.addEventListener("DOMContentLoaded", function() {
-    currentStage.classList.add("verdigris");
+  currentStage.classList.add("verdigris");
 });
 
 // Round inputs on focus out
@@ -29,17 +29,17 @@ calculateBtn.addEventListener("click", calculate);
 /**
  * Round input salary to the nearest integer
  */
-function roundSalary () {
-    let formSalaryValue = formSalary.value;
-    formSalary.value = Math.round(formSalaryValue);
+function roundSalary() {
+  let formSalaryValue = formSalary.value;
+  formSalary.value = Math.round(formSalaryValue);
 }
 
 /**
  * Round input years to the nearest integer
  */
-function roundYears () {
-    let formYearsValue = formYears.value;
-    formYears.value = Math.round(formYearsValue);
+function roundYears() {
+  let formYearsValue = formYears.value;
+  formYears.value = Math.round(formYearsValue);
 }
 
 /**
@@ -47,22 +47,22 @@ function roundYears () {
  * show apply button.
  * Change calculate to recalculate.
  */
-function showApplyBtn () {
-    if (salary !== "" && years !== "") {
-        const btn = document.createElement("button");
-        btn.setAttribute("id", "apply-now");
-        btn.setAttribute("onclick", 
-        "window.location.href='application-form.html'");
+function showApplyBtn() {
+  if (salary !== "" && years !== "") {
+    const btn = document.createElement("button");
+    btn.setAttribute("id", "apply-now");
+    btn.setAttribute("onclick",
+      "window.location.href='application-form.html'");
 
-        btn.textContent = "Apply now for this cover";
+    btn.textContent = "Apply now for this cover";
 
-        //Change calculate-btn color after use
-        calculateBtn.removeAttribute("id");
-        calculateBtn.classList.add("back-button");
+    //Change calculate-btn color after use
+    calculateBtn.removeAttribute("id");
+    calculateBtn.classList.add("back-button");
 
-        calcApplyBtn.insertBefore(btn, calculateBtn);
-        calculateBtn.innerText = "Recalculate";
-    }
+    calcApplyBtn.insertBefore(btn, calculateBtn);
+    calculateBtn.innerText = "Recalculate";
+  }
 }
 
 /**
@@ -73,28 +73,27 @@ function showApplyBtn () {
  * If input fields are missing show alerts.
  */
 function calculate() {
-    // Calculate only if fields are blank or 0
-    if (formSalary.value !== "" && formYears.value !== "" && 
-    formYears.value !== 0 && formYears.value !== 0) 
-    {
-        salary = document.getElementById("salary").value;
-        years = document.getElementById("years").value;
-        result = salary * years;
+  // Calculate only if fields are blank or 0
+  if (formSalary.value !== "" && formYears.value !== "" &&
+    formYears.value !== 0 && formYears.value !== 0) {
+    salary = document.getElementById("salary").value;
+    years = document.getElementById("years").value;
+    result = salary * years;
 
-        document.getElementById("life-cover-result").innerText = 
-        result + `€ is the amount of cover you need!`;
+    document.getElementById("life-cover-result").innerText =
+      result + `€ is the amount of cover you need!`;
 
-        sessionStorage.setItem("salary", salary);
-        sessionStorage.setItem("years", years);   
-        
-        // If - prevents apply-now from appearing at every 'calculate' click
-        if (calculateBtn.innerText !== "Recalculate") {
-            showApplyBtn();
-        }
+    sessionStorage.setItem("salary", salary);
+    sessionStorage.setItem("years", years);
 
-    } else {
-        alert("Enter your salary and the years or cover you need!");
-        formSalary.style.borderColor="red";
-        formYears.style.borderColor="red";
+    // If - prevents apply-now from appearing at every 'calculate' click
+    if (calculateBtn.innerText !== "Recalculate") {
+      showApplyBtn();
     }
+
+  } else {
+    alert("Enter your salary and the years or cover you need!");
+    formSalary.style.borderColor = "red";
+    formYears.style.borderColor = "red";
+  }
 }
