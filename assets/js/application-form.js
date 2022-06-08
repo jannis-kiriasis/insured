@@ -39,15 +39,15 @@ form.addEventListener("submit", function(event) {
 });
 
 // Round user inputs on focus out
-formSalary.addEventListener('focusout', roundSalary);
-formYears.addEventListener('focusout', roundYears);
+formSalary.addEventListener("focusout", roundSalary);
+formYears.addEventListener("focusout", roundYears);
 
 /**
  * EmailJS public key
  * to send emails with JS
  */
 (function() {
-  emailjs.init('DDKNXpYjXyUnLG1Vo');
+  emailjs.init("DDKNXpYjXyUnLG1Vo");
 })();
 
 // Prepopulate existing values
@@ -122,7 +122,7 @@ function displayThankYou() {
 function formValidation() {
 
   // Username must be provided to start the questionnaire
-  const nameExists = value => value === '' ? false : true;
+  const nameExists = value => value === "" ? false : true;
 
   // Use to set username min and max length
   const nameLength = (length, min, max) => length < min ||
@@ -175,5 +175,5 @@ function restart() {
  */
 function restartClick() {
   sessionStorage.clear();
-  window.location.href = 'index.html';
+  window.location.href = "index.html";
 }

@@ -113,7 +113,7 @@ progressUpdate();
 }
 
 // Username must be provided to start the questionnaire
-const nameExists = value => value === '' ? false : true;
+const nameExists = value => value === "" ? false : true;
 
 // Use to set username min and max length
 const nameLength = (length, min, max) => length < min ||
@@ -287,10 +287,10 @@ start.innerHTML = `Restart with new name`;
 * displayComments().
 */
 function addInsuranceMessage(message) {
-const p = document.createElement('p');
+const p = document.createElement("p");
 p.textContent = message;
 resultsArea.appendChild(p);
-const br = document.createElement('br');
+const br = document.createElement("br");
 resultsArea.appendChild(br);
 }
 

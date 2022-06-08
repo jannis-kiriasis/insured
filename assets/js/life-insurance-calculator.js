@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Round inputs on focus out
-formSalary.addEventListener('focusout', roundSalary);
-formYears.addEventListener('focusout', roundYears);
+formSalary.addEventListener("focusout", roundSalary);
+formYears.addEventListener("focusout", roundYears);
 
 // Listen to 'calculate' clicks
 calculateBtn.addEventListener("click", calculate);
