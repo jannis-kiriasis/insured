@@ -153,6 +153,8 @@ This is a list of features that appear on every page.
 10. **Confirmation message**
     An application submitted message appears on the screen when the form is submitted correctly. This is done using DOM manipulation. In the confirmation message, there is also a summary of the information submitted and a button to restart from the questionnaire.
 
+    An email with the data submitted is also sent to the user and to Insured.
+
 ### Others
 11. **Custom 404 page**  
     A custom 404 page asks visitors what page they were looking for.
@@ -275,6 +277,7 @@ A Lighthouse report is available a few paragraphs below in the testing section.
 - Lighthouse: [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - Colours contrast checker: [Contrast checker](https://color-contrast-checker.deque.com/)
 - Colours accessibility: [Webiam](https://webaim.org/resources/contrastchecker/)
+- Send emails with JS: [emailJS](https://www.emailjs.com/)
 
 ## Testing
 
