@@ -73,6 +73,11 @@ const buttons = document.getElementsByClassName("choice-text");
 // Get questionnaire icon
 const currentStage = document.getElementsByTagName("img")[1];
 
+// Declare variables for user validatiom
+const min = 3;
+const max = 25;
+const specialChar = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+
 // Variables to loop through questions
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
@@ -124,9 +129,7 @@ length > max ? false : true;
  * cannot be blank
  */
 function validateUsername() {
-  const min = 3;
-  const max = 25;
-  const specialChar = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+
   username = document.getElementById("username").value;
   username = username.trim();
   // Logic to check username is valid
