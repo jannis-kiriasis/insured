@@ -85,8 +85,7 @@ let currentProgress = 0;
 // Store username in a variable
 let username = "";
 let userAnswers = [];
-username = document.getElementById("username").value;
-username = username.trim();
+
 
 // Listen to 'start' clicks
 start.addEventListener("click", validateUsername);
@@ -130,7 +129,8 @@ length > max ? false : true;
 * cannot be blank
 */
 function validateUsername() {
-
+  username = document.getElementById("username").value;
+  username = username.trim();
 // Logic to check username is valid
 if (!nameExists(username)) {
   document.getElementById("username").style.borderColor = "red";
