@@ -15,6 +15,14 @@ document.addEventListener("DOMContentLoaded", function() {
     currentStage.classList.add("verdigris");
 });
 
+/**
+ * EmailJS public key
+ * to send emails with JS
+*/
+(function() {
+    emailjs.init('DDKNXpYjXyUnLG1Vo');
+})();
+
 //Prepopulate existing values
 formName.setAttribute("value", `${sessionStorage.getItem("name")}`);
 formSalary.setAttribute("value", `${sessionStorage.getItem("salary")}`);
@@ -105,6 +113,24 @@ function formValidation () {
     }
 }
 
+/**
+ * On submit click,
+ * send form data to emailJS and
+ * forward email to user Email and Insured (jannis.kiriasis@gmail.com)
+ */
+window.onload = function() {
+    document.getElementById("form").addEventListener('submit', function(event) {
+        event.preventDefault();
+        // these IDs from the previous steps
+        emailjs.sendForm('service_dnybmhl', 'template_r1haoio', this)
+            .then(function() {
+                console.log('SUCCESS!');
+            }, function(error) {
+                console.log('FAILED...', error);
+            });
+    });
+}
+
 //Prevent default form submit
 let form = document.getElementsByTagName("form")[0];
 form.addEventListener("submit", function(event){
@@ -128,3 +154,4 @@ function restartClick() {
     window.location.href='index.html';
     sessionStorage.clear();
 }
+
