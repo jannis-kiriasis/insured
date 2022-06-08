@@ -252,49 +252,47 @@ function backButton() {
   start.innerHTML = `Restart with new name`;
 }
 
-//Show comments based on the user's answers
-function displayComments() {
+/**
+ * addInsuranceMessage pass the paramenter message.
+ * This function creates paragraphs and spaces.
+ * The content of the message is equal to the user needs (life, mortgage or
+ * income protection).
+ * The value of message changes based on the conditional logic in the function
+ * displayComments().
+ */
+function addInsuranceMessage(message) {
+  let p = document.createElement('p');
+  p.textContent = message;
+  resultsArea.appendChild(p);
+  let br = document.createElement('br');
+  resultsArea.appendChild(br);
+}
+
+/**
+ * Show messages following the if conditions. Different user answers trigger
+ * different messages.
+ */
+  function displayComments() {
   document.getElementById("mobile-progress").innerText = `R`;
   document.getElementById("mobile-progress").classList.add("past-question");
   resultsArea.firstChild.textContent = `Hi ${username},`;
 
   if (userAnswers[0] === "yes") {
-    let p = document.createElement('p');
-    p.textContent = needLifeInsurance;
-    resultsArea.appendChild(p);
-    let br = document.createElement('br');
-    resultsArea.appendChild(br);
+    addInsuranceMessage(needLifeInsurance);
   }
   if (userAnswers[1] === "yes") {
-    let p = document.createElement('p');
-    p.textContent = needIncomeProtection;
-    resultsArea.appendChild(p);
-    let br = document.createElement('br');
-    resultsArea.appendChild(br);
+    addInsuranceMessage(needIncomeProtection);
   }
   if (userAnswers[2] === "yes") {
-    let p = document.createElement('p');
-    p.textContent = needMortgageProtection;
-    resultsArea.appendChild(p);
-    let br = document.createElement('br');
-    resultsArea.appendChild(br);
+    addInsuranceMessage(needMortgageProtection);
   }
   if (userAnswers[3] === "yes" || userAnswers[4] === "yes") {
-    let p = document.createElement('p');
-    p.textContent = needLifeInsuranceExtra;
-    resultsArea.appendChild(p);
-    let br = document.createElement('br');
-    resultsArea.appendChild(br);
+    addInsuranceMessage(needLifeInsuranceExtra);
   }
   if (userAnswers[0] === "no" && userAnswers[1] === "no" && 
-  userAnswers[2] === "no" && userAnswers[3] === "no" && 
-  userAnswers[4] === "no") 
-  {
-    let p = document.createElement('p');
-    p.textContent = noNeed;
-    resultsArea.appendChild(p);
-    let br = document.createElement('br');
-    resultsArea.appendChild(br);
+    userAnswers[2] === "no" && userAnswers[3] === "no" && 
+    userAnswers[4] === "no") {
+      addInsuranceMessage(noNeed);
   }
   if (userAnswers[0] === "yes" || userAnswers[1] === "yes" || 
   userAnswers[2] === "yes" || userAnswers[3] === "yes" || 
@@ -304,3 +302,4 @@ function displayComments() {
   }
   backButton();
 }
+
