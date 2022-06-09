@@ -113,6 +113,8 @@ function displayThankYou() {
   restart();
 }
 
+// Part of this code is from javascripttutorial.net tutorial linked in README.md
+// It has been edited as needed
 /**
  * Validate form input fields and
  * save inputs in session storage and

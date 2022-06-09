@@ -119,6 +119,8 @@ const nameExists = value => value === "" ? false : true;
 const nameLength = (length, min, max) => length < min ||
 length > max ? false : true;
 
+// Part of this code is from javascripttutorial.net tutorial linked in README.md
+// It has been edited as needed
 /**
 * Validate username and initialize questionnaire. Username must be
 * between 3 and 25 characters long
@@ -156,6 +158,8 @@ function validateUsername() {
   }
 }
 
+// Part of this code comes from Code Explained tutorial linked in README.md
+// It has been edited as needed
 /**
 * Render the first question,
 * show yes / no buttons,
@@ -188,6 +192,8 @@ function hideTextArea() {
   hide.style.display = "none";
 }
 
+// Part of this code comes from Code Explained tutorial linked in README.md
+// It has been edited as needed
 /**
 * Check if there are questions left to loop through,
 * if so, increment runningQuestion and
@@ -212,6 +218,8 @@ function saveAnswers() {
   leftQuestions();
 }
 
+// Part of this code comes from Code Explained tutorial linked in README.md
+// It has been edited as needed
 /**
 * Update progress bar colors:
 * current question progress becomes blue,
