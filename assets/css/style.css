@@ -127,6 +127,10 @@ h1 {
     margin-top: 10px;
 }
 
+label[for="username"] {
+    display: none;
+}
+
 /* Buttons styles */
 .swal2-styled.swal2-confirm,
 .button-style,
