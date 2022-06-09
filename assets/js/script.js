@@ -86,18 +86,17 @@ let currentProgress = 0;
 let username = "";
 let userAnswers = [];
 
-
 // Listen to 'start' clicks
 start.addEventListener("click", validateUsername);
 
 // Wait DOM to be loaded then run funtion
 document.addEventListener("DOMContentLoaded", function() {
-currentStage.classList.add("verdigris");
+  currentStage.classList.add("verdigris");
 });
 
 // On yes/no click, run saveAnswer()
 for (let button of buttons) {
-button.addEventListener("click", saveAnswers);
+  button.addEventListener("click", saveAnswers);
 }
 
 /**
@@ -106,11 +105,11 @@ button.addEventListener("click", saveAnswers);
 * show the first question
 */
 function startQuestionnaire() {
-start.classList.add("hide");
-// Make first bar progress border-color green
-document.getElementById("i").classList.add("past-question");
-nextQuestion();
-progressUpdate();
+  start.classList.add("hide");
+  // Make first bar progress border-color green
+  document.getElementById("i").classList.add("past-question");
+  nextQuestion();
+  progressUpdate();
 }
 
 // Username must be provided to start the questionnaire
@@ -131,30 +130,30 @@ length > max ? false : true;
 function validateUsername() {
   username = document.getElementById("username").value;
   username = username.trim();
-// Logic to check username is valid
-if (!nameExists(username)) {
-  document.getElementById("username").style.borderColor = "red";
-  Swal.fire({
-    text: "Your name cannot be blank. Try Again!",
-    customClass: "swalButton",
-  });
-} else if (!nameLength(username.length, min, max)) {
-  document.getElementById("username").style.borderColor = "red";
-  Swal.fire(`Your name must be between ${min} and ${max} characters. Try Again!`);
-} else if (/\s/.test(username)) {
-  document.getElementById("username").style.borderColor = "red";
-  Swal.fire("Your name must be one word! Try again.");
-} else if (specialChar.test(username)) {
-  document.getElementById("username").style.borderColor = "red";
-  Swal.fire("Your name can't contain special characters! Try again.");
-} else if (/\d/.test(username)) {
-  document.getElementById("username").style.borderColor = "red";
-  Swal.fire("Your name can't contain numbers! Try again.");
-} else {
-  //store username in sessionStorage
-  sessionStorage.setItem("name", username);
-  startQuestionnaire();
-}
+  // Logic to check username is valid
+  if (!nameExists(username)) {
+    document.getElementById("username").style.borderColor = "red";
+    Swal.fire({
+      text: "Your name cannot be blank. Try Again!",
+      customClass: "swalButton",
+    });
+  } else if (!nameLength(username.length, min, max)) {
+    document.getElementById("username").style.borderColor = "red";
+    Swal.fire(`Your name must be between ${min} and ${max} characters. Try Again!`);
+  } else if (/\s/.test(username)) {
+    document.getElementById("username").style.borderColor = "red";
+    Swal.fire("Your name must be one word! Try again.");
+  } else if (specialChar.test(username)) {
+    document.getElementById("username").style.borderColor = "red";
+    Swal.fire("Your name can't contain special characters! Try again.");
+  } else if (/\d/.test(username)) {
+    document.getElementById("username").style.borderColor = "red";
+    Swal.fire("Your name can't contain numbers! Try again.");
+  } else {
+    //store username in sessionStorage
+    sessionStorage.setItem("name", username);
+    startQuestionnaire();
+  }
 }
 
 /**
@@ -163,30 +162,30 @@ if (!nameExists(username)) {
 * hide Text area (the intro message)
 */
 function nextQuestion() {
-let q = questions[runningQuestion];
-document.getElementsByTagName("h1")[0].innerText = q.question;
-document.getElementById("yes").innerText = q.answers.a;
-document.getElementById("no").innerText = q.answers.b;
+  let q = questions[runningQuestion];
+  document.getElementsByTagName("h1")[0].innerText = q.question;
+  document.getElementById("yes").innerText = q.answers.a;
+  document.getElementById("no").innerText = q.answers.b;
 
-showButtons();
-hideTextArea();
-progressUpdate();
+  showButtons();
+  hideTextArea();
+  progressUpdate();
 }
 
 /**
 * Show yes / no buttons below the question
 */
 function showButtons() {
-const showButtons = document.getElementById("answers");
-showButtons.classList.remove("hide");
+  const showButtons = document.getElementById("answers");
+  showButtons.classList.remove("hide");
 }
 
 /**
 * Hide intro text area
 */
 function hideTextArea() {
-const hide = document.getElementById("text-area");
-hide.style.display = "none";
+  const hide = document.getElementById("text-area");
+  hide.style.display = "none";
 }
 
 /**
@@ -196,12 +195,12 @@ hide.style.display = "none";
 * show results.
 */
 function leftQuestions() {
-if (runningQuestion < lastQuestion) {
-  runningQuestion++;
-  nextQuestion();
-} else {
-  showResults();
-}
+  if (runningQuestion < lastQuestion) {
+    runningQuestion++;
+    nextQuestion();
+  } else {
+    showResults();
+  }
 }
 
 /**
@@ -209,8 +208,8 @@ if (runningQuestion < lastQuestion) {
 * go to next question
 */
 function saveAnswers() {
-userAnswers.push(this.id);
-leftQuestions();
+  userAnswers.push(this.id);
+  leftQuestions();
 }
 
 /**
@@ -224,61 +223,61 @@ leftQuestions();
 * circle becomes green
 */
 function progressUpdate() {
-//Get the id of the progress circle that matches the running question
-currentProgress = document.getElementsByClassName("progress")[runningQuestion + 1].id;
-//Check if currentProgress = running question to change the progress color
-if (parseInt(currentProgress) === runningQuestion) {
-  let blueCircle = document.getElementById(runningQuestion);
+  //Get the id of the progress circle that matches the running question
+  currentProgress = document.getElementsByClassName("progress")[runningQuestion + 1].id;
+  //Check if currentProgress = running question to change the progress color
+  if (parseInt(currentProgress) === runningQuestion) {
+    let blueCircle = document.getElementById(runningQuestion);
 
-  document.getElementById("mobile-progress").innerText =
-    `${document.getElementById(runningQuestion).innerText} / 5`;
+    document.getElementById("mobile-progress").innerText =
+      `${document.getElementById(runningQuestion).innerText} / 5`;
 
-  blueCircle.classList.add("current-question");
-}
-// Check if there are past questions to change the progress color
-if (parseInt(currentProgress) > runningQuestion - 1 && runningQuestion !== 0) {
-  let greenCircle = document.getElementById(runningQuestion - 1);
-  greenCircle.classList.add("past-question");
-}
+    blueCircle.classList.add("current-question");
+  }
+  // Check if there are past questions to change the progress color
+  if (parseInt(currentProgress) > runningQuestion - 1 && runningQuestion !== 0) {
+    let greenCircle = document.getElementById(runningQuestion - 1);
+    greenCircle.classList.add("past-question");
+  }
 }
 
 /**
 * Initialise the DOM preor to display comments
 */
 function showResults() {
-document.getElementById("answers").style.display = "none";
-document.getElementById("question").style.display = "none";
-document.getElementById("text-area").style.display = "block";
-document.getElementById("intro").innerHTML = "";
+  document.getElementById("answers").style.display = "none";
+  document.getElementById("question").style.display = "none";
+  document.getElementById("text-area").style.display = "block";
+  document.getElementById("intro").innerHTML = "";
 
-document.getElementById("5").classList.add("current-question");
-document.getElementById("4").classList.add("past-question");
-displayComments();
+  document.getElementById("5").classList.add("current-question");
+  document.getElementById("4").classList.add("past-question");
+  displayComments();
 }
 
 /**
 * Show calculator buttons and set properties
 */
 function calculatorButton() {
-const calculatorBtn = document.createElement("button");
+  const calculatorBtn = document.createElement("button");
 
-calculatorBtn.setAttribute("onclick",
-  "window.location.href='life-insurance-calculator.html'");
+  calculatorBtn.setAttribute("onclick",
+    "window.location.href='life-insurance-calculator.html'");
 
-calculatorBtn.textContent = `Calculate your life insurance need`;
-calculatorBtn.setAttribute("id", "life-calculator-btn");
-resultsArea.appendChild(calculatorBtn);
+  calculatorBtn.textContent = `Calculate your life insurance need`;
+  calculatorBtn.setAttribute("id", "life-calculator-btn");
+  resultsArea.appendChild(calculatorBtn);
 }
 
 /**
 * Show back button and set properties
 */
 function backButton() {
-start.classList.remove("hide");
-start.removeAttribute("id");
-start.classList.add("back-button");
-start.setAttribute("onclick", "window.location.href='index.html'");
-start.innerHTML = `Restart with new name`;
+  start.classList.remove("hide");
+  start.removeAttribute("id");
+  start.classList.add("back-button");
+  start.setAttribute("onclick", "window.location.href='index.html'");
+  start.innerHTML = `Restart with new name`;
 }
 
 /**
@@ -290,11 +289,11 @@ start.innerHTML = `Restart with new name`;
 * displayComments().
 */
 function addInsuranceMessage(message) {
-const p = document.createElement("p");
-p.textContent = message;
-resultsArea.appendChild(p);
-const br = document.createElement("br");
-resultsArea.appendChild(br);
+  const p = document.createElement("p");
+  p.textContent = message;
+  resultsArea.appendChild(p);
+  const br = document.createElement("br");
+  resultsArea.appendChild(br);
 }
 
 /**
@@ -302,31 +301,31 @@ resultsArea.appendChild(br);
 * different messages.
 */
 function displayComments() {
-document.getElementById("mobile-progress").innerText = `R`;
-document.getElementById("mobile-progress").classList.add("past-question");
-resultsArea.firstChild.textContent = `Hi ${username},`;
+  document.getElementById("mobile-progress").innerText = `R`;
+  document.getElementById("mobile-progress").classList.add("past-question");
+  resultsArea.firstChild.textContent = `Hi ${username},`;
 
-if (userAnswers[0] === "yes") {
-  addInsuranceMessage(needLifeInsurance);
-}
-if (userAnswers[1] === "yes") {
-  addInsuranceMessage(needIncomeProtection);
-}
-if (userAnswers[2] === "yes") {
-  addInsuranceMessage(needMortgageProtection);
-}
-if (userAnswers[3] === "yes" || userAnswers[4] === "yes") {
-  addInsuranceMessage(needLifeInsuranceExtra);
-}
-if (userAnswers[0] === "no" && userAnswers[1] === "no" &&
-  userAnswers[2] === "no" && userAnswers[3] === "no" &&
-  userAnswers[4] === "no") {
-  addInsuranceMessage(noNeed);
-}
-if (userAnswers[0] === "yes" || userAnswers[1] === "yes" ||
-  userAnswers[2] === "yes" || userAnswers[3] === "yes" ||
-  userAnswers[4] === "yes") {
-  calculatorButton();
-}
-backButton();
+  if (userAnswers[0] === "yes") {
+    addInsuranceMessage(needLifeInsurance);
+  }
+  if (userAnswers[1] === "yes") {
+    addInsuranceMessage(needIncomeProtection);
+  }
+  if (userAnswers[2] === "yes") {
+    addInsuranceMessage(needMortgageProtection);
+  }
+  if (userAnswers[3] === "yes" || userAnswers[4] === "yes") {
+    addInsuranceMessage(needLifeInsuranceExtra);
+  }
+  if (userAnswers[0] === "no" && userAnswers[1] === "no" &&
+    userAnswers[2] === "no" && userAnswers[3] === "no" &&
+    userAnswers[4] === "no") {
+    addInsuranceMessage(noNeed);
+  }
+  if (userAnswers[0] === "yes" || userAnswers[1] === "yes" ||
+    userAnswers[2] === "yes" || userAnswers[3] === "yes" ||
+    userAnswers[4] === "yes") {
+    calculatorButton();
+  }
+  backButton();
 }
